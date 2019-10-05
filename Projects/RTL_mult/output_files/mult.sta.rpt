@@ -1,0 +1,496 @@
+Timing Analyzer report for mult
+Mon Apr 01 15:00:27 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'Clk'
+ 12. Hold: 'Clk'
+ 13. Setup Transfers
+ 14. Hold Transfers
+ 15. Report TCCS
+ 16. Report RSKM
+ 17. Unconstrained Paths Summary
+ 18. Clock Status Summary
+ 19. Unconstrained Input Ports
+ 20. Unconstrained Output Ports
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; mult                                                ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M1270ZT144C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 186.01 MHz ; 186.01 MHz      ; Clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Setup Summary                  ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; Clk   ; -4.376 ; -61.253       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; Clk   ; 1.640 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; Clk   ; -2.289 ; -2.289        ;
++-------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'Clk'                                                                                                                         ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; -4.376 ; RegN:M|Dinternal[1]       ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 5.043      ;
+; -4.375 ; RegN:M|Dinternal[1]       ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 5.042      ;
+; -4.286 ; RegN:M|Dinternal[0]       ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.953      ;
+; -4.285 ; RegN:M|Dinternal[0]       ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.952      ;
+; -4.246 ; RegN:M|Dinternal[2]       ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.913      ;
+; -4.237 ; RegN:M|Dinternal[1]       ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.904      ;
+; -4.161 ; RegN:M|Dinternal[0]       ; RegN:ACC|Dinternal[1]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.828      ;
+; -4.147 ; RegN:M|Dinternal[0]       ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.814      ;
+; -4.125 ; RegN:M|Dinternal[3]       ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.792      ;
+; -4.110 ; RegN:ACC|Dinternal[0]     ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.777      ;
+; -4.109 ; RegN:ACC|Dinternal[0]     ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.776      ;
+; -4.107 ; RegN:M|Dinternal[2]       ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.774      ;
+; -4.098 ; Controller:C|state.InitS  ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.765      ;
+; -4.098 ; Controller:C|state.InitS  ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.765      ;
+; -4.098 ; Controller:C|state.InitS  ; RegN:ACC|Dinternal[1]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.765      ;
+; -4.098 ; Controller:C|state.InitS  ; RegN:ACC|Dinternal[0]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.765      ;
+; -4.085 ; Controller:C|state.AddS   ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.752      ;
+; -4.085 ; Controller:C|state.AddS   ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.752      ;
+; -4.085 ; Controller:C|state.AddS   ; RegN:ACC|Dinternal[1]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.752      ;
+; -4.085 ; Controller:C|state.AddS   ; RegN:ACC|Dinternal[0]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.752      ;
+; -3.985 ; RegN:ACC|Dinternal[0]     ; RegN:ACC|Dinternal[1]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.652      ;
+; -3.971 ; RegN:ACC|Dinternal[0]     ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.638      ;
+; -3.804 ; RegN:ACC|Dinternal[1]     ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.471      ;
+; -3.803 ; RegN:ACC|Dinternal[1]     ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.470      ;
+; -3.680 ; RegN:ACC|Dinternal[2]     ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.347      ;
+; -3.665 ; RegN:ACC|Dinternal[1]     ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.332      ;
+; -3.563 ; Controller:C|state.ShiftS ; RegN:Q|Dinternal[3]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.230      ;
+; -3.563 ; Controller:C|state.ShiftS ; RegN:Q|Dinternal[2]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.230      ;
+; -3.563 ; Controller:C|state.ShiftS ; RegN:Q|Dinternal[1]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.230      ;
+; -3.563 ; Controller:C|state.ShiftS ; RegN:Q|Dinternal[0]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.230      ;
+; -3.556 ; Controller:C|state.ShiftS ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.223      ;
+; -3.556 ; Controller:C|state.ShiftS ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.223      ;
+; -3.556 ; Controller:C|state.ShiftS ; RegN:ACC|Dinternal[1]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.223      ;
+; -3.556 ; Controller:C|state.ShiftS ; RegN:ACC|Dinternal[0]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.223      ;
+; -3.541 ; RegN:ACC|Dinternal[2]     ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.208      ;
+; -3.540 ; RegN:ACC|Dinternal[3]     ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.207      ;
+; -3.495 ; RegN:M|Dinternal[1]       ; RegN:ACC|Dinternal[1]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.162      ;
+; -3.489 ; RegN:M|Dinternal[2]       ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.156      ;
+; -3.338 ; RegN:M|Dinternal[0]       ; RegN:ACC|Dinternal[0]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 4.005      ;
+; -3.304 ; Controller:C|state.InitS  ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.971      ;
+; -3.230 ; RegN:M|Dinternal[3]       ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.897      ;
+; -3.213 ; Controller:C|state.InitS  ; RegN:Q|Dinternal[3]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.880      ;
+; -3.213 ; Controller:C|state.InitS  ; RegN:Q|Dinternal[2]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.880      ;
+; -3.213 ; Controller:C|state.InitS  ; RegN:Q|Dinternal[1]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.880      ;
+; -3.213 ; Controller:C|state.InitS  ; RegN:Q|Dinternal[0]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.880      ;
+; -3.190 ; Controller:C|CNT[1]       ; Controller:C|state.HaltS  ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.857      ;
+; -3.185 ; Controller:C|state.ShiftS ; Controller:C|CNT[0]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.852      ;
+; -3.185 ; Controller:C|state.ShiftS ; Controller:C|CNT[1]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.852      ;
+; -3.105 ; RegN:ACC|Dinternal[0]     ; RegN:ACC|Dinternal[0]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.772      ;
+; -2.980 ; RegN:ACC|Dinternal[2]     ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.647      ;
+; -2.980 ; RegN:ACC|Dinternal[1]     ; RegN:ACC|Dinternal[1]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.647      ;
+; -2.835 ; Controller:C|state.InitS  ; Controller:C|CNT[0]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.502      ;
+; -2.835 ; Controller:C|state.InitS  ; Controller:C|CNT[1]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.502      ;
+; -2.760 ; Controller:C|state.AddS   ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.427      ;
+; -2.702 ; RegN:ACC|Dinternal[3]     ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.369      ;
+; -2.675 ; Controller:C|CNT[0]       ; Controller:C|state.HaltS  ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.342      ;
+; -2.415 ; Controller:C|state.ShiftS ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.082      ;
+; -2.411 ; Controller:C|state.InitS  ; RegN:M|Dinternal[0]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.078      ;
+; -2.411 ; Controller:C|state.InitS  ; RegN:M|Dinternal[1]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.078      ;
+; -2.411 ; Controller:C|state.InitS  ; RegN:M|Dinternal[2]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.078      ;
+; -2.411 ; Controller:C|state.InitS  ; RegN:M|Dinternal[3]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 3.078      ;
+; -2.078 ; RegN:ACC|Dinternal[0]     ; RegN:Q|Dinternal[3]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.745      ;
+; -1.849 ; Controller:C|state.InitS  ; Controller:C|state.QtempS ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.516      ;
+; -1.830 ; Controller:C|state.QtempS ; Controller:C|state.ShiftS ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.497      ;
+; -1.799 ; RegN:ACC|Dinternal[4]     ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.466      ;
+; -1.796 ; RegN:ACC|Dinternal[4]     ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.463      ;
+; -1.772 ; RegN:Q|Dinternal[2]       ; RegN:Q|Dinternal[1]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.439      ;
+; -1.744 ; Controller:C|CNT[1]       ; Controller:C|state.QtempS ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.411      ;
+; -1.744 ; Controller:C|CNT[0]       ; Controller:C|CNT[0]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.411      ;
+; -1.739 ; Controller:C|CNT[1]       ; Controller:C|CNT[1]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.406      ;
+; -1.725 ; Controller:C|state.AddS   ; Controller:C|state.ShiftS ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.392      ;
+; -1.706 ; RegN:ACC|Dinternal[2]     ; RegN:ACC|Dinternal[1]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.373      ;
+; -1.690 ; RegN:ACC|Dinternal[3]     ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.357      ;
+; -1.618 ; RegN:Q|Dinternal[0]       ; Controller:C|state.ShiftS ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.285      ;
+; -1.617 ; RegN:Q|Dinternal[0]       ; Controller:C|state.AddS   ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.284      ;
+; -1.525 ; Controller:C|state.ShiftS ; Controller:C|state.QtempS ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.192      ;
+; -1.522 ; Controller:C|state.ShiftS ; Controller:C|state.HaltS  ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.189      ;
+; -1.519 ; Controller:C|state.QtempS ; Controller:C|state.AddS   ; Clk          ; Clk         ; 1.000        ; 0.000      ; 2.186      ;
+; -1.298 ; Controller:C|CNT[0]       ; Controller:C|state.QtempS ; Clk          ; Clk         ; 1.000        ; 0.000      ; 1.965      ;
+; -1.294 ; Controller:C|CNT[0]       ; Controller:C|CNT[1]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 1.961      ;
+; -1.254 ; Controller:C|state.HaltS  ; Controller:C|state.InitS  ; Clk          ; Clk         ; 1.000        ; 0.000      ; 1.921      ;
+; -1.247 ; Controller:C|state.HaltS  ; Controller:C|state.HaltS  ; Clk          ; Clk         ; 1.000        ; 0.000      ; 1.914      ;
+; -1.241 ; RegN:ACC|Dinternal[1]     ; RegN:ACC|Dinternal[0]     ; Clk          ; Clk         ; 1.000        ; 0.000      ; 1.908      ;
+; -1.196 ; RegN:Q|Dinternal[3]       ; RegN:Q|Dinternal[2]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 1.863      ;
+; -1.194 ; RegN:Q|Dinternal[1]       ; RegN:Q|Dinternal[0]       ; Clk          ; Clk         ; 1.000        ; 0.000      ; 1.861      ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'Clk'                                                                                                                         ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; 1.640 ; RegN:Q|Dinternal[1]       ; RegN:Q|Dinternal[0]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.861      ;
+; 1.642 ; RegN:Q|Dinternal[3]       ; RegN:Q|Dinternal[2]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.863      ;
+; 1.687 ; RegN:ACC|Dinternal[1]     ; RegN:ACC|Dinternal[0]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.908      ;
+; 1.693 ; Controller:C|state.HaltS  ; Controller:C|state.HaltS  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.914      ;
+; 1.700 ; Controller:C|state.HaltS  ; Controller:C|state.InitS  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.921      ;
+; 1.710 ; Controller:C|state.InitS  ; Controller:C|CNT[0]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.931      ;
+; 1.740 ; Controller:C|CNT[0]       ; Controller:C|CNT[1]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.961      ;
+; 1.744 ; Controller:C|CNT[0]       ; Controller:C|state.QtempS ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.965      ;
+; 1.965 ; Controller:C|state.QtempS ; Controller:C|state.AddS   ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.186      ;
+; 1.968 ; Controller:C|state.ShiftS ; Controller:C|state.HaltS  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.189      ;
+; 1.971 ; Controller:C|state.ShiftS ; Controller:C|state.QtempS ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.192      ;
+; 2.063 ; RegN:Q|Dinternal[0]       ; Controller:C|state.AddS   ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.284      ;
+; 2.064 ; RegN:Q|Dinternal[0]       ; Controller:C|state.ShiftS ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.285      ;
+; 2.136 ; RegN:ACC|Dinternal[3]     ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.357      ;
+; 2.152 ; RegN:ACC|Dinternal[2]     ; RegN:ACC|Dinternal[1]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.373      ;
+; 2.171 ; Controller:C|state.AddS   ; Controller:C|state.ShiftS ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.392      ;
+; 2.185 ; Controller:C|CNT[1]       ; Controller:C|CNT[1]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.406      ;
+; 2.190 ; Controller:C|CNT[1]       ; Controller:C|state.QtempS ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.411      ;
+; 2.190 ; Controller:C|CNT[0]       ; Controller:C|CNT[0]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.411      ;
+; 2.218 ; RegN:Q|Dinternal[2]       ; RegN:Q|Dinternal[1]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.439      ;
+; 2.242 ; RegN:ACC|Dinternal[4]     ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.463      ;
+; 2.245 ; RegN:ACC|Dinternal[4]     ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.466      ;
+; 2.276 ; Controller:C|state.QtempS ; Controller:C|state.ShiftS ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.497      ;
+; 2.295 ; Controller:C|state.InitS  ; Controller:C|state.QtempS ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.516      ;
+; 2.493 ; Controller:C|state.InitS  ; RegN:Q|Dinternal[1]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.714      ;
+; 2.503 ; Controller:C|state.InitS  ; RegN:Q|Dinternal[3]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.724      ;
+; 2.524 ; RegN:ACC|Dinternal[0]     ; RegN:Q|Dinternal[3]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.745      ;
+; 2.737 ; Controller:C|state.AddS   ; RegN:ACC|Dinternal[1]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.958      ;
+; 2.738 ; Controller:C|state.AddS   ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 2.959      ;
+; 2.805 ; Controller:C|state.InitS  ; RegN:Q|Dinternal[0]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.026      ;
+; 2.816 ; Controller:C|state.InitS  ; RegN:Q|Dinternal[2]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.037      ;
+; 2.842 ; Controller:C|state.InitS  ; Controller:C|CNT[1]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.063      ;
+; 2.857 ; Controller:C|state.InitS  ; RegN:M|Dinternal[0]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.078      ;
+; 2.857 ; Controller:C|state.InitS  ; RegN:M|Dinternal[1]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.078      ;
+; 2.857 ; Controller:C|state.InitS  ; RegN:M|Dinternal[2]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.078      ;
+; 2.857 ; Controller:C|state.InitS  ; RegN:M|Dinternal[3]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.078      ;
+; 2.861 ; Controller:C|state.ShiftS ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.082      ;
+; 3.121 ; Controller:C|CNT[0]       ; Controller:C|state.HaltS  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.342      ;
+; 3.148 ; RegN:ACC|Dinternal[3]     ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.369      ;
+; 3.204 ; Controller:C|state.AddS   ; RegN:ACC|Dinternal[0]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.425      ;
+; 3.206 ; Controller:C|state.AddS   ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.427      ;
+; 3.210 ; Controller:C|state.AddS   ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.431      ;
+; 3.426 ; RegN:ACC|Dinternal[2]     ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.647      ;
+; 3.426 ; RegN:ACC|Dinternal[1]     ; RegN:ACC|Dinternal[1]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.647      ;
+; 3.551 ; RegN:ACC|Dinternal[0]     ; RegN:ACC|Dinternal[0]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.772      ;
+; 3.631 ; Controller:C|state.ShiftS ; Controller:C|CNT[0]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.852      ;
+; 3.631 ; Controller:C|state.ShiftS ; Controller:C|CNT[1]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.852      ;
+; 3.636 ; Controller:C|CNT[1]       ; Controller:C|state.HaltS  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.857      ;
+; 3.676 ; RegN:M|Dinternal[3]       ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.897      ;
+; 3.750 ; Controller:C|state.InitS  ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.971      ;
+; 3.750 ; Controller:C|state.InitS  ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.971      ;
+; 3.750 ; Controller:C|state.InitS  ; RegN:ACC|Dinternal[1]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.971      ;
+; 3.750 ; Controller:C|state.InitS  ; RegN:ACC|Dinternal[0]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.971      ;
+; 3.750 ; Controller:C|state.InitS  ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 3.971      ;
+; 3.784 ; RegN:M|Dinternal[0]       ; RegN:ACC|Dinternal[0]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.005      ;
+; 3.935 ; RegN:M|Dinternal[2]       ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.156      ;
+; 3.941 ; RegN:M|Dinternal[1]       ; RegN:ACC|Dinternal[1]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.162      ;
+; 3.971 ; RegN:ACC|Dinternal[3]     ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.192      ;
+; 3.972 ; RegN:ACC|Dinternal[2]     ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.193      ;
+; 4.002 ; Controller:C|state.ShiftS ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.223      ;
+; 4.002 ; Controller:C|state.ShiftS ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.223      ;
+; 4.002 ; Controller:C|state.ShiftS ; RegN:ACC|Dinternal[1]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.223      ;
+; 4.002 ; Controller:C|state.ShiftS ; RegN:ACC|Dinternal[0]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.223      ;
+; 4.009 ; Controller:C|state.ShiftS ; RegN:Q|Dinternal[3]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.230      ;
+; 4.009 ; Controller:C|state.ShiftS ; RegN:Q|Dinternal[2]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.230      ;
+; 4.009 ; Controller:C|state.ShiftS ; RegN:Q|Dinternal[1]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.230      ;
+; 4.009 ; Controller:C|state.ShiftS ; RegN:Q|Dinternal[0]       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.230      ;
+; 4.084 ; RegN:ACC|Dinternal[1]     ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.305      ;
+; 4.099 ; RegN:ACC|Dinternal[2]     ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.320      ;
+; 4.211 ; RegN:ACC|Dinternal[1]     ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.432      ;
+; 4.234 ; RegN:ACC|Dinternal[1]     ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.455      ;
+; 4.377 ; RegN:ACC|Dinternal[0]     ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.598      ;
+; 4.415 ; RegN:ACC|Dinternal[0]     ; RegN:ACC|Dinternal[1]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.636      ;
+; 4.504 ; RegN:ACC|Dinternal[0]     ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.725      ;
+; 4.527 ; RegN:ACC|Dinternal[0]     ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.748      ;
+; 4.537 ; RegN:M|Dinternal[2]       ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.758      ;
+; 4.554 ; RegN:M|Dinternal[0]       ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.775      ;
+; 4.555 ; RegN:M|Dinternal[3]       ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.776      ;
+; 4.592 ; RegN:M|Dinternal[0]       ; RegN:ACC|Dinternal[1]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.813      ;
+; 4.655 ; RegN:M|Dinternal[1]       ; RegN:ACC|Dinternal[3]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.876      ;
+; 4.664 ; RegN:M|Dinternal[2]       ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.885      ;
+; 4.681 ; RegN:M|Dinternal[0]       ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.902      ;
+; 4.704 ; RegN:M|Dinternal[0]       ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 4.925      ;
+; 4.782 ; RegN:M|Dinternal[1]       ; RegN:ACC|Dinternal[4]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 5.003      ;
+; 4.805 ; RegN:M|Dinternal[1]       ; RegN:ACC|Dinternal[2]     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 5.026      ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; Clk        ; Clk      ; 119      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; Clk        ; Clk      ; 119      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 9     ; 9    ;
+; Unconstrained Input Port Paths  ; 10    ; 10   ;
+; Unconstrained Output Ports      ; 9     ; 9    ;
+; Unconstrained Output Port Paths ; 9     ; 9    ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; Clk    ; Clk   ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                              ;
++-----------------+--------------------------------------------------------------------------------------+
+; Input Port      ; Comment                                                                              ;
++-----------------+--------------------------------------------------------------------------------------+
+; Multiplicand[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Multiplicand[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Multiplicand[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Multiplicand[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Multiplier[0]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Multiplier[1]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Multiplier[2]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Multiplier[3]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Start           ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-----------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; Done        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Product[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Product[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Product[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Product[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Product[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Product[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Product[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Product[7]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                              ;
++-----------------+--------------------------------------------------------------------------------------+
+; Input Port      ; Comment                                                                              ;
++-----------------+--------------------------------------------------------------------------------------+
+; Multiplicand[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Multiplicand[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Multiplicand[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Multiplicand[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Multiplier[0]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Multiplier[1]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Multiplier[2]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Multiplier[3]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Start           ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-----------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; Done        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Product[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Product[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Product[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Product[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Product[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Product[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Product[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Product[7]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Mon Apr 01 15:00:25 2019
+Info: Command: quartus_sta mult -c mult
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'mult.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name Clk Clk
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -4.376
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -4.376             -61.253 Clk 
+Info (332146): Worst-case hold slack is 1.640
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.640               0.000 Clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 Clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4682 megabytes
+    Info: Processing ended: Mon Apr 01 15:00:27 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

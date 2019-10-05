@@ -1,0 +1,11 @@
+Fitter Status : Successful - Fri Feb 01 15:56:48 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : Four_bit_adder
+Top-level Entity Name : DUT
+Family : MAX V
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 6 / 1,270 ( < 1 % )
+Total pins : 12 / 114 ( 11 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

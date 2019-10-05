@@ -1,0 +1,124 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do Adder_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/intelFPGA_lite/18.1/Projects/Adder/Gates.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:51:57 on Feb 08,2019
+# vcom -reportprogress 300 -93 -work work C:/intelFPGA_lite/18.1/Projects/Adder/Gates.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package Gates
+# -- Compiling entity INVERTER
+# -- Compiling architecture Equations of INVERTER
+# -- Compiling entity AND_2
+# -- Compiling architecture Equations of AND_2
+# -- Compiling entity NAND_2
+# -- Compiling architecture Equations of NAND_2
+# -- Compiling entity OR_2
+# -- Compiling architecture Equations of OR_2
+# -- Compiling entity NOR_2
+# -- Compiling architecture Equations of NOR_2
+# -- Compiling entity XOR_2
+# -- Compiling architecture Equations of XOR_2
+# -- Compiling entity XNOR_2
+# -- Compiling architecture Equations of XNOR_2
+# -- Compiling entity HALF_ADDER
+# -- Compiling architecture Equations of HALF_ADDER
+# -- Compiling entity Full_Adder
+# -- Compiling architecture bhv of Full_Adder
+# End time: 16:51:57 on Feb 08,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/intelFPGA_lite/18.1/Projects/Adder/DUT.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:51:57 on Feb 08,2019
+# vcom -reportprogress 300 -93 -work work C:/intelFPGA_lite/18.1/Projects/Adder/DUT.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DUT
+# -- Compiling architecture DutWrap of DUT
+# End time: 16:51:57 on Feb 08,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/intelFPGA_lite/18.1/Projects/Adder/eightbitadder.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:51:57 on Feb 08,2019
+# vcom -reportprogress 300 -93 -work work C:/intelFPGA_lite/18.1/Projects/Adder/eightbitadder.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package Gates
+# -- Compiling entity eightbitadder
+# -- Compiling architecture Equations of eightbitadder
+# End time: 16:51:57 on Feb 08,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.eightbitadder
+# vsim work.eightbitadder 
+# Start time: 16:52:05 on Feb 08,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.gates
+# Loading work.eightbitadder(equations)
+# Loading work.half_adder(equations)
+# Loading work.full_adder(bhv)
+add wave -position insertpoint  \
+sim:/eightbitadder/A0
+add wave -position insertpoint  \
+sim:/eightbitadder/A0 \
+sim:/eightbitadder/A1 \
+sim:/eightbitadder/A2 \
+sim:/eightbitadder/A3 \
+sim:/eightbitadder/A4 \
+sim:/eightbitadder/A5 \
+sim:/eightbitadder/A6 \
+sim:/eightbitadder/A7 \
+sim:/eightbitadder/B0 \
+sim:/eightbitadder/B1 \
+sim:/eightbitadder/B2 \
+sim:/eightbitadder/B3 \
+sim:/eightbitadder/B4 \
+sim:/eightbitadder/B5 \
+sim:/eightbitadder/B6 \
+sim:/eightbitadder/B7 \
+sim:/eightbitadder/Y0 \
+sim:/eightbitadder/Y1 \
+sim:/eightbitadder/Y2 \
+sim:/eightbitadder/Y3 \
+sim:/eightbitadder/Y4 \
+sim:/eightbitadder/Y5 \
+sim:/eightbitadder/Y6 \
+sim:/eightbitadder/Y7
+run
+force -freeze sim:/eightbitadder/A0 0 0
+force -freeze sim:/eightbitadder/A0 1 0
+force -freeze sim:/eightbitadder/A0 0 0
+force -freeze sim:/eightbitadder/A0 0 0
+force -freeze sim:/eightbitadder/A1 1 0
+force -freeze sim:/eightbitadder/A2 0 0
+force -freeze sim:/eightbitadder/A3 1 0
+force -freeze sim:/eightbitadder/A4 0 0
+force -freeze sim:/eightbitadder/A5 1 0
+force -freeze sim:/eightbitadder/A6 0 0
+force -freeze sim:/eightbitadder/A7 0 0
+force -freeze sim:/eightbitadder/B0 0 0
+force -freeze sim:/eightbitadder/B1 1 0
+force -freeze sim:/eightbitadder/B2 1 0
+force -freeze sim:/eightbitadder/B3 1 0
+force -freeze sim:/eightbitadder/B4 1 0
+force -freeze sim:/eightbitadder/B5 1 0
+force -freeze sim:/eightbitadder/B6 0 0
+force -freeze sim:/eightbitadder/B7 0 0
+run
+# End time: 16:57:21 on Feb 08,2019, Elapsed time: 0:05:16
+# Errors: 0, Warnings: 0

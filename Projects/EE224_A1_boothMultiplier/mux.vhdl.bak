@@ -1,0 +1,51 @@
+library ieee;
+use ieee.std_logic_1164.all;
+library work;
+use work.Gates.all;
+
+library ieee;
+use ieee.std_logic_1164.all;
+entity mux  is
+  port ( X1, X2, X3, X4 : in std_logic_vector( 15 downto 0);
+         OP : in std_logic_vector(2 downto 0);
+         Z : out std_logic_vector(15 downto 0));
+end entity mux;
+
+architecture arc of mux is
+  signal t1, t2, t3, t4, t5, t6, t7, t8, t9: std_logic_vector(15 downto 0);
+  signal EOP : std_logic_vector(1 downto 0);
+  signal Blck, a,b: std_logic;
+   component ANDsixteen is
+     port ( X : in std_logic_vector( 15 downto 0);
+            Y : in std_logic;
+            Z : out std_logic_vector(15 downto 0));
+   end component;
+
+begin
+  -- component instances
+EOP(1) <= not (OP(0) xor OP(1));
+EOP(0) <= OP(2);
+a<=not EOP(0);
+b<=not EOP(1);
+Blck <= (not(OP(2) and OP(1) and OP(0))) and (OP(2) or OP(1) or OP(0));
+ a1 : ANDsixteen
+      port map(X => X1, Y => a , Z => t1 );
+ a2 : ANDsixteen
+      port map(X => t1, Y => b, Z => t5 );
+ a3 : ANDsixteen
+      port map(X => X2, Y => EOP(0) , Z => t2 );
+ a4 : ANDsixteen
+      port map(X => t2, Y => b, Z => t6 );
+ a5 : ANDsixteen
+      port map(X => X3, Y => a, Z => t3 );
+ a6 : ANDsixteen
+      port map(X => t3, Y => EOP(1), Z => t7 );
+ a7 : ANDsixteen
+      port map(X => X4, Y => EOP(0), Z => t4 );
+ a8 : ANDsixteen
+      port map(X => t4, Y => EOP(1), Z => t8 );
+ a9 : ANDsixteen
+      port map(X => t9 , Y => Blck, Z => Z);
+		t9 <= t5 or t6 or t7 or t8 ;
+
+end arc;

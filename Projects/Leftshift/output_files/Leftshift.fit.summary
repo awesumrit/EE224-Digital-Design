@@ -1,0 +1,11 @@
+Fitter Status : Successful - Thu Feb 14 15:40:16 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : Leftshift
+Top-level Entity Name : leftshift
+Family : MAX V
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 26 / 1,270 ( 2 % )
+Total pins : 24 / 114 ( 21 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

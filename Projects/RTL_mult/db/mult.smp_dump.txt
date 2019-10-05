@@ -1,0 +1,8 @@
+
+State Machine - |MultTop|Controller:C|state
+Name state.ShiftS state.AddS state.QtempS state.InitS state.HaltS 
+state.HaltS 0 0 0 0 0 
+state.InitS 0 0 0 1 1 
+state.QtempS 0 0 1 0 1 
+state.AddS 0 1 0 0 1 
+state.ShiftS 1 0 0 0 1 

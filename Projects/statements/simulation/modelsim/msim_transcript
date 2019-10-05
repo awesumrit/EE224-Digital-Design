@@ -1,0 +1,80 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# ERROR: No extended dataflow license exists
+# do statements_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/intelFPGA_lite/18.1/Projects/statements/example_1.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:47:27 on Mar 09,2019
+# vcom -reportprogress 300 -93 -work work C:/intelFPGA_lite/18.1/Projects/statements/example_1.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity example_1
+# -- Compiling architecture behav_1 of example_1
+# -- Compiling architecture behav_2 of example_1
+# -- Loading entity example_1
+# End time: 21:47:27 on Mar 09,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim -gui -l msim_transcript work.example_1 -t ns
+# vsim -gui -l msim_transcript work.example_1 -t ns 
+# Start time: 21:47:55 on Mar 09,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.example_1(behav_2)
+add wave *
+force -freeze sim:/example_1/a 1 0
+force -freeze sim:/example_1/b 1 0
+run
+run
+run
+run
+force -freeze sim:/example_1/a 0 0
+run
+run
+force -freeze sim:/example_1/b 0 0
+run
+run
+force -freeze sim:/example_1/b 1 0
+run
+run
+vcom -reportprogress 300 -work work C:/intelFPGA_lite/18.1/Projects/statements/example_1.vhdl
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:52:10 on Mar 09,2019
+# vcom -reportprogress 300 -work work C:/intelFPGA_lite/18.1/Projects/statements/example_1.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity example_1
+# -- Compiling architecture behav_1 of example_1
+# -- Compiling architecture behav_2 of example_1
+# -- Loading entity example_1
+# -- Compiling architecture behav_3 of example_1
+# -- Loading entity example_1
+# End time: 21:52:10 on Mar 09,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -gui -l msim_transcript -t ns work.example_1
+# End time: 21:52:30 on Mar 09,2019, Elapsed time: 0:04:35
+# Errors: 0, Warnings: 0
+# vsim -gui -l msim_transcript -t ns work.example_1 
+# Start time: 21:52:30 on Mar 09,2019
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.example_1(behav_3)
+# WARNING: No extended dataflow license exists
+add wave *
+add wave *
+run
+# End time: 21:53:53 on Mar 09,2019, Elapsed time: 0:01:23
+# Errors: 0, Warnings: 1

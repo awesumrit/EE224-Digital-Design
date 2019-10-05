@@ -1,0 +1,79 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.all;
+
+entity booth_multiplier8 is
+Port ( A : in  STD_LOGIC_VECTOR (7 downto 0);
+B : in  STD_LOGIC_VECTOR (7 downto 0);
+prod : out  STD_LOGIC_VECTOR (15 downto 0));
+
+end booth_multiplier8;
+
+architecture Behavioral of booth_multiplier8 is
+
+component full_adder is
+Port ( a : in  STD_LOGIC;
+b : in  STD_LOGIC;
+c : in  STD_LOGIC;
+sum : out  STD_LOGIC;
+carry : out  STD_LOGIC);
+end component;
+
+component half_adder is
+Port ( a : in  STD_LOGIC;
+b : in  STD_LOGIC;
+sum : out  STD_LOGIC;
+carry : out  STD_LOGIC);
+end component;
+
+signal A1, minusA1, twiceA1, twice_minusA1 : std_logic_vector(15 downto 0);
+
+signal A2, minusA2, twiceA2, twice_minusA2 : std_logic_vector(15 downto 0);
+
+signal A3, minusA3, twiceA3, twice_minusA3 : std_logic_vector(15 downto 0);
+
+signal A4, minusA4, twiceA4, twice_minusA4 : std_logic_vector(15 downto 0);
+
+signal signA, sign_notA : std_logic_vector(7 downto 0);
+
+signal p0, p1, p2, p3 : std_logic_vector(15 downto 0);
+
+
+begin
+
+signA := (others=>A(7)); 
+sign_notA := (others=>(not A(7)) ); 
+
+A1 <= signA(7 downto 0) & std_logic_vector(A);
+minusA1 <= sign_notA(7 downto 0) & std_logic_vector((unsigned(not A)+1));
+twiceA1 <= A1(14 downto 0) & '0';
+twice_minusA1 <= minusA1(14 downto 0) & '0';
+
+A2 <= signA(5 downto 0) & std_logic_vector(A) & "00";
+minusA2 <= sign_notA(5 downto 0) & std_logic_vector((unsigned(not A)+1)) & "00";
+twiceA2 <= A2(14 downto 0) & '0';
+twice_minusA2<=minusA2(14 downto 0) & '0';
+
+A3 <= signA(3 downto 0) & std_logic_vector(A) & "0000";
+minusA3 <= sign_notA(3 downto 0) & std_logic_vector((unsigned(not A)+1)) & "0000";
+twiceA3 <= A3(14 downto 0) & '0';
+twice_minusA3 <= minusA3(14 downto 0) & '0';
+
+A4 <= signA(1 downto 0) & std_logic_vector(A) & "000000";
+minusA4 <= sign_notA(1 downto 0) & std_logic_vector((unsigned(not A)+1)) & "000000";
+twiceA4 <= A4(14 downto 0) & '0';
+twice_minusA4 <= minusA4(14 downto 0) & '0';
+
+--mux control 
+M1: mux_final port map(X1 => A1, X2 => minusA1 , X3 => twiceA1, X4 => twice_minusA1, OP => B(1 downto 0) & '0', Z => p0);
+M1: mux_final port map(X1 => A2, X2 => minusA2 , X3 => twiceA2, X4 => twice_minusA2, OP => B(3 downto 1) , Z => p1);
+M1: mux_final port map(X1 => A3, X2 => minusA3 , X3 => twiceA3, X4 => twice_minusA3, OP => B(5 downto 3) , Z => p2);
+M1: mux_final port map(X1 => A4, X2 => minusA4 , X3 => twiceA4, X4 => twice_minusA4, OP => B(7 downto 5) , Z => p3);
+
+Add1 : bit_adder16 port map(X =>p0 ,Y =>p1 , Z => s1);
+Add2 : bit_adder16 port map(X =>s1 ,Y =>p2 , Z => s2);
+Add3 : bit_adder16 port map(X =>s2 ,Y =>p3 , Z => s3);
+
+prod <= s3 ;
+
+end Behavioral;

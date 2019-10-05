@@ -1,0 +1,300 @@
+|TopLevel
+TDI => Scan_Chain:scan_instance.TDI
+TDO << Scan_Chain:scan_instance.TDO
+TMS => Scan_Chain:scan_instance.TMS
+TCLK => Scan_Chain:scan_instance.TCLK
+TRST => Scan_Chain:scan_instance.TRST
+
+
+|TopLevel|Scan_Chain:scan_instance
+TDI => Scan_reg:In_Reg.SI
+TDO <= Scan_reg:Out_Reg.SO
+TMS => L2_en.DATAB
+TMS => next_state.DATAB
+TMS => next_state.DATAB
+TMS => Selector2.IN2
+TMS => next_state.DATAB
+TMS => Selector3.IN1
+TMS => Selector0.IN1
+TMS => Selector1.IN1
+TCLK => Scan_reg:In_Reg.clock
+TCLK => Scan_reg:Out_Reg.clock
+TCLK => current_state~1.DATAIN
+TRST => Scan_reg:In_Reg.reset
+TRST => Scan_reg:Out_Reg.reset
+TRST => current_state~3.DATAIN
+TRST => L1_en.OUTPUTSELECT
+TRST => L2_en.OUTPUTSELECT
+TRST => cap_shft.OUTPUTSELECT
+TRST => next_state.s_idle.OUTPUTSELECT
+TRST => next_state.s_DR.OUTPUTSELECT
+TRST => next_state.s_capture.OUTPUTSELECT
+TRST => next_state.s_shift.OUTPUTSELECT
+TRST => next_state.s_update.OUTPUTSELECT
+TRST => Scan_reg:In_Reg.sel_reg
+TRST => Scan_reg:Out_Reg.sel_reg
+dut_in[0] <= Scan_reg:In_Reg.PO[0]
+dut_in[1] <= Scan_reg:In_Reg.PO[1]
+dut_in[2] <= Scan_reg:In_Reg.PO[2]
+dut_in[3] <= Scan_reg:In_Reg.PO[3]
+dut_in[4] <= Scan_reg:In_Reg.PO[4]
+dut_in[5] <= Scan_reg:In_Reg.PO[5]
+dut_in[6] <= Scan_reg:In_Reg.PO[6]
+dut_out[0] => Scan_reg:Out_Reg.PI[0]
+
+
+|TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg
+clock => L2[0].CLK
+clock => L2[1].CLK
+clock => L2[2].CLK
+clock => L2[3].CLK
+clock => L2[4].CLK
+clock => L2[5].CLK
+clock => L2[6].CLK
+clock => L1[0].CLK
+clock => L1[1].CLK
+clock => L1[2].CLK
+clock => L1[3].CLK
+clock => L1[4].CLK
+clock => L1[5].CLK
+clock => L1[6].CLK
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+PI[0] => mux1[0].DATAB
+PI[0] => mux2.DATAB
+PI[1] => mux1[1].DATAB
+PI[1] => mux2.DATAB
+PI[2] => mux1[2].DATAB
+PI[2] => mux2.DATAB
+PI[3] => mux1[3].DATAB
+PI[3] => mux2.DATAB
+PI[4] => mux1[4].DATAB
+PI[4] => mux2.DATAB
+PI[5] => mux1[5].DATAB
+PI[5] => mux2.DATAB
+PI[6] => mux1[6].DATAB
+PI[6] => mux2.DATAB
+PO[0] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[1] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[2] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[3] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[4] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[5] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[6] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+SI => mux1[6].DATAA
+SO <= L1[0].DB_MAX_OUTPUT_PORT_TYPE
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+cap_shft => mux1[6].OUTPUTSELECT
+cap_shft => mux1[5].OUTPUTSELECT
+cap_shft => mux1[4].OUTPUTSELECT
+cap_shft => mux1[3].OUTPUTSELECT
+cap_shft => mux1[2].OUTPUTSELECT
+cap_shft => mux1[1].OUTPUTSELECT
+cap_shft => mux1[0].OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+
+
+|TopLevel|Scan_Chain:scan_instance|Scan_Reg:Out_Reg
+clock => L2[0].CLK
+clock => L1[0].CLK
+reset => L1.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+PI[0] => mux1[0].DATAB
+PI[0] => mux2.DATAB
+PO[0] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+SI => mux1[0].DATAA
+SO <= L1[0].DB_MAX_OUTPUT_PORT_TYPE
+L1_en => L1.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+cap_shft => mux1[0].OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+
+
+|TopLevel|DUT:dut_instance
+input_vector[0] => fsm_all:add_instance.clk
+input_vector[1] => fsm_all:add_instance.rst
+input_vector[2] => fsm_all:add_instance.uin[0]
+input_vector[3] => fsm_all:add_instance.uin[1]
+input_vector[4] => fsm_all:add_instance.uin[2]
+input_vector[5] => fsm_all:add_instance.uin[3]
+input_vector[6] => fsm_all:add_instance.uin[4]
+output_vector[0] <= fsm_all:add_instance.y
+
+
+|TopLevel|DUT:dut_instance|fsm_all:add_instance
+uin[0] => Fsm_bomb:S0.uin[0]
+uin[0] => Fsm_gun:S1.uin[0]
+uin[0] => Fsm_terror:S2.uin[0]
+uin[0] => Fsm_knife:S3.uin[0]
+uin[1] => Fsm_bomb:S0.uin[1]
+uin[1] => Fsm_gun:S1.uin[1]
+uin[1] => Fsm_terror:S2.uin[1]
+uin[1] => Fsm_knife:S3.uin[1]
+uin[2] => Fsm_bomb:S0.uin[2]
+uin[2] => Fsm_gun:S1.uin[2]
+uin[2] => Fsm_terror:S2.uin[2]
+uin[2] => Fsm_knife:S3.uin[2]
+uin[3] => Fsm_bomb:S0.uin[3]
+uin[3] => Fsm_gun:S1.uin[3]
+uin[3] => Fsm_terror:S2.uin[3]
+uin[3] => Fsm_knife:S3.uin[3]
+uin[4] => Fsm_bomb:S0.uin[4]
+uin[4] => Fsm_gun:S1.uin[4]
+uin[4] => Fsm_terror:S2.uin[4]
+uin[4] => Fsm_knife:S3.uin[4]
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+rst => Fsm_bomb:S0.rst
+rst => Fsm_gun:S1.rst
+rst => Fsm_terror:S2.rst
+rst => Fsm_knife:S3.rst
+clk => Fsm_bomb:S0.clk
+clk => Fsm_gun:S1.clk
+clk => Fsm_terror:S2.clk
+clk => Fsm_knife:S3.clk
+
+
+|TopLevel|DUT:dut_instance|fsm_all:add_instance|Fsm_bomb:S0
+uin[0] => Mux0.IN36
+uin[0] => Mux1.IN36
+uin[0] => Mux2.IN36
+uin[1] => Mux0.IN35
+uin[1] => Mux1.IN35
+uin[1] => Mux2.IN35
+uin[2] => Mux0.IN34
+uin[2] => Mux1.IN34
+uin[2] => Mux2.IN34
+uin[3] => Mux0.IN33
+uin[3] => Mux1.IN33
+uin[3] => Mux2.IN33
+uin[4] => Mux0.IN32
+uin[4] => Mux1.IN32
+uin[4] => Mux2.IN32
+y <= y_var.DB_MAX_OUTPUT_PORT_TYPE
+rst => input_symbol.reset.IN0
+rst => input_symbol.b.OUTPUTSELECT
+rst => input_symbol.o.OUTPUTSELECT
+rst => input_symbol.m.OUTPUTSELECT
+clk => fsm_state_symbol~1.DATAIN
+
+
+|TopLevel|DUT:dut_instance|fsm_all:add_instance|Fsm_gun:S1
+uin[0] => Mux3.IN36
+uin[0] => Mux4.IN36
+uin[0] => Mux5.IN36
+uin[1] => Mux3.IN35
+uin[1] => Mux4.IN35
+uin[1] => Mux5.IN35
+uin[2] => Mux3.IN34
+uin[2] => Mux4.IN34
+uin[2] => Mux5.IN34
+uin[3] => Mux3.IN33
+uin[3] => Mux4.IN33
+uin[3] => Mux5.IN33
+uin[4] => Mux3.IN32
+uin[4] => Mux4.IN32
+uin[4] => Mux5.IN32
+y <= y_var.DB_MAX_OUTPUT_PORT_TYPE
+rst => input_symbol.reset.IN0
+rst => input_symbol.g.OUTPUTSELECT
+rst => input_symbol.u.OUTPUTSELECT
+rst => input_symbol.n.OUTPUTSELECT
+clk => fsm_state_symbol~1.DATAIN
+
+
+|TopLevel|DUT:dut_instance|fsm_all:add_instance|Fsm_terror:S2
+uin[0] => Mux1.IN36
+uin[0] => Mux9.IN36
+uin[0] => Mux10.IN36
+uin[0] => Mux11.IN36
+uin[1] => Mux1.IN35
+uin[1] => Mux9.IN35
+uin[1] => Mux10.IN35
+uin[1] => Mux11.IN35
+uin[2] => Mux1.IN34
+uin[2] => Mux9.IN34
+uin[2] => Mux10.IN34
+uin[2] => Mux11.IN34
+uin[3] => Mux1.IN33
+uin[3] => Mux9.IN33
+uin[3] => Mux10.IN33
+uin[3] => Mux11.IN33
+uin[4] => Mux1.IN32
+uin[4] => Mux9.IN32
+uin[4] => Mux10.IN32
+uin[4] => Mux11.IN32
+y <= y_var.DB_MAX_OUTPUT_PORT_TYPE
+rst => input_symbol.reset.IN0
+rst => input_symbol.o.OUTPUTSELECT
+rst => input_symbol.e.OUTPUTSELECT
+rst => input_symbol.t.OUTPUTSELECT
+rst => input_symbol.r.OUTPUTSELECT
+clk => fsm_state_symbol~1.DATAIN
+
+
+|TopLevel|DUT:dut_instance|fsm_all:add_instance|Fsm_knife:S3
+uin[0] => Mux5.IN36
+uin[0] => Mux6.IN36
+uin[0] => Mux7.IN36
+uin[0] => Mux8.IN36
+uin[0] => Mux9.IN36
+uin[1] => Mux5.IN35
+uin[1] => Mux6.IN35
+uin[1] => Mux7.IN35
+uin[1] => Mux8.IN35
+uin[1] => Mux9.IN35
+uin[2] => Mux5.IN34
+uin[2] => Mux6.IN34
+uin[2] => Mux7.IN34
+uin[2] => Mux8.IN34
+uin[2] => Mux9.IN34
+uin[3] => Mux5.IN33
+uin[3] => Mux6.IN33
+uin[3] => Mux7.IN33
+uin[3] => Mux8.IN33
+uin[3] => Mux9.IN33
+uin[4] => Mux5.IN32
+uin[4] => Mux6.IN32
+uin[4] => Mux7.IN32
+uin[4] => Mux8.IN32
+uin[4] => Mux9.IN32
+y <= y_var.DB_MAX_OUTPUT_PORT_TYPE
+rst => input_symbol.reset.IN0
+rst => input_symbol.n.OUTPUTSELECT
+rst => input_symbol.k.OUTPUTSELECT
+rst => input_symbol.i.OUTPUTSELECT
+rst => input_symbol.f.OUTPUTSELECT
+rst => input_symbol.e.OUTPUTSELECT
+clk => fsm_state_symbol~1.DATAIN
+
+

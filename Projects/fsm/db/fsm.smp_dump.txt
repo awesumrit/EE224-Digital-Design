@@ -1,0 +1,42 @@
+
+State Machine - |TopLevel|DUT:dut_instance|fsm_all:add_instance|Fsm_knife:S3|fsm_state_symbol
+Name fsm_state_symbol.knife fsm_state_symbol.knif fsm_state_symbol.kni fsm_state_symbol.kn fsm_state_symbol.k fsm_state_symbol.phi 
+fsm_state_symbol.phi 0 0 0 0 0 0 
+fsm_state_symbol.k 0 0 0 0 1 1 
+fsm_state_symbol.kn 0 0 0 1 0 1 
+fsm_state_symbol.kni 0 0 1 0 0 1 
+fsm_state_symbol.knif 0 1 0 0 0 1 
+fsm_state_symbol.knife 1 0 0 0 0 1 
+
+State Machine - |TopLevel|DUT:dut_instance|fsm_all:add_instance|Fsm_terror:S2|fsm_state_symbol
+Name fsm_state_symbol.terror fsm_state_symbol.terro fsm_state_symbol.terr fsm_state_symbol.ter fsm_state_symbol.te fsm_state_symbol.t fsm_state_symbol.phi 
+fsm_state_symbol.phi 0 0 0 0 0 0 0 
+fsm_state_symbol.t 0 0 0 0 0 1 1 
+fsm_state_symbol.te 0 0 0 0 1 0 1 
+fsm_state_symbol.ter 0 0 0 1 0 0 1 
+fsm_state_symbol.terr 0 0 1 0 0 0 1 
+fsm_state_symbol.terro 0 1 0 0 0 0 1 
+fsm_state_symbol.terror 1 0 0 0 0 0 1 
+
+State Machine - |TopLevel|DUT:dut_instance|fsm_all:add_instance|Fsm_gun:S1|fsm_state_symbol
+Name fsm_state_symbol.gun fsm_state_symbol.gu fsm_state_symbol.g fsm_state_symbol.phi 
+fsm_state_symbol.phi 0 0 0 0 
+fsm_state_symbol.g 0 0 1 1 
+fsm_state_symbol.gu 0 1 0 1 
+fsm_state_symbol.gun 1 0 0 1 
+
+State Machine - |TopLevel|DUT:dut_instance|fsm_all:add_instance|Fsm_bomb:S0|fsm_state_symbol
+Name fsm_state_symbol.bomb fsm_state_symbol.bom fsm_state_symbol.bo fsm_state_symbol.b fsm_state_symbol.phi 
+fsm_state_symbol.phi 0 0 0 0 0 
+fsm_state_symbol.b 0 0 0 1 1 
+fsm_state_symbol.bo 0 0 1 0 1 
+fsm_state_symbol.bom 0 1 0 0 1 
+fsm_state_symbol.bomb 1 0 0 0 1 
+
+State Machine - |TopLevel|Scan_Chain:scan_instance|current_state
+Name current_state.s_update current_state.s_shift current_state.s_capture current_state.s_DR current_state.s_idle 
+current_state.s_idle 0 0 0 0 0 
+current_state.s_DR 0 0 0 1 1 
+current_state.s_capture 0 0 1 0 1 
+current_state.s_shift 0 1 0 0 1 
+current_state.s_update 1 0 0 0 1 

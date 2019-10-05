@@ -1,0 +1,4174 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+
+// 
+// Device: Altera 5M1270ZT144C5 Package TQFP144
+// 
+
+// 
+// This SDF file should be used for ModelSim-Altera (VHDL) only
+// 
+
+(DELAYFILE
+  (SDFVERSION "2.1")
+  (DESIGN "TopLevel")
+  (DATE "02/15/2019 16:00:56")
+  (VENDOR "Altera")
+  (PROGRAM "Quartus Prime")
+  (VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition")
+  (DIVIDER .)
+  (TIMESCALE 1 ps)
+
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\TCLK\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1132:1132:1132) (1132:1132:1132))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\TMS\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1132:1132:1132) (1132:1132:1132))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\TRST\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1132:1132:1132) (1132:1132:1132))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|current_state\.s_shift\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (5057:5057:5057) (5057:5057:5057))
+        (PORT datad (946:946:946) (946:946:946))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+        (IOPATH qfbkin regin (923:923:923) (923:923:923))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+        (IOPATH qfbkin combout (595:595:595) (595:595:595))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|current_state\.s_shift\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (9084:9084:9084) (9084:9084:9084))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+        (IOPATH (posedge clk) qfbkout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) qfbkout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|current_state\.s_update\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (918:918:918) (918:918:918))
+        (PORT datab (5066:5066:5066) (5066:5066:5066))
+        (PORT datad (942:942:942) (942:942:942))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|current_state\.s_update\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (9084:9084:9084) (9084:9084:9084))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|current_state\.s_idle\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (929:929:929) (929:929:929))
+        (PORT datac (980:980:980) (980:980:980))
+        (PORT datad (5063:5063:5063) (5063:5063:5063))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|current_state\.s_idle\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (9084:9084:9084) (9084:9084:9084))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|current_state\.s_DR\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (913:913:913) (913:913:913))
+        (PORT datac (980:980:980) (980:980:980))
+        (PORT datad (5061:5061:5061) (5061:5061:5061))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|current_state\.s_DR\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (9084:9084:9084) (9084:9084:9084))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|current_state\.s_capture\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (5064:5064:5064) (5064:5064:5064))
+        (PORT datad (914:914:914) (914:914:914))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|current_state\.s_capture\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (9084:9084:9084) (9084:9084:9084))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\TDI\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio combout (1132:1132:1132) (1132:1132:1132))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[0\]\~27\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (921:921:921) (921:921:921))
+        (PORT datab (937:937:937) (937:937:937))
+        (PORT datac (5384:5384:5384) (5384:5384:5384))
+        (PORT datad (5057:5057:5057) (5057:5057:5057))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[17\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (4898:4898:4898) (4898:4898:4898))
+        (PORT datac (3327:3327:3327) (3327:3327:3327))
+        (PORT datad (4813:4813:4813) (4813:4813:4813))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[17\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3854:3854:3854) (3854:3854:3854))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\~1\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5316:5316:5316) (5316:5316:5316))
+        (PORT datab (5058:5058:5058) (5058:5058:5058))
+        (PORT datac (979:979:979) (979:979:979))
+        (PORT datad (947:947:947) (947:947:947))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[17\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4764:4764:4764) (4764:4764:4764))
+        (PORT datad (937:937:937) (937:937:937))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[17\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4248:4248:4248) (4248:4248:4248))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[16\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (933:933:933) (933:933:933))
+        (PORT datac (3322:3322:3322) (3322:3322:3322))
+        (PORT datad (4806:4806:4806) (4806:4806:4806))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[16\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3854:3854:3854) (3854:3854:3854))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[16\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (897:897:897) (897:897:897))
+        (PORT datad (4817:4817:4817) (4817:4817:4817))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[16\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4248:4248:4248) (4248:4248:4248))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[3\]\~37\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2179:2179:2179) (2179:2179:2179))
+        (PORT datab (2153:2153:2153) (2153:2153:2153))
+        (PORT datac (4771:4771:4771) (4771:4771:4771))
+        (PORT datad (3755:3755:3755) (3755:3755:3755))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[15\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (5513:5513:5513) (5513:5513:5513))
+        (PORT datac (2606:2606:2606) (2606:2606:2606))
+        (PORT datad (1217:1217:1217) (1217:1217:1217))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[15\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (2460:2460:2460) (2460:2460:2460))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[14\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (5495:5495:5495) (5495:5495:5495))
+        (PORT datac (945:945:945) (945:945:945))
+        (PORT datad (1207:1207:1207) (1207:1207:1207))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[14\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (2460:2460:2460) (2460:2460:2460))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[13\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (945:945:945) (945:945:945))
+        (PORT datac (5913:5913:5913) (5913:5913:5913))
+        (PORT datad (1215:1215:1215) (1215:1215:1215))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[13\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (2460:2460:2460) (2460:2460:2460))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[12\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (897:897:897) (897:897:897))
+        (PORT datab (5514:5514:5514) (5514:5514:5514))
+        (PORT datad (1218:1218:1218) (1218:1218:1218))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[12\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (2460:2460:2460) (2460:2460:2460))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[11\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2056:2056:2056) (2056:2056:2056))
+        (PORT datac (2666:2666:2666) (2666:2666:2666))
+        (PORT datad (5998:5998:5998) (5998:5998:5998))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[11\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4235:4235:4235) (4235:4235:4235))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[10\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2734:2734:2734) (2734:2734:2734))
+        (PORT datac (2170:2170:2170) (2170:2170:2170))
+        (PORT datad (6022:6022:6022) (6022:6022:6022))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[10\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4419:4419:4419) (4419:4419:4419))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[10\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5551:5551:5551) (5551:5551:5551))
+        (PORT datad (1287:1287:1287) (1287:1287:1287))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[10\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4244:4244:4244) (4244:4244:4244))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[3\]\~38\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2171:2171:2171) (2171:2171:2171))
+        (PORT datab (2156:2156:2156) (2156:2156:2156))
+        (PORT datac (4761:4761:4761) (4761:4761:4761))
+        (PORT datad (3754:3754:3754) (3754:3754:3754))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[3\]\~63\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (731:731:731) (731:731:731))
+        (PORT datab (2773:2773:2773) (2773:2773:2773))
+        (PORT datac (4768:4768:4768) (4768:4768:4768))
+        (PORT datad (765:765:765) (765:765:765))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[5\]\~44\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2188:2188:2188) (2188:2188:2188))
+        (PORT datab (2148:2148:2148) (2148:2148:2148))
+        (PORT datac (4779:4779:4779) (4779:4779:4779))
+        (PORT datad (3758:3758:3758) (3758:3758:3758))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[9\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2751:2751:2751) (2751:2751:2751))
+        (PORT datab (928:928:928) (928:928:928))
+        (PORT datad (6043:6043:6043) (6043:6043:6043))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[9\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4419:4419:4419) (4419:4419:4419))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[8\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2751:2751:2751) (2751:2751:2751))
+        (PORT datac (940:940:940) (940:940:940))
+        (PORT datad (6042:6042:6042) (6042:6042:6042))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[8\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4419:4419:4419) (4419:4419:4419))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[7\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (2540:2540:2540) (2540:2540:2540))
+        (PORT datac (3331:3331:3331) (3331:3331:3331))
+        (PORT datad (4819:4819:4819) (4819:4819:4819))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[7\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3854:3854:3854) (3854:3854:3854))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[6\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3278:3278:3278) (3278:3278:3278))
+        (PORT datac (978:978:978) (978:978:978))
+        (PORT datad (4792:4792:4792) (4792:4792:4792))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[6\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3854:3854:3854) (3854:3854:3854))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[5\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (939:939:939) (939:939:939))
+        (PORT datac (3331:3331:3331) (3331:3331:3331))
+        (PORT datad (4819:4819:4819) (4819:4819:4819))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[5\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3854:3854:3854) (3854:3854:3854))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[4\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1335:1335:1335) (1335:1335:1335))
+        (PORT datab (3784:3784:3784) (3784:3784:3784))
+        (PORT datad (4793:4793:4793) (4793:4793:4793))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[4\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3269:3269:3269) (3269:3269:3269))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[3\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4802:4802:4802) (4802:4802:4802))
+        (PORT datac (946:946:946) (946:946:946))
+        (PORT datad (3797:3797:3797) (3797:3797:3797))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[3\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3269:3269:3269) (3269:3269:3269))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[2\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (914:914:914) (914:914:914))
+        (PORT datab (3784:3784:3784) (3784:3784:3784))
+        (PORT datad (4822:4822:4822) (4822:4822:4822))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[2\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3269:3269:3269) (3269:3269:3269))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[1\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2740:2740:2740) (2740:2740:2740))
+        (PORT datac (2608:2608:2608) (2608:2608:2608))
+        (PORT datad (6030:6030:6030) (6030:6030:6030))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[1\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4419:4419:4419) (4419:4419:4419))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[0\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (877:877:877) (877:877:877))
+        (PORT datac (2817:2817:2817) (2817:2817:2817))
+        (PORT datad (6038:6038:6038) (6038:6038:6038))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L1\[0\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4419:4419:4419) (4419:4419:4419))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[7\]\~54\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2189:2189:2189) (2189:2189:2189))
+        (PORT datab (2149:2149:2149) (2149:2149:2149))
+        (PORT datac (4781:4781:4781) (4781:4781:4781))
+        (PORT datad (2798:2798:2798) (2798:2798:2798))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[13\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (896:896:896) (896:896:896))
+        (PORT datad (5507:5507:5507) (5507:5507:5507))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[13\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3003:3003:3003) (3003:3003:3003))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[14\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (5490:5490:5490) (5490:5490:5490))
+        (PORT datad (938:938:938) (938:938:938))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[14\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3003:3003:3003) (3003:3003:3003))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[11\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (978:978:978) (978:978:978))
+        (PORT datad (5997:5997:5997) (5997:5997:5997))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[11\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3689:3689:3689) (3689:3689:3689))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[12\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (2116:2116:2116) (2116:2116:2116))
+        (PORT datad (5976:5976:5976) (5976:5976:5976))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[12\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3689:3689:3689) (3689:3689:3689))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[15\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (2544:2544:2544) (2544:2544:2544))
+        (PORT datad (5779:5779:5779) (5779:5779:5779))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[15\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3615:3615:3615) (3615:3615:3615))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S1\|S\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (918:918:918) (918:918:918))
+        (PORT datab (953:953:953) (953:953:953))
+        (PORT datac (6015:6015:6015) (6015:6015:6015))
+        (PORT datad (1335:1335:1335) (1335:1335:1335))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S2\|l2\[2\]\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2761:2761:2761) (2761:2761:2761))
+        (PORT datab (5486:5486:5486) (5486:5486:5486))
+        (PORT datac (2762:2762:2762) (2762:2762:2762))
+        (PORT datad (1774:1774:1774) (1774:1774:1774))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[7\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (977:977:977) (977:977:977))
+        (PORT datad (4796:4796:4796) (4796:4796:4796))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[7\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4248:4248:4248) (4248:4248:4248))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[8\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1283:1283:1283) (1283:1283:1283))
+        (PORT datac (5569:5569:5569) (5569:5569:5569))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[8\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4244:4244:4244) (4244:4244:4244))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[9\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5558:5558:5558) (5558:5558:5558))
+        (PORT datad (1317:1317:1317) (1317:1317:1317))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[9\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4244:4244:4244) (4244:4244:4244))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|PO\[9\]\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5413:5413:5413) (5413:5413:5413))
+        (PORT datad (2696:2696:2696) (2696:2696:2696))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S2\|l3\[7\]\~7\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1921:1921:1921) (1921:1921:1921))
+        (PORT datab (3399:3399:3399) (3399:3399:3399))
+        (PORT datac (3549:3549:3549) (3549:3549:3549))
+        (PORT datad (760:760:760) (760:760:760))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[5\]\~22\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6086:6086:6086) (6086:6086:6086))
+        (PORT datad (2167:2167:2167) (2167:2167:2167))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[0\]\~24\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (5451:5451:5451) (5451:5451:5451))
+        (PORT datac (2145:2145:2145) (2145:2145:2145))
+        (PORT datad (2217:2217:2217) (2217:2217:2217))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[4\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6105:6105:6105) (6105:6105:6105))
+        (PORT datad (2017:2017:2017) (2017:2017:2017))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[4\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4247:4247:4247) (4247:4247:4247))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[5\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4787:4787:4787) (4787:4787:4787))
+        (PORT datad (1353:1353:1353) (1353:1353:1353))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[5\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4247:4247:4247) (4247:4247:4247))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|PO\[8\]\~1\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (2113:2113:2113) (2113:2113:2113))
+        (PORT datad (5453:5453:5453) (5453:5453:5453))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S1\|l2\[5\]\~3\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2115:2115:2115) (2115:2115:2115))
+        (PORT datab (3564:3564:3564) (3564:3564:3564))
+        (PORT datac (2237:2237:2237) (2237:2237:2237))
+        (PORT datad (1791:1791:1791) (1791:1791:1791))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[0\]\~19\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (5485:5485:5485) (5485:5485:5485))
+        (PORT datac (3548:3548:3548) (3548:3548:3548))
+        (PORT datad (2957:2957:2957) (2957:2957:2957))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[2\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (2609:2609:2609) (2609:2609:2609))
+        (PORT datad (6026:6026:6026) (6026:6026:6026))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[2\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3742:3742:3742) (3742:3742:3742))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[3\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (919:919:919) (919:919:919))
+        (PORT datad (4801:4801:4801) (4801:4801:4801))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[3\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4247:4247:4247) (4247:4247:4247))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S1\|l3\[3\]\~5\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6002:6002:6002) (6002:6002:6002))
+        (PORT datab (2647:2647:2647) (2647:2647:2647))
+        (PORT datac (1981:1981:1981) (1981:1981:1981))
+        (PORT datad (2868:2868:2868) (2868:2868:2868))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[0\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (1466:1466:1466) (1466:1466:1466))
+        (PORT datac (5548:5548:5548) (5548:5548:5548))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[0\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4244:4244:4244) (4244:4244:4244))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[1\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1269:1269:1269) (1269:1269:1269))
+        (PORT datac (5565:5565:5565) (5565:5565:5565))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[1\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4244:4244:4244) (4244:4244:4244))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S1\|l2\[1\]\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1994:1994:1994) (1994:1994:1994))
+        (PORT datab (5439:5439:5439) (5439:5439:5439))
+        (PORT datac (2155:2155:2155) (2155:2155:2155))
+        (PORT datad (2464:2464:2464) (2464:2464:2464))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S1\|l3\[3\]\~6\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (719:719:719) (719:719:719))
+        (PORT datab (1927:1927:1927) (1927:1927:1927))
+        (PORT datac (2236:2236:2236) (2236:2236:2236))
+        (PORT datad (3171:3171:3171) (3171:3171:3171))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[0\]\~18\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6101:6101:6101) (6101:6101:6101))
+        (PORT datab (2193:2193:2193) (2193:2193:2193))
+        (PORT datac (2136:2136:2136) (2136:2136:2136))
+        (PORT datad (2104:2104:2104) (2104:2104:2104))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[6\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4793:4793:4793) (4793:4793:4793))
+        (PORT datad (938:938:938) (938:938:938))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|In_Reg\|L2\[6\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4248:4248:4248) (4248:4248:4248))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S2\|l1\[6\]\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (2741:2741:2741) (2741:2741:2741))
+        (PORT datad (2413:2413:2413) (2413:2413:2413))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S2\|l1\[7\]\~4\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2803:2803:2803) (2803:2803:2803))
+        (PORT datad (2415:2415:2415) (2415:2415:2415))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~59\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3123:3123:3123) (3123:3123:3123))
+        (PORT datab (2865:2865:2865) (2865:2865:2865))
+        (PORT datac (755:755:755) (755:755:755))
+        (PORT datad (721:721:721) (721:721:721))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~60\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1836:1836:1836) (1836:1836:1836))
+        (PORT datab (2865:2865:2865) (2865:2865:2865))
+        (PORT datac (1946:1946:1946) (1946:1946:1946))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p0\[0\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (5442:5442:5442) (5442:5442:5442))
+        (PORT datac (2172:2172:2172) (2172:2172:2172))
+        (PORT datad (2107:2107:2107) (2107:2107:2107))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S0\|FA1\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2164:2164:2164) (2164:2164:2164))
+        (PORT datab (5453:5453:5453) (5453:5453:5453))
+        (PORT datac (2167:2167:2167) (2167:2167:2167))
+        (PORT datad (534:534:534) (534:534:534))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S0\|FA2\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2069:2069:2069) (2069:2069:2069))
+        (PORT datab (5452:5452:5452) (5452:5452:5452))
+        (PORT datac (2071:2071:2071) (2071:2071:2071))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S0\|FA3\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6103:6103:6103) (6103:6103:6103))
+        (PORT datab (2973:2973:2973) (2973:2973:2973))
+        (PORT datac (2789:2789:2789) (2789:2789:2789))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S0\|FA4\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1995:1995:1995) (1995:1995:1995))
+        (PORT datab (5450:5450:5450) (5450:5450:5450))
+        (PORT datac (3600:3600:3600) (3600:3600:3600))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S0\|FA5\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2687:2687:2687) (2687:2687:2687))
+        (PORT datab (2796:2796:2796) (2796:2796:2796))
+        (PORT datac (6158:6158:6158) (6158:6158:6158))
+        (PORT datad (1826:1826:1826) (1826:1826:1826))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S0\|FA6\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6090:6090:6090) (6090:6090:6090))
+        (PORT datab (2744:2744:2744) (2744:2744:2744))
+        (PORT datac (2831:2831:2831) (2831:2831:2831))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S0\|FA7\|sum\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2793:2793:2793) (2793:2793:2793))
+        (PORT datab (2582:2582:2582) (2582:2582:2582))
+        (PORT datac (6152:6152:6152) (6152:6152:6152))
+        (PORT datad (720:720:720) (720:720:720))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~61\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2390:2390:2390) (2390:2390:2390))
+        (PORT datab (2958:2958:2958) (2958:2958:2958))
+        (PORT datac (761:761:761) (761:761:761))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m6\|FA7\|sum\~8\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2031:2031:2031) (2031:2031:2031))
+        (PORT datab (2157:2157:2157) (2157:2157:2157))
+        (PORT datac (1864:1864:1864) (1864:1864:1864))
+        (PORT datad (2269:2269:2269) (2269:2269:2269))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|PO\[10\]\~4\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6007:6007:6007) (6007:6007:6007))
+        (PORT datac (1426:1426:1426) (1426:1426:1426))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|PO\[1\]\~3\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5547:5547:5547) (5547:5547:5547))
+        (PORT datad (948:948:948) (948:948:948))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|PO\[13\]\~10\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (5502:5502:5502) (5502:5502:5502))
+        (PORT datad (944:944:944) (944:944:944))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p0\[6\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (5499:5499:5499) (5499:5499:5499))
+        (PORT datac (2617:2617:2617) (2617:2617:2617))
+        (PORT datad (932:932:932) (932:932:932))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p0\[5\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (5512:5512:5512) (5512:5512:5512))
+        (PORT datac (2623:2623:2623) (2623:2623:2623))
+        (PORT datad (942:942:942) (942:942:942))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|PO\[12\]\~8\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (1007:1007:1007) (1007:1007:1007))
+        (PORT datad (5999:5999:5999) (5999:5999:5999))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|PO\[11\]\~6\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (6020:6020:6020) (6020:6020:6020))
+        (PORT datad (935:935:935) (935:935:935))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p0\[4\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (5965:5965:5965) (5965:5965:5965))
+        (PORT datac (999:999:999) (999:999:999))
+        (PORT datad (2120:2120:2120) (2120:2120:2120))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p0\[3\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (915:915:915) (915:915:915))
+        (PORT datab (5996:5996:5996) (5996:5996:5996))
+        (PORT datad (2123:2123:2123) (2123:2123:2123))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p0\[2\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (5519:5519:5519) (5519:5519:5519))
+        (PORT datac (969:969:969) (969:969:969))
+        (PORT datad (927:927:927) (927:927:927))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p1\[1\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (5522:5522:5522) (5522:5522:5522))
+        (PORT datac (949:949:949) (949:949:949))
+        (PORT datad (944:944:944) (944:944:944))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p0\[1\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (5521:5521:5521) (5521:5521:5521))
+        (PORT datac (969:969:969) (969:969:969))
+        (PORT datad (1311:1311:1311) (1311:1311:1311))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p1\[2\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (5507:5507:5507) (5507:5507:5507))
+        (PORT datac (950:950:950) (950:950:950))
+        (PORT datad (946:946:946) (946:946:946))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m0\|FA2\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1832:1832:1832) (1832:1832:1832))
+        (PORT datab (1890:1890:1890) (1890:1890:1890))
+        (PORT datac (1950:1950:1950) (1950:1950:1950))
+        (PORT datad (2000:2000:2000) (2000:2000:2000))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m0\|FA3\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1899:1899:1899) (1899:1899:1899))
+        (PORT datab (1204:1204:1204) (1204:1204:1204))
+        (PORT datac (2042:2042:2042) (2042:2042:2042))
+        (PORT datad (719:719:719) (719:719:719))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m0\|FA4\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1938:1938:1938) (1938:1938:1938))
+        (PORT datab (1926:1926:1926) (1926:1926:1926))
+        (PORT datac (1885:1885:1885) (1885:1885:1885))
+        (PORT datad (1166:1166:1166) (1166:1166:1166))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m0\|FA5\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2016:2016:2016) (2016:2016:2016))
+        (PORT datab (1878:1878:1878) (1878:1878:1878))
+        (PORT datac (1999:1999:1999) (1999:1999:1999))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m0\|FA6\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3261:3261:3261) (3261:3261:3261))
+        (PORT datab (3007:3007:3007) (3007:3007:3007))
+        (PORT datac (1952:1952:1952) (1952:1952:1952))
+        (PORT datad (1898:1898:1898) (1898:1898:1898))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m6\|FA7\|sum\~13\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3388:3388:3388) (3388:3388:3388))
+        (PORT datab (3670:3670:3670) (3670:3670:3670))
+        (PORT datac (6560:6560:6560) (6560:6560:6560))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m6\|FA7\|sum\~9\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (696:696:696) (696:696:696))
+        (PORT datab (2823:2823:2823) (2823:2823:2823))
+        (PORT datac (4061:4061:4061) (4061:4061:4061))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|PO\[0\]\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (3582:3582:3582) (3582:3582:3582))
+        (PORT datad (5456:5456:5456) (5456:5456:5456))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p5\[6\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4806:4806:4806) (4806:4806:4806))
+        (PORT datac (1380:1380:1380) (1380:1380:1380))
+        (PORT datad (2904:2904:2904) (2904:2904:2904))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p5\[5\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (2209:2209:2209) (2209:2209:2209))
+        (PORT datac (5392:5392:5392) (5392:5392:5392))
+        (PORT datad (2236:2236:2236) (2236:2236:2236))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|PO\[2\]\~5\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (5905:5905:5905) (5905:5905:5905))
+        (PORT datad (949:949:949) (949:949:949))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m0\|FA6\|sum\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1941:1941:1941) (1941:1941:1941))
+        (PORT datab (1996:1996:1996) (1996:1996:1996))
+        (PORT datac (1897:1897:1897) (1897:1897:1897))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p2\[2\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (947:947:947) (947:947:947))
+        (PORT datac (1362:1362:1362) (1362:1362:1362))
+        (PORT datad (6040:6040:6040) (6040:6040:6040))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p2\[3\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (1305:1305:1305) (1305:1305:1305))
+        (PORT datac (5901:5901:5901) (5901:5901:5901))
+        (PORT datad (942:942:942) (942:942:942))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m0\|FA2\|sum\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1834:1834:1834) (1834:1834:1834))
+        (PORT datab (1891:1891:1891) (1891:1891:1891))
+        (PORT datac (1952:1952:1952) (1952:1952:1952))
+        (PORT datad (2001:2001:2001) (2001:2001:2001))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m0\|FA3\|sum\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2011:2011:2011) (2011:2011:2011))
+        (PORT datab (1908:1908:1908) (1908:1908:1908))
+        (PORT datac (1250:1250:1250) (1250:1250:1250))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m1\|FA3\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1853:1853:1853) (1853:1853:1853))
+        (PORT datab (1845:1845:1845) (1845:1845:1845))
+        (PORT datac (812:812:812) (812:812:812))
+        (PORT datad (733:733:733) (733:733:733))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m0\|FA4\|sum\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2585:2585:2585) (2585:2585:2585))
+        (PORT datab (1915:1915:1915) (1915:1915:1915))
+        (PORT datac (1200:1200:1200) (1200:1200:1200))
+        (PORT datad (726:726:726) (726:726:726))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m1\|FA4\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1969:1969:1969) (1969:1969:1969))
+        (PORT datab (2676:2676:2676) (2676:2676:2676))
+        (PORT datac (791:791:791) (791:791:791))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m0\|FA5\|sum\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2018:2018:2018) (2018:2018:2018))
+        (PORT datab (2152:2152:2152) (2152:2152:2152))
+        (PORT datac (1991:1991:1991) (1991:1991:1991))
+        (PORT datad (719:719:719) (719:719:719))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m1\|FA5\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3177:3177:3177) (3177:3177:3177))
+        (PORT datab (1927:1927:1927) (1927:1927:1927))
+        (PORT datac (1206:1206:1206) (1206:1206:1206))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m1\|FA6\|sum\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3171:3171:3171) (3171:3171:3171))
+        (PORT datab (2161:2161:2161) (2161:2161:2161))
+        (PORT datac (769:769:769) (769:769:769))
+        (PORT datad (726:726:726) (726:726:726))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|PO\[3\]\~7\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4804:4804:4804) (4804:4804:4804))
+        (PORT datad (941:941:941) (941:941:941))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p3\[3\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4805:4805:4805) (4805:4805:4805))
+        (PORT datac (2069:2069:2069) (2069:2069:2069))
+        (PORT datad (942:942:942) (942:942:942))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p3\[4\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4783:4783:4783) (4783:4783:4783))
+        (PORT datab (930:930:930) (930:930:930))
+        (PORT datad (2894:2894:2894) (2894:2894:2894))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m1\|FA3\|sum\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1859:1859:1859) (1859:1859:1859))
+        (PORT datab (1841:1841:1841) (1841:1841:1841))
+        (PORT datac (806:806:806) (806:806:806))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m1\|FA4\|sum\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1972:1972:1972) (1972:1972:1972))
+        (PORT datab (3345:3345:3345) (3345:3345:3345))
+        (PORT datac (767:767:767) (767:767:767))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m2\|FA4\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1985:1985:1985) (1985:1985:1985))
+        (PORT datab (1922:1922:1922) (1922:1922:1922))
+        (PORT datac (767:767:767) (767:767:767))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m1\|FA5\|sum\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3170:3170:3170) (3170:3170:3170))
+        (PORT datab (2613:2613:2613) (2613:2613:2613))
+        (PORT datac (1199:1199:1199) (1199:1199:1199))
+        (PORT datad (1168:1168:1168) (1168:1168:1168))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m2\|FA5\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1949:1949:1949) (1949:1949:1949))
+        (PORT datab (1900:1900:1900) (1900:1900:1900))
+        (PORT datac (1229:1229:1229) (1229:1229:1229))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m2\|FA6\|sum\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1905:1905:1905) (1905:1905:1905))
+        (PORT datab (2054:2054:2054) (2054:2054:2054))
+        (PORT datac (768:768:768) (768:768:768))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p4\[4\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5312:5312:5312) (5312:5312:5312))
+        (PORT datac (2937:2937:2937) (2937:2937:2937))
+        (PORT datad (2273:2273:2273) (2273:2273:2273))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|p4\[5\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (1329:1329:1329) (1329:1329:1329))
+        (PORT datac (6093:6093:6093) (6093:6093:6093))
+        (PORT datad (1330:1330:1330) (1330:1330:1330))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m2\|FA5\|sum\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1946:1946:1946) (1946:1946:1946))
+        (PORT datab (1184:1184:1184) (1184:1184:1184))
+        (PORT datac (766:766:766) (766:766:766))
+        (PORT datad (3489:3489:3489) (3489:3489:3489))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m2\|FA4\|sum\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3718:3718:3718) (3718:3718:3718))
+        (PORT datab (3228:3228:3228) (3228:3228:3228))
+        (PORT datac (1906:1906:1906) (1906:1906:1906))
+        (PORT datad (1881:1881:1881) (1881:1881:1881))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m3\|FA5\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2559:2559:2559) (2559:2559:2559))
+        (PORT datab (2047:2047:2047) (2047:2047:2047))
+        (PORT datac (1248:1248:1248) (1248:1248:1248))
+        (PORT datad (723:723:723) (723:723:723))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m3\|FA6\|sum\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2691:2691:2691) (2691:2691:2691))
+        (PORT datab (3319:3319:3319) (3319:3319:3319))
+        (PORT datac (1248:1248:1248) (1248:1248:1248))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m3\|FA5\|sum\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2553:2553:2553) (2553:2553:2553))
+        (PORT datab (2041:2041:2041) (2041:2041:2041))
+        (PORT datac (1257:1257:1257) (1257:1257:1257))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m4\|FA6\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4376:4376:4376) (4376:4376:4376))
+        (PORT datab (2448:2448:2448) (2448:2448:2448))
+        (PORT datac (766:766:766) (766:766:766))
+        (PORT datad (534:534:534) (534:534:534))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|In_Reg\|PO\[4\]\~9\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6029:6029:6029) (6029:6029:6029))
+        (PORT datac (942:942:942) (942:942:942))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m3\|FA6\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3936:3936:3936) (3936:3936:3936))
+        (PORT datab (3202:3202:3202) (3202:3202:3202))
+        (PORT datac (1254:1254:1254) (1254:1254:1254))
+        (PORT datad (1175:1175:1175) (1175:1175:1175))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m6\|FA7\|sum\~11\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3922:3922:3922) (3922:3922:3922))
+        (PORT datab (5248:5248:5248) (5248:5248:5248))
+        (PORT datac (3839:3839:3839) (3839:3839:3839))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m6\|FA7\|sum\~6\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1716:1716:1716) (1716:1716:1716))
+        (PORT datab (2015:2015:2015) (2015:2015:2015))
+        (PORT datac (771:771:771) (771:771:771))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m4\|FA6\|sum\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4373:4373:4373) (4373:4373:4373))
+        (PORT datab (2447:2447:2447) (2447:2447:2447))
+        (PORT datac (768:768:768) (768:768:768))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m5\|FA6\|Cout\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2746:2746:2746) (2746:2746:2746))
+        (PORT datab (5488:5488:5488) (5488:5488:5488))
+        (PORT datac (2703:2703:2703) (2703:2703:2703))
+        (PORT datad (1168:1168:1168) (1168:1168:1168))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m2\|FA6\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1906:1906:1906) (1906:1906:1906))
+        (PORT datab (1148:1148:1148) (1148:1148:1148))
+        (PORT datac (1869:1869:1869) (1869:1869:1869))
+        (PORT datad (1164:1164:1164) (1164:1164:1164))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m1\|FA6\|Cout\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (696:696:696) (696:696:696))
+        (PORT datab (1955:1955:1955) (1955:1955:1955))
+        (PORT datac (1714:1714:1714) (1714:1714:1714))
+        (PORT datad (1734:1734:1734) (1734:1734:1734))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m6\|FA7\|sum\~12\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2099:2099:2099) (2099:2099:2099))
+        (PORT datab (5963:5963:5963) (5963:5963:5963))
+        (PORT datac (2627:2627:2627) (2627:2627:2627))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m6\|FA7\|sum\~7\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2775:2775:2775) (2775:2775:2775))
+        (PORT datab (3061:3061:3061) (3061:3061:3061))
+        (PORT datac (1198:1198:1198) (1198:1198:1198))
+        (PORT datad (1834:1834:1834) (1834:1834:1834))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m6\|FA7\|sum\~10\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1868:1868:1868) (1868:1868:1868))
+        (PORT datab (1148:1148:1148) (1148:1148:1148))
+        (PORT datac (771:771:771) (771:771:771))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~62\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1983:1983:1983) (1983:1983:1983))
+        (PORT datab (1855:1855:1855) (1855:1855:1855))
+        (PORT datac (1178:1178:1178) (1178:1178:1178))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[7\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3653:3653:3653) (3653:3653:3653))
+        (PORT datab (5475:5475:5475) (5475:5475:5475))
+        (PORT datac (5133:5133:5133) (5133:5133:5133))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[7\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT sclr (7208:7208:7208) (7208:7208:7208))
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4520:4520:4520) (4520:4520:4520))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP sclr (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD sclr (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S2\|l2\[6\]\~1\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6495:6495:6495) (6495:6495:6495))
+        (PORT datab (2262:2262:2262) (2262:2262:2262))
+        (PORT datac (3019:3019:3019) (3019:3019:3019))
+        (PORT datad (2164:2164:2164) (2164:2164:2164))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S2\|l3\[6\]\~8\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5339:5339:5339) (5339:5339:5339))
+        (PORT datab (2688:2688:2688) (2688:2688:2688))
+        (PORT datac (1976:1976:1976) (1976:1976:1976))
+        (PORT datad (1871:1871:1871) (1871:1871:1871))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S0\|FA6\|sum\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6096:6096:6096) (6096:6096:6096))
+        (PORT datab (2739:2739:2739) (2739:2739:2739))
+        (PORT datac (2837:2837:2837) (2837:2837:2837))
+        (PORT datad (723:723:723) (723:723:723))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S1\|l2\[4\]\~1\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2113:2113:2113) (2113:2113:2113))
+        (PORT datab (1791:1791:1791) (1791:1791:1791))
+        (PORT datac (2235:2235:2235) (2235:2235:2235))
+        (PORT datad (2867:2867:2867) (2867:2867:2867))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S2\|l1\[5\]\~3\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (2794:2794:2794) (2794:2794:2794))
+        (PORT datad (2419:2419:2419) (2419:2419:2419))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S1\|l3\[2\]\~3\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2875:2875:2875) (2875:2875:2875))
+        (PORT datab (5321:5321:5321) (5321:5321:5321))
+        (PORT datac (3000:3000:3000) (3000:3000:3000))
+        (PORT datad (3278:3278:3278) (3278:3278:3278))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S2\|l3\[5\]\~5\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (5334:5334:5334) (5334:5334:5334))
+        (PORT datab (2689:2689:2689) (2689:2689:2689))
+        (PORT datac (1979:1979:1979) (1979:1979:1979))
+        (PORT datad (2811:2811:2811) (2811:2811:2811))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S1\|l3\[2\]\~4\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4160:4160:4160) (4160:4160:4160))
+        (PORT datab (759:759:759) (759:759:759))
+        (PORT datac (1230:1230:1230) (1230:1230:1230))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~55\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2668:2668:2668) (2668:2668:2668))
+        (PORT datab (1127:1127:1127) (1127:1127:1127))
+        (PORT datac (4742:4742:4742) (4742:4742:4742))
+        (PORT datad (1881:1881:1881) (1881:1881:1881))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~56\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2667:2667:2667) (2667:2667:2667))
+        (PORT datab (1163:1163:1163) (1163:1163:1163))
+        (PORT datac (2023:2023:2023) (2023:2023:2023))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~57\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3045:3045:3045) (3045:3045:3045))
+        (PORT datab (1161:1161:1161) (1161:1161:1161))
+        (PORT datac (2521:2521:2521) (2521:2521:2521))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m5\|FA6\|sum\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4667:4667:4667) (4667:4667:4667))
+        (PORT datab (3310:3310:3310) (3310:3310:3310))
+        (PORT datac (2729:2729:2729) (2729:2729:2729))
+        (PORT datad (1776:1776:1776) (1776:1776:1776))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~58\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2588:2588:2588) (2588:2588:2588))
+        (PORT datab (2519:2519:2519) (2519:2519:2519))
+        (PORT datac (759:759:759) (759:759:759))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[6\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2635:2635:2635) (2635:2635:2635))
+        (PORT datab (4539:4539:4539) (4539:4539:4539))
+        (PORT datac (2059:2059:2059) (2059:2059:2059))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[6\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT sclr (6408:6408:6408) (6408:6408:6408))
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4622:4622:4622) (4622:4622:4622))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP sclr (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD sclr (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m4\|FA5\|sum\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2577:2577:2577) (2577:2577:2577))
+        (PORT datab (5316:5316:5316) (5316:5316:5316))
+        (PORT datac (2814:2814:2814) (2814:2814:2814))
+        (PORT datad (2951:2951:2951) (2951:2951:2951))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S0\|FA5\|sum\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3396:3396:3396) (3396:3396:3396))
+        (PORT datab (1747:1747:1747) (1747:1747:1747))
+        (PORT datac (2811:2811:2811) (2811:2811:2811))
+        (PORT datad (5313:5313:5313) (5313:5313:5313))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[5\]\~45\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2189:2189:2189) (2189:2189:2189))
+        (PORT datab (2150:2150:2150) (2150:2150:2150))
+        (PORT datac (4781:4781:4781) (4781:4781:4781))
+        (PORT datad (2798:2798:2798) (2798:2798:2798))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S1\|l2\[3\]\~4\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (2217:2217:2217) (2217:2217:2217))
+        (PORT datad (744:744:744) (744:744:744))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|Z\[7\]\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6031:6031:6031) (6031:6031:6031))
+        (PORT datac (2243:2243:2243) (2243:2243:2243))
+        (PORT datad (2156:2156:2156) (2156:2156:2156))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[5\]\~65\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1978:1978:1978) (1978:1978:1978))
+        (PORT datab (1328:1328:1328) (1328:1328:1328))
+        (PORT datac (6096:6096:6096) (6096:6096:6096))
+        (PORT datad (749:749:749) (749:749:749))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[5\]\~64\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6018:6018:6018) (6018:6018:6018))
+        (PORT datab (1378:1378:1378) (1378:1378:1378))
+        (PORT datac (2249:2249:2249) (2249:2249:2249))
+        (PORT datad (2166:2166:2166) (2166:2166:2166))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S1\|l3\[1\]\~7\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2189:2189:2189) (2189:2189:2189))
+        (PORT datab (5467:5467:5467) (5467:5467:5467))
+        (PORT datac (761:761:761) (761:761:761))
+        (PORT datad (1871:1871:1871) (1871:1871:1871))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S2\|l3\[5\]\~4\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6499:6499:6499) (6499:6499:6499))
+        (PORT datab (3421:3421:3421) (3421:3421:3421))
+        (PORT datac (2878:2878:2878) (2878:2878:2878))
+        (PORT datad (2160:2160:2160) (2160:2160:2160))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S2\|l3\[5\]\~6\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1880:1880:1880) (1880:1880:1880))
+        (PORT datab (755:755:755) (755:755:755))
+        (PORT datac (3456:3456:3456) (3456:3456:3456))
+        (PORT datad (745:745:745) (745:745:745))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~50\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2014:2014:2014) (2014:2014:2014))
+        (PORT datab (1784:1784:1784) (1784:1784:1784))
+        (PORT datac (1980:1980:1980) (1980:1980:1980))
+        (PORT datad (2022:2022:2022) (2022:2022:2022))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~51\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2007:2007:2007) (2007:2007:2007))
+        (PORT datab (714:714:714) (714:714:714))
+        (PORT datac (754:754:754) (754:754:754))
+        (PORT datad (534:534:534) (534:534:534))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~52\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1908:1908:1908) (1908:1908:1908))
+        (PORT datab (708:708:708) (708:708:708))
+        (PORT datac (1892:1892:1892) (1892:1892:1892))
+        (PORT datad (1159:1159:1159) (1159:1159:1159))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[5\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1911:1911:1911) (1911:1911:1911))
+        (PORT datab (2898:2898:2898) (2898:2898:2898))
+        (PORT datac (765:765:765) (765:765:765))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[5\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT sclr (7038:7038:7038) (7038:7038:7038))
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4557:4557:4557) (4557:4557:4557))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP sclr (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD sclr (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m3\|FA4\|sum\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2567:2567:2567) (2567:2567:2567))
+        (PORT datab (2590:2590:2590) (2590:2590:2590))
+        (PORT datac (2679:2679:2679) (2679:2679:2679))
+        (PORT datad (5308:5308:5308) (5308:5308:5308))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S0\|FA4\|sum\~8\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2003:2003:2003) (2003:2003:2003))
+        (PORT datab (3558:3558:3558) (3558:3558:3558))
+        (PORT datac (6159:6159:6159) (6159:6159:6159))
+        (PORT datad (1806:1806:1806) (1806:1806:1806))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S1\|l2\[2\]\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (2226:2226:2226) (2226:2226:2226))
+        (PORT datad (1877:1877:1877) (1877:1877:1877))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S1\|S\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2761:2761:2761) (2761:2761:2761))
+        (PORT datab (5487:5487:5487) (5487:5487:5487))
+        (PORT datac (2763:2763:2763) (2763:2763:2763))
+        (PORT datad (1775:1775:1775) (1775:1775:1775))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S1\|l3\[0\]\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2751:2751:2751) (2751:2751:2751))
+        (PORT datab (723:723:723) (723:723:723))
+        (PORT datac (767:767:767) (767:767:767))
+        (PORT datad (2384:2384:2384) (2384:2384:2384))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S2\|l3\[4\]\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3380:3380:3380) (3380:3380:3380))
+        (PORT datab (2832:2832:2832) (2832:2832:2832))
+        (PORT datac (3011:3011:3011) (3011:3011:3011))
+        (PORT datad (5262:5262:5262) (5262:5262:5262))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S2\|l3\[4\]\~3\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (712:712:712) (712:712:712))
+        (PORT datab (746:746:746) (746:746:746))
+        (PORT datac (1867:1867:1867) (1867:1867:1867))
+        (PORT datad (1960:1960:1960) (1960:1960:1960))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~46\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2021:2021:2021) (2021:2021:2021))
+        (PORT datab (1788:1788:1788) (1788:1788:1788))
+        (PORT datac (1856:1856:1856) (1856:1856:1856))
+        (PORT datad (2573:2573:2573) (2573:2573:2573))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~47\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2013:2013:2013) (2013:2013:2013))
+        (PORT datab (707:707:707) (707:707:707))
+        (PORT datac (1311:1311:1311) (1311:1311:1311))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~48\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1928:1928:1928) (1928:1928:1928))
+        (PORT datab (2921:2921:2921) (2921:2921:2921))
+        (PORT datac (1880:1880:1880) (1880:1880:1880))
+        (PORT datad (1156:1156:1156) (1156:1156:1156))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[4\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1927:1927:1927) (1927:1927:1927))
+        (PORT datab (908:908:908) (908:908:908))
+        (PORT datac (767:767:767) (767:767:767))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[4\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT sclr (7038:7038:7038) (7038:7038:7038))
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4557:4557:4557) (4557:4557:4557))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP sclr (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD sclr (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S0\|FA3\|sum\~8\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3321:3321:3321) (3321:3321:3321))
+        (PORT datab (5436:5436:5436) (5436:5436:5436))
+        (PORT datac (781:781:781) (781:781:781))
+        (PORT datad (2961:2961:2961) (2961:2961:2961))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~43\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (731:731:731) (731:731:731))
+        (PORT datab (762:762:762) (762:762:762))
+        (PORT datac (2138:2138:2138) (2138:2138:2138))
+        (PORT datad (1899:1899:1899) (1899:1899:1899))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[3\]\~32\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (6032:6032:6032) (6032:6032:6032))
+        (PORT datab (1385:1385:1385) (1385:1385:1385))
+        (PORT datac (2244:2244:2244) (2244:2244:2244))
+        (PORT datad (2153:2153:2153) (2153:2153:2153))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~40\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1913:1913:1913) (1913:1913:1913))
+        (PORT datab (1966:1966:1966) (1966:1966:1966))
+        (PORT datac (1247:1247:1247) (1247:1247:1247))
+        (PORT datad (2065:2065:2065) (2065:2065:2065))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[3\]\~34\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1893:1893:1893) (1893:1893:1893))
+        (PORT datab (2003:2003:2003) (2003:2003:2003))
+        (PORT datac (1295:1295:1295) (1295:1295:1295))
+        (PORT datad (2519:2519:2519) (2519:2519:2519))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S2\|l2\[3\]\~3\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4045:4045:4045) (4045:4045:4045))
+        (PORT datab (1912:1912:1912) (1912:1912:1912))
+        (PORT datac (2110:2110:2110) (2110:2110:2110))
+        (PORT datad (2915:2915:2915) (2915:2915:2915))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~41\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1200:1200:1200) (1200:1200:1200))
+        (PORT datab (2483:2483:2483) (2483:2483:2483))
+        (PORT datac (1942:1942:1942) (1942:1942:1942))
+        (PORT datad (734:734:734) (734:734:734))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~42\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2405:2405:2405) (2405:2405:2405))
+        (PORT datab (1144:1144:1144) (1144:1144:1144))
+        (PORT datac (1937:1937:1937) (1937:1937:1937))
+        (PORT datad (722:722:722) (722:722:722))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[3\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (723:723:723) (723:723:723))
+        (PORT datab (750:750:750) (750:750:750))
+        (PORT datac (1889:1889:1889) (1889:1889:1889))
+        (PORT datad (2011:2011:2011) (2011:2011:2011))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[3\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT sclr (6454:6454:6454) (6454:6454:6454))
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3857:3857:3857) (3857:3857:3857))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP sclr (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD sclr (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S0\|FA2\|sum\~8\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (718:718:718) (718:718:718))
+        (PORT datab (5426:5426:5426) (5426:5426:5426))
+        (PORT datac (2066:2066:2066) (2066:2066:2066))
+        (PORT datad (2048:2048:2048) (2048:2048:2048))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~39\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (894:894:894) (894:894:894))
+        (PORT datab (769:769:769) (769:769:769))
+        (PORT datac (799:799:799) (799:799:799))
+        (PORT datad (2732:2732:2732) (2732:2732:2732))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~33\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1907:1907:1907) (1907:1907:1907))
+        (PORT datab (745:745:745) (745:745:745))
+        (PORT datac (1961:1961:1961) (1961:1961:1961))
+        (PORT datad (2532:2532:2532) (2532:2532:2532))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S2\|l2\[2\]\~2\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3262:3262:3262) (3262:3262:3262))
+        (PORT datab (2918:2918:2918) (2918:2918:2918))
+        (PORT datac (2114:2114:2114) (2114:2114:2114))
+        (PORT datad (1910:1910:1910) (1910:1910:1910))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~35\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3033:3033:3033) (3033:3033:3033))
+        (PORT datab (1159:1159:1159) (1159:1159:1159))
+        (PORT datac (2566:2566:2566) (2566:2566:2566))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~36\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2531:2531:2531) (2531:2531:2531))
+        (PORT datab (1711:1711:1711) (1711:1711:1711))
+        (PORT datac (2540:2540:2540) (2540:2540:2540))
+        (PORT datad (534:534:534) (534:534:534))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[2\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (720:720:720) (720:720:720))
+        (PORT datab (750:750:750) (750:750:750))
+        (PORT datac (2036:2036:2036) (2036:2036:2036))
+        (PORT datad (1917:1917:1917) (1917:1917:1917))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[2\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT sclr (6454:6454:6454) (6454:6454:6454))
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3857:3857:3857) (3857:3857:3857))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP sclr (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD sclr (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S3\|m0\|FA1\|sum\~4\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2092:2092:2092) (2092:2092:2092))
+        (PORT datab (1866:1866:1866) (1866:1866:1866))
+        (PORT datac (4221:4221:4221) (4221:4221:4221))
+        (PORT datad (5463:5463:5463) (5463:5463:5463))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S2\|l1\[1\]\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2881:2881:2881) (2881:2881:2881))
+        (PORT datad (1913:1913:1913) (1913:1913:1913))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S2\|l1\[2\]\~1\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3267:3267:3267) (3267:3267:3267))
+        (PORT datad (1902:1902:1902) (1902:1902:1902))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~28\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3346:3346:3346) (3346:3346:3346))
+        (PORT datab (2907:2907:2907) (2907:2907:2907))
+        (PORT datac (773:773:773) (773:773:773))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~29\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (4075:4075:4075) (4075:4075:4075))
+        (PORT datab (734:734:734) (734:734:734))
+        (PORT datac (1203:1203:1203) (1203:1203:1203))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[0\]\~23\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2189:2189:2189) (2189:2189:2189))
+        (PORT datab (5470:5470:5470) (5470:5470:5470))
+        (PORT datac (2136:2136:2136) (2136:2136:2136))
+        (PORT datad (2148:2148:2148) (2148:2148:2148))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S0\|FA1\|sum\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (710:710:710) (710:710:710))
+        (PORT datab (5439:5439:5439) (5439:5439:5439))
+        (PORT datac (2176:2176:2176) (2176:2176:2176))
+        (PORT datad (2178:2178:2178) (2178:2178:2178))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~30\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (696:696:696) (696:696:696))
+        (PORT datab (1139:1139:1139) (1139:1139:1139))
+        (PORT datac (2401:2401:2401) (2401:2401:2401))
+        (PORT datad (724:724:724) (724:724:724))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~31\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (1899:1899:1899) (1899:1899:1899))
+        (PORT datab (719:719:719) (719:719:719))
+        (PORT datac (1897:1897:1897) (1897:1897:1897))
+        (PORT datad (726:726:726) (726:726:726))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[1\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3240:3240:3240) (3240:3240:3240))
+        (PORT datab (5468:5468:5468) (5468:5468:5468))
+        (PORT datac (2089:2089:2089) (2089:2089:2089))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[1\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT sclr (7190:7190:7190) (7190:7190:7190))
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (3175:3175:3175) (3175:3175:3175))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP sclr (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD sclr (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S0\|FA0\|S\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3560:3560:3560) (3560:3560:3560))
+        (PORT datac (4733:4733:4733) (4733:4733:4733))
+        (PORT datad (3321:3321:3321) (3321:3321:3321))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~25\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3042:3042:3042) (3042:3042:3042))
+        (PORT datab (720:720:720) (720:720:720))
+        (PORT datac (2617:2617:2617) (2617:2617:2617))
+        (PORT datad (1815:1815:1815) (1815:1815:1815))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\dut_instance\|add_instance\|S1\|l1\[0\]\~0\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (1968:1968:1968) (1968:1968:1968))
+        (PORT datad (4169:4169:4169) (4169:4169:4169))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~20\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (3351:3351:3351) (3351:3351:3351))
+        (PORT datab (1134:1134:1134) (1134:1134:1134))
+        (PORT datac (2945:2945:2945) (2945:2945:2945))
+        (PORT datad (305:305:305) (305:305:305))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~21\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (708:708:708) (708:708:708))
+        (PORT datab (1163:1163:1163) (1163:1163:1163))
+        (PORT datac (3808:3808:3808) (3808:3808:3808))
+        (PORT datad (1138:1138:1138) (1138:1138:1138))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\~26\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2463:2463:2463) (2463:2463:2463))
+        (PORT datab (721:721:721) (721:721:721))
+        (PORT datac (2493:2493:2493) (2493:2493:2493))
+        (PORT datad (2009:2009:2009) (2009:2009:2009))
+        (IOPATH dataa combout (914:914:914) (914:914:914))
+        (IOPATH datab combout (740:740:740) (740:740:740))
+        (IOPATH datac combout (511:511:511) (511:511:511))
+        (IOPATH datad combout (200:200:200) (200:200:200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_asynch_lcell")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[0\]\\.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (2625:2625:2625) (2625:2625:2625))
+        (PORT datab (2654:2654:2654) (2654:2654:2654))
+        (PORT datac (4715:4715:4715) (4715:4715:4715))
+        (PORT datad (724:724:724) (724:724:724))
+        (IOPATH dataa regin (1183:1183:1183) (1183:1183:1183))
+        (IOPATH datab regin (1061:1061:1061) (1061:1061:1061))
+        (IOPATH datac regin (804:804:804) (804:804:804))
+        (IOPATH datad regin (591:591:591) (591:591:591))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_lcell_register")
+    (INSTANCE \\scan_instance\|Out_Reg\|L1\[0\]\\.lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT sclr (6408:6408:6408) (6408:6408:6408))
+        (PORT aclr (1372:1372:1372) (1372:1372:1372))
+        (PORT clk (6428:6428:6428) (6428:6428:6428))
+        (PORT ena (4622:4622:4622) (4622:4622:4622))
+        (IOPATH (posedge clk) regout (376:376:376) (376:376:376))
+        (IOPATH (posedge aclr) regout (577:577:577) (577:577:577))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (333:333:333))
+      (SETUP sclr (posedge clk) (333:333:333))
+      (SETUP ena (posedge clk) (333:333:333))
+      (HOLD datain (posedge clk) (221:221:221))
+      (HOLD sclr (posedge clk) (221:221:221))
+      (HOLD ena (posedge clk) (221:221:221))
+    )
+  )
+  (CELL
+    (CELLTYPE "maxv_io")
+    (INSTANCE \\TDO\~I\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (2707:2707:2707) (2707:2707:2707))
+        (IOPATH datain padio (2322:2322:2322) (2322:2322:2322))
+      )
+    )
+  )
+)

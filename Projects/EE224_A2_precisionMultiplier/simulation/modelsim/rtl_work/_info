@@ -1,0 +1,673 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/18.1/Projects/EE224_A2/simulation/modelsim
+Eand_2
+Z1 w1555599113
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/intelFPGA_lite/18.1/Projects/EE224_A2/Gates.vhdl
+Z5 FC:/intelFPGA_lite/18.1/Projects/EE224_A2/Gates.vhdl
+l0
+L59
+VEZ2D<X;^P<mhD?oYSoZVj1
+!s100 I6a;h`m1l>_P==[;fjQ`@1
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1555951709
+!i10b 1
+Z8 !s108 1555951708.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/Projects/EE224_A2/Gates.vhdl|
+Z10 !s107 C:/intelFPGA_lite/18.1/Projects/EE224_A2/Gates.vhdl|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aequations
+R2
+R3
+DEx4 work 5 and_2 0 22 EZ2D<X;^P<mhD?oYSoZVj1
+l64
+L63
+VY^DPFg?I0<FA[cHI4QgS90
+!s100 OS4[mm7YAehBWh`cRa9VV2
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edut
+Z13 w1555698663
+R2
+R3
+R0
+Z14 8C:/intelFPGA_lite/18.1/Projects/EE224_A2/DUT.vhdl
+Z15 FC:/intelFPGA_lite/18.1/Projects/EE224_A2/DUT.vhdl
+l0
+L3
+VI^`QedOSiNNZj6YYlh<>[1
+!s100 1@TX^k>lmQhW=9RkfQ@=L2
+R6
+31
+Z16 !s110 1555951708
+!i10b 1
+R8
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/Projects/EE224_A2/DUT.vhdl|
+Z18 !s107 C:/intelFPGA_lite/18.1/Projects/EE224_A2/DUT.vhdl|
+!i113 1
+R11
+R12
+Adutwrap
+R2
+R3
+DEx4 work 3 dut 0 22 I^`QedOSiNNZj6YYlh<>[1
+l15
+L8
+V7nGJX>CU[OMPbA:HHnD1>2
+!s100 68DHVeY32Pb^?chaAO<4o1
+R6
+31
+R16
+!i10b 1
+R8
+R17
+R18
+!i113 1
+R11
+R12
+Efivebitadder
+Z19 w1555612079
+Z20 DPx4 work 5 gates 0 22 :]U[Of??ib[ek@SON6ZD@1
+R2
+R3
+R0
+Z21 8C:/intelFPGA_lite/18.1/Projects/EE224_A2/fivebitadder.vhdl
+Z22 FC:/intelFPGA_lite/18.1/Projects/EE224_A2/fivebitadder.vhdl
+l0
+L6
+V2[@RCYMPKDO0A;hXzfgY73
+!s100 5Y0V1NYzeP=^K_><^_=Yz1
+R6
+31
+Z23 !s110 1555951710
+!i10b 1
+Z24 !s108 1555951710.000000
+Z25 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/Projects/EE224_A2/fivebitadder.vhdl|
+Z26 !s107 C:/intelFPGA_lite/18.1/Projects/EE224_A2/fivebitadder.vhdl|
+!i113 1
+R11
+R12
+Aequations
+R20
+R2
+R3
+DEx4 work 12 fivebitadder 0 22 2[@RCYMPKDO0A;hXzfgY73
+l16
+L13
+V2KEf54`52<g<>RO<6nJJ@1
+!s100 EMkQ3SQ>BFRZdZkHWZEU91
+R6
+31
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R11
+R12
+Efull_adder
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L138
+VXz>=hc:CeR<KQdzVaY4Vd3
+!s100 8HPZFgF`Riz[]6KT88T<G1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Astruct
+R2
+R3
+DEx4 work 10 full_adder 0 22 Xz>=hc:CeR<KQdzVaY4Vd3
+l157
+L143
+V?AAaG3>T_[6mQV=Q;V82f3
+!s100 KMk7k]`I5`MA^=5[>TMnW3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Pgates
+R2
+R3
+R1
+R0
+R4
+R5
+l0
+L3
+V:]U[Of??ib[ek@SON6ZD@1
+!s100 H<]8BJ;IhF[mAD;T9RW:b1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ehalf_adder
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L126
+VO5`?Bi9H0U1Y=nH8I;W:;3
+!s100 Mn5Xn5oeBf<SEh^kmV@?K0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Aequations
+R2
+R3
+DEx4 work 10 half_adder 0 22 O5`?Bi9H0U1Y=nH8I;W:;3
+l131
+L130
+V_D0mFSDk>j4Q=bMR`f7AL1
+!s100 <JI05_lZCaJEIT;X>>cD61
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Einverter
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L47
+VBIOamM3EK06VPlCm?A8YE2
+!s100 ^@6FTiNl<S76gX^6lE=Oo3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Aequations
+R2
+R3
+DEx4 work 8 inverter 0 22 BIOamM3EK06VPlCm?A8YE2
+l52
+L51
+Vo?3RU59gRd979WAidJl>g0
+!s100 R:j7bZmz@DRP3]];CFDdR0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Emultiplier
+Z27 w1555613013
+R20
+Z28 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R0
+Z29 8C:/intelFPGA_lite/18.1/Projects/EE224_A2/multiplier.vhdl
+Z30 FC:/intelFPGA_lite/18.1/Projects/EE224_A2/multiplier.vhdl
+l0
+L7
+V4Ike^n04l^`8]iC8=Qd870
+!s100 5iC4ZJkaQf29nj__4i8?Q0
+R6
+31
+R23
+!i10b 1
+R24
+Z31 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/Projects/EE224_A2/multiplier.vhdl|
+Z32 !s107 C:/intelFPGA_lite/18.1/Projects/EE224_A2/multiplier.vhdl|
+!i113 1
+R11
+R12
+Astruct
+R20
+R28
+R2
+R3
+DEx4 work 10 multiplier 0 22 4Ike^n04l^`8]iC8=Qd870
+l29
+L15
+VTMN>gJN0G3HM7eU=;m<Nj1
+!s100 mOecV9=O1^HjeC<DGdCUT0
+R6
+31
+R23
+!i10b 1
+R24
+R31
+R32
+!i113 1
+R11
+R12
+Emux
+Z33 w1555614967
+R20
+R2
+R3
+R0
+Z34 8C:/intelFPGA_lite/18.1/Projects/EE224_A2/mux.vhdl
+Z35 FC:/intelFPGA_lite/18.1/Projects/EE224_A2/mux.vhdl
+l0
+L8
+VfZo^1Z2c4<E4?F_C^N4:E1
+!s100 elB9IiBE72I_C9^NEZImg2
+R6
+31
+R7
+!i10b 1
+Z36 !s108 1555951709.000000
+Z37 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/Projects/EE224_A2/mux.vhdl|
+Z38 !s107 C:/intelFPGA_lite/18.1/Projects/EE224_A2/mux.vhdl|
+!i113 1
+R11
+R12
+Aarch
+R20
+R2
+R3
+DEx4 work 3 mux 0 22 fZo^1Z2c4<E4?F_C^N4:E1
+l17
+L14
+VFfAK`izc29W^>OYAN?coH3
+!s100 O:bD<HQ_<@<zHkoOl6ZFF0
+R6
+31
+R7
+!i10b 1
+R36
+R37
+R38
+!i113 1
+R11
+R12
+Enand_2
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L70
+VcTH:KFODdnT[iCQSNbonf0
+!s100 2RYX9^CFh6J>LDg_n_R`X0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Aequations
+R2
+R3
+DEx4 work 6 nand_2 0 22 cTH:KFODdnT[iCQSNbonf0
+l81
+L80
+VRLKKT4hafJkTFYFAc5Qk41
+!s100 NmJ4cRQeZUB@4JdNLD17o0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Enor_2
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L92
+V6]fcS^>ff?d?DJ8R<2af>2
+!s100 Ic4o3N<AJ=3YGiKDUH]0n3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Aequations
+R2
+R3
+DEx4 work 5 nor_2 0 22 6]fcS^>ff?d?DJ8R<2af>2
+l97
+L96
+V5B^knP:jA[lV:ojk[6n2Z0
+!s100 0TL1^49oGHGoelzZV[?`03
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eor_2
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L76
+VgU]3>g82d>[8Ah;PS^KW_1
+!s100 KL?_^L;cgMa2OS9_?b1O>3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Aequations
+R2
+R3
+DEx4 work 4 or_2 0 22 gU]3>g82d>[8Ah;PS^KW_1
+l86
+L85
+V;9^Ze9>c?KDSkchdnVga01
+!s100 Y_Ce[fd7^O:il?@j2I0Pe1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Equarter_precision_multiplier
+Z39 w1555784368
+R20
+R28
+Z40 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z41 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R2
+R3
+R0
+Z42 8C:/intelFPGA_lite/18.1/Projects/EE224_A2/quarter_precision_multiplier.vhdl
+Z43 FC:/intelFPGA_lite/18.1/Projects/EE224_A2/quarter_precision_multiplier.vhdl
+l0
+L9
+VofilRTKbb_P<67O=Q8ooc3
+!s100 fZmKSmV6W2@=;l<Nmj<oX0
+R6
+31
+R23
+!i10b 1
+R36
+Z44 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/Projects/EE224_A2/quarter_precision_multiplier.vhdl|
+Z45 !s107 C:/intelFPGA_lite/18.1/Projects/EE224_A2/quarter_precision_multiplier.vhdl|
+!i113 1
+R11
+R12
+Abehavioral
+R20
+R28
+R40
+R41
+R2
+R3
+DEx4 work 28 quarter_precision_multiplier 0 22 ofilRTKbb_P<67O=Q8ooc3
+l53
+L15
+Ve8_[ZZKa61TeaXh;oPU=20
+!s100 YefDg;e`a42Q;3@NUW@4Q1
+R6
+31
+R23
+!i10b 1
+R36
+R44
+R45
+!i113 1
+R11
+R12
+Etenbitadder
+Z46 w1555613073
+R20
+R2
+R3
+R0
+Z47 8C:/intelFPGA_lite/18.1/Projects/EE224_A2/tenbitadder.vhdl
+Z48 FC:/intelFPGA_lite/18.1/Projects/EE224_A2/tenbitadder.vhdl
+l0
+L6
+VMISzILkVJ@SX]`=9JOnJN0
+!s100 _JCVfY[ZHOiFNSf6N:7K:0
+R6
+31
+R7
+!i10b 1
+R36
+Z49 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/Projects/EE224_A2/tenbitadder.vhdl|
+Z50 !s107 C:/intelFPGA_lite/18.1/Projects/EE224_A2/tenbitadder.vhdl|
+!i113 1
+R11
+R12
+Aequations
+R20
+R2
+R3
+DEx4 work 11 tenbitadder 0 22 MISzILkVJ@SX]`=9JOnJN0
+l16
+L13
+VeS:X4jZ?@<zOlm<i1ZEb[1
+!s100 `<24]h43UDkg6Qeb5RHG<1
+R6
+31
+R7
+!i10b 1
+R36
+R49
+R50
+!i113 1
+R11
+R12
+Etestbench
+Z51 w1555698456
+R3
+R2
+R0
+Z52 8C:/intelFPGA_lite/18.1/Projects/EE224_A2/Testbench.vhdl
+Z53 FC:/intelFPGA_lite/18.1/Projects/EE224_A2/Testbench.vhdl
+l0
+L7
+V]iKK_Z9L:G9B:i8c]3eFH0
+!s100 bWf8kl8zb90X@P1m>V^K20
+R6
+31
+R23
+!i10b 1
+R24
+Z54 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/Projects/EE224_A2/Testbench.vhdl|
+Z55 !s107 C:/intelFPGA_lite/18.1/Projects/EE224_A2/Testbench.vhdl|
+!i113 1
+R11
+R12
+Abehave
+R3
+R2
+DEx4 work 9 testbench 0 22 ]iKK_Z9L:G9B:i8c]3eFH0
+l69
+L9
+Vl?4gdieaoYH^XAa5<CD?a1
+!s100 9G?n5Ze6JLj^0_>@9K`2F2
+R6
+31
+R23
+!i10b 1
+R24
+R54
+R55
+!i113 1
+R11
+R12
+Exnor_2
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L115
+VkM``B@@kUjFUEI^?:9G_91
+!s100 =Z<nTFhLU>M`HDzA_F?W<0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Aequations
+R2
+R3
+DEx4 work 6 xnor_2 0 22 kM``B@@kUjFUEI^?:9G_91
+l120
+L119
+V093O0V]GNhKB1AC<IL>[e3
+!s100 A=Rb9^m`0MVQ[LP@gjf`U3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Exor_2
+R1
+R2
+R3
+R0
+R4
+R5
+l0
+L104
+V3Sl8IEZ:EEQEWGMUJV?h22
+!s100 U>PYgi5MgTJT7Q8>odG:03
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Aequations
+R2
+R3
+DEx4 work 5 xor_2 0 22 3Sl8IEZ:EEQEWGMUJV?h22
+l109
+L108
+VeUlcj]QO3FGDcNP:eje]@1
+!s100 nUlR2<;a:EcfU6m`:f;^a3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12

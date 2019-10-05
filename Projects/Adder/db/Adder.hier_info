@@ -1,0 +1,154 @@
+|DUT
+input_vector[0] => eightbitadder:add_instance.A[0]
+input_vector[1] => eightbitadder:add_instance.A[1]
+input_vector[2] => eightbitadder:add_instance.A[2]
+input_vector[3] => eightbitadder:add_instance.A[3]
+input_vector[4] => eightbitadder:add_instance.A[4]
+input_vector[5] => eightbitadder:add_instance.A[5]
+input_vector[6] => eightbitadder:add_instance.A[6]
+input_vector[7] => eightbitadder:add_instance.A[7]
+input_vector[8] => eightbitadder:add_instance.B[0]
+input_vector[9] => eightbitadder:add_instance.B[1]
+input_vector[10] => eightbitadder:add_instance.B[2]
+input_vector[11] => eightbitadder:add_instance.B[3]
+input_vector[12] => eightbitadder:add_instance.B[4]
+input_vector[13] => eightbitadder:add_instance.B[5]
+input_vector[14] => eightbitadder:add_instance.B[6]
+input_vector[15] => eightbitadder:add_instance.B[7]
+output_vector[0] <= eightbitadder:add_instance.S[0]
+output_vector[1] <= eightbitadder:add_instance.S[1]
+output_vector[2] <= eightbitadder:add_instance.S[2]
+output_vector[3] <= eightbitadder:add_instance.S[3]
+output_vector[4] <= eightbitadder:add_instance.S[4]
+output_vector[5] <= eightbitadder:add_instance.S[5]
+output_vector[6] <= eightbitadder:add_instance.S[6]
+output_vector[7] <= eightbitadder:add_instance.S[7]
+
+
+|DUT|eightbitadder:add_instance
+A[0] => HALF_ADDER:FA0.A
+A[1] => Full_Adder:FA1.A
+A[2] => Full_Adder:FA2.A
+A[3] => Full_Adder:FA3.A
+A[4] => Full_Adder:FA4.A
+A[5] => Full_Adder:FA5.A
+A[6] => Full_Adder:FA6.A
+A[7] => Full_Adder:FA7.A
+B[0] => HALF_ADDER:FA0.B
+B[1] => Full_Adder:FA1.B
+B[2] => Full_Adder:FA2.B
+B[3] => Full_Adder:FA3.B
+B[4] => Full_Adder:FA4.B
+B[5] => Full_Adder:FA5.B
+B[6] => Full_Adder:FA6.B
+B[7] => Full_Adder:FA7.B
+S[0] <= HALF_ADDER:FA0.S
+S[1] <= Full_Adder:FA1.S
+S[2] <= Full_Adder:FA2.S
+S[3] <= Full_Adder:FA3.S
+S[4] <= Full_Adder:FA4.S
+S[5] <= Full_Adder:FA5.S
+S[6] <= Full_Adder:FA6.S
+S[7] <= Full_Adder:FA7.S
+
+
+|DUT|eightbitadder:add_instance|HALF_ADDER:FA0
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|eightbitadder:add_instance|Full_Adder:FA1
+A => S.IN0
+A => Cout.IN1
+B => S.IN1
+B => Cout.IN0
+B => Cout.IN0
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|eightbitadder:add_instance|Full_Adder:FA2
+A => S.IN0
+A => Cout.IN1
+B => S.IN1
+B => Cout.IN0
+B => Cout.IN0
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|eightbitadder:add_instance|Full_Adder:FA3
+A => S.IN0
+A => Cout.IN1
+B => S.IN1
+B => Cout.IN0
+B => Cout.IN0
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|eightbitadder:add_instance|Full_Adder:FA4
+A => S.IN0
+A => Cout.IN1
+B => S.IN1
+B => Cout.IN0
+B => Cout.IN0
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|eightbitadder:add_instance|Full_Adder:FA5
+A => S.IN0
+A => Cout.IN1
+B => S.IN1
+B => Cout.IN0
+B => Cout.IN0
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|eightbitadder:add_instance|Full_Adder:FA6
+A => S.IN0
+A => Cout.IN1
+B => S.IN1
+B => Cout.IN0
+B => Cout.IN0
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|eightbitadder:add_instance|Full_Adder:FA7
+A => S.IN0
+A => Cout.IN1
+B => S.IN1
+B => Cout.IN0
+B => Cout.IN0
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+

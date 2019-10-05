@@ -1,0 +1,121 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity multiplier_array is
+    port (
+        a:  in  std_logic_vector  (7 downto 0);
+        b:  in  std_logic_vector  (7 downto 0);
+        p:  out std_logic_vector (15 downto 0)
+    );
+end entity;
+
+architecture and_array of multiplier_array is
+
+    signal b0:          unsigned (7 downto 0);
+    signal b1:          unsigned (7 downto 0);
+    signal b2:          unsigned (7 downto 0);
+    signal b3:          unsigned (7 downto 0);
+    signal b4:          unsigned (7 downto 0);
+    signal b5:          unsigned (7 downto 0);
+    signal b6:          unsigned (7 downto 0);
+    signal b7:          unsigned (7 downto 0);
+
+    signal pp1:         unsigned (7 downto 0);
+    signal pp2:         unsigned (7 downto 0);   
+    signal pp3:         unsigned (7 downto 0); 
+    signal pp4:         unsigned (7 downto 0);
+    signal pp5:         unsigned (7 downto 0);
+    signal pp6:         unsigned (7 downto 0);   
+    signal pp7:         unsigned (7 downto 0); 
+    signal pp8:         unsigned (7 downto 0);
+
+    signal s:           unsigned (15 downto 0);
+
+begin
+
+    -- AND Array Multiplies
+
+    b0 <= (others => b(0));
+    b1 <= (others => b(1));
+    b2 <= (others => b(2));
+    b3 <= (others => b(3));
+    b4 <= (others => b(4));
+    b5 <= (others => b(5));
+    b6 <= (others => b(6));
+    b7 <= (others => b(7));
+
+    pp1 <= unsigned (a) and b0;
+
+    pp2 <= unsigned (a) and b1;
+
+    pp3 <= unsigned (a) and b2;
+
+    pp4 <= unsigned (a) and b3;
+
+    pp5 <= unsigned (a) and b4;
+
+    pp6 <= unsigned (a) and b5;
+
+    pp7 <= unsigned (a) and b6;
+
+    pp8 <= unsigned (a) and b7;
+
+    -- Sum
+
+    s <=   ( '0' & pp8 & "0000000") -- lead '0' for 16 bit sum
+         + (       pp7 & "000000" ) -- "+" takes sum width from left operand
+         + (       pp6 & "00000"  ) -- adds are in left to right order so 16 bit
+         + (       pp5 & "0000"   ) 
+         + (       pp4 & "000"    )  
+         + (       pp3 & "00"     )
+         + (       pp2 & '0'      )
+         +         pp1;
+
+    p <= std_logic_vector (s); 
+
+end architecture;
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity mult_tb is
+end entity;
+
+architecture foo of mult_tb is
+    signal a, b:    std_logic_vector (7 downto 0) := (others =>'0');
+    signal p:       std_logic_vector (15 downto 0);
+
+begin
+DUT:
+    entity work.multiplier_array
+        port map (
+            a => a,
+            b => b,
+            p => p
+        );
+
+STIMULI:
+    process
+    begin
+        wait for 10 ns;
+        a <= std_logic_vector (to_unsigned(245, a'length));
+        b <= std_logic_vector (to_unsigned(175, b'length));
+        wait for 10 ns;
+        wait;
+    end process;
+
+MONITOR:
+    process (p)
+    begin
+        if now > 9 ns then
+            report "a = " & natural'image (to_integer(unsigned(a)));
+            report "b = " & natural'image (to_integer(unsigned(b)));
+            report "product = " & natural'image (to_integer(unsigned(p)));
+            report "expected product = " & 
+                    natural'image (to_integer(unsigned(a) * unsigned(b)));
+        end if;
+    end process;
+
+end architecture;

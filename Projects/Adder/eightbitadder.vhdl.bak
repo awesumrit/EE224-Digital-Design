@@ -1,0 +1,32 @@
+library ieee;
+use ieee.std_logic_1164.all;
+library work;
+use work.Gates.all;
+
+entity eightbitadder is 
+	port(A0, A1, A2, A3, A4, A5, A6, A7, B0, B1, B2, B3, B4, B5, B6, B7: in std_logic;
+	Y0, Y1, Y2, Y3, Y4, Y5, Y6, Y7: out std_logic);
+end entity eightbitadder;
+
+architecture Equations of eightbitadder is
+signal l1, l2, l3, l4, l5, l6, l7, l8: std_logic;
+
+begin
+ha1: HALF_ADDER
+	port map(A=>A0, B=>B0, S=>Y0, C=>l1);
+fa1: FULL_ADDER
+	port map(A=>A1, B=>B1, Cin=>l1, S=>Y1, Cout=>l2);
+fa2: FULL_ADDER
+	port map(A=>A2, B=>B2, Cin=>l2, S=>Y2, Cout=>l3);
+fa3: FULL_ADDER
+	port map(A=>A3, B=>B3, Cin=>l3, S=>Y3, Cout=>l4);
+fa4: FULL_ADDER
+	port map(A=>A4, B=>B4, Cin=>l4, S=>Y4, Cout=>l5);
+fa5: FULL_ADDER
+	port map(A=>A5, B=>B5, Cin=>l5, S=>Y5, Cout=>l6);
+fa6: FULL_ADDER
+	port map(A=>A6, B=>B6, Cin=>l6, S=>Y6, Cout=>l7);
+fa7: FULL_ADDER
+	port map(A=>A7, B=>B7, Cin=>l7, S=>Y7, Cout=>l8);
+
+end Equations;

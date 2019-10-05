@@ -1,0 +1,56 @@
+library ieee;
+use ieee.std_logic_1164.all;
+library work;
+use work.Gates.all;
+
+entity leftshift is 
+	port(X: in std_logic_vector(7 downto 0);
+	Y: in std_logic_vector(7 downto 0);
+	Z : out std_logic_vector(7 downto 0)
+	);
+end entity leftshift;
+
+architecture Easy of leftshift is
+begin
+signal l1, l2, l3 : std_logic_vector(7 downto 0);
+signal S : std_logic;
+S <= ((((Y(7) or Y(6)) or Y(5)) or Y(4)) or Y(3));
+
+l1(7) <= '0' when S='1' else X(7);
+l1(6) <= '0' when S='1' else X(6);
+l1(5) <= '0' when S='1' else X(5);
+l1(4) <= '0' when S='1' else X(4);
+l1(3) <= '0' when S='1' else X(3);
+l1(2) <= '0' when S='1' else X(2);
+l1(1) <= '0' when S='1' else X(1);
+l1(0) <= '0' when S='1' else X(0);
+
+l2(7) <= l1(6) when Y(0)='1' else l1(7);
+l2(6) <= l1(5) when Y(0)='1' else l1(6);
+l2(5) <= l1(4) when Y(0)='1' else l1(5);
+l2(4) <= l1(3) when Y(0)='1' else l1(4);
+l2(3) <= l1(2) when Y(0)='1' else l1(3);
+l2(2) <= l1(1) when Y(0)='1' else l1(2);
+l2(1) <= l1(0) when Y(0)='1' else l1(1);
+l2(0) <= '0' when Y(0)='1' else l1(0);
+
+l3(7) <= l2(5) when Y(1)='1' else l2(7);
+l3(6) <= l2(4) when Y(1)='1' else l2(6);
+l3(5) <= l2(3) when Y(1)='1' else l2(5);
+l3(4) <= l2(2) when Y(1)='1' else l2(4);
+l3(3) <= l2(1) when Y(1)='1' else l2(3);
+l3(2) <= l2(0) when Y(1)='1' else l2(2);
+l3(1) <= '0' when Y(1)='1' else l2(1);
+l3(0) <= '0' when Y(1)='1' else l2(0);
+
+Z(7) <= l3(3) when Y(2)='1' else l3(7); 
+Z(6) <= l3(2) when Y(2)='1' else l3(6); 
+Z(5) <= l3(1) when Y(2)='1' else l3(5); 
+Z(4) <= l3(0) when Y(2)='1' else l3(4); 
+Z(3) <= '0' when Y(2)='1' else l3(3); 
+Z(2) <= '0' when Y(2)='1' else l3(2); 
+Z(1) <= '0' when Y(2)='1' else l3(1); 
+Z(0) <= '0' when Y(2)='1' else l3(0); 
+
+end Easy;
+

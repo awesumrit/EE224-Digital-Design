@@ -1,0 +1,1666 @@
+|TopLevel
+TDI => Scan_Chain:scan_instance.TDI
+TDO << Scan_Chain:scan_instance.TDO
+TMS => Scan_Chain:scan_instance.TMS
+TCLK => Scan_Chain:scan_instance.TCLK
+TRST => Scan_Chain:scan_instance.TRST
+
+
+|TopLevel|Scan_Chain:scan_instance
+TDI => Scan_reg:In_Reg.SI
+TDO <= Scan_reg:Out_Reg.SO
+TMS => L2_en.DATAB
+TMS => next_state.DATAB
+TMS => next_state.DATAB
+TMS => Selector2.IN2
+TMS => next_state.DATAB
+TMS => Selector3.IN1
+TMS => Selector0.IN1
+TMS => Selector1.IN1
+TCLK => Scan_reg:In_Reg.clock
+TCLK => Scan_reg:Out_Reg.clock
+TCLK => current_state~1.DATAIN
+TRST => Scan_reg:In_Reg.reset
+TRST => Scan_reg:Out_Reg.reset
+TRST => current_state~3.DATAIN
+TRST => L1_en.OUTPUTSELECT
+TRST => L2_en.OUTPUTSELECT
+TRST => cap_shft.OUTPUTSELECT
+TRST => next_state.s_idle.OUTPUTSELECT
+TRST => next_state.s_DR.OUTPUTSELECT
+TRST => next_state.s_capture.OUTPUTSELECT
+TRST => next_state.s_shift.OUTPUTSELECT
+TRST => next_state.s_update.OUTPUTSELECT
+TRST => Scan_reg:In_Reg.sel_reg
+TRST => Scan_reg:Out_Reg.sel_reg
+dut_in[0] <= Scan_reg:In_Reg.PO[0]
+dut_in[1] <= Scan_reg:In_Reg.PO[1]
+dut_in[2] <= Scan_reg:In_Reg.PO[2]
+dut_in[3] <= Scan_reg:In_Reg.PO[3]
+dut_in[4] <= Scan_reg:In_Reg.PO[4]
+dut_in[5] <= Scan_reg:In_Reg.PO[5]
+dut_in[6] <= Scan_reg:In_Reg.PO[6]
+dut_in[7] <= Scan_reg:In_Reg.PO[7]
+dut_in[8] <= Scan_reg:In_Reg.PO[8]
+dut_in[9] <= Scan_reg:In_Reg.PO[9]
+dut_in[10] <= Scan_reg:In_Reg.PO[10]
+dut_in[11] <= Scan_reg:In_Reg.PO[11]
+dut_in[12] <= Scan_reg:In_Reg.PO[12]
+dut_in[13] <= Scan_reg:In_Reg.PO[13]
+dut_in[14] <= Scan_reg:In_Reg.PO[14]
+dut_in[15] <= Scan_reg:In_Reg.PO[15]
+dut_in[16] <= Scan_reg:In_Reg.PO[16]
+dut_in[17] <= Scan_reg:In_Reg.PO[17]
+dut_out[0] => Scan_reg:Out_Reg.PI[0]
+dut_out[1] => Scan_reg:Out_Reg.PI[1]
+dut_out[2] => Scan_reg:Out_Reg.PI[2]
+dut_out[3] => Scan_reg:Out_Reg.PI[3]
+dut_out[4] => Scan_reg:Out_Reg.PI[4]
+dut_out[5] => Scan_reg:Out_Reg.PI[5]
+dut_out[6] => Scan_reg:Out_Reg.PI[6]
+dut_out[7] => Scan_reg:Out_Reg.PI[7]
+
+
+|TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg
+clock => L2[0].CLK
+clock => L2[1].CLK
+clock => L2[2].CLK
+clock => L2[3].CLK
+clock => L2[4].CLK
+clock => L2[5].CLK
+clock => L2[6].CLK
+clock => L2[7].CLK
+clock => L2[8].CLK
+clock => L2[9].CLK
+clock => L2[10].CLK
+clock => L2[11].CLK
+clock => L2[12].CLK
+clock => L2[13].CLK
+clock => L2[14].CLK
+clock => L2[15].CLK
+clock => L2[16].CLK
+clock => L2[17].CLK
+clock => L1[0].CLK
+clock => L1[1].CLK
+clock => L1[2].CLK
+clock => L1[3].CLK
+clock => L1[4].CLK
+clock => L1[5].CLK
+clock => L1[6].CLK
+clock => L1[7].CLK
+clock => L1[8].CLK
+clock => L1[9].CLK
+clock => L1[10].CLK
+clock => L1[11].CLK
+clock => L1[12].CLK
+clock => L1[13].CLK
+clock => L1[14].CLK
+clock => L1[15].CLK
+clock => L1[16].CLK
+clock => L1[17].CLK
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+PI[0] => mux1[0].DATAB
+PI[0] => mux2.DATAB
+PI[1] => mux1[1].DATAB
+PI[1] => mux2.DATAB
+PI[2] => mux1[2].DATAB
+PI[2] => mux2.DATAB
+PI[3] => mux1[3].DATAB
+PI[3] => mux2.DATAB
+PI[4] => mux1[4].DATAB
+PI[4] => mux2.DATAB
+PI[5] => mux1[5].DATAB
+PI[5] => mux2.DATAB
+PI[6] => mux1[6].DATAB
+PI[6] => mux2.DATAB
+PI[7] => mux1[7].DATAB
+PI[7] => mux2.DATAB
+PI[8] => mux1[8].DATAB
+PI[8] => mux2.DATAB
+PI[9] => mux1[9].DATAB
+PI[9] => mux2.DATAB
+PI[10] => mux1[10].DATAB
+PI[10] => mux2.DATAB
+PI[11] => mux1[11].DATAB
+PI[11] => mux2.DATAB
+PI[12] => mux1[12].DATAB
+PI[12] => mux2.DATAB
+PI[13] => mux1[13].DATAB
+PI[13] => mux2.DATAB
+PI[14] => mux1[14].DATAB
+PI[14] => mux2.DATAB
+PI[15] => mux1[15].DATAB
+PI[15] => mux2.DATAB
+PI[16] => mux1[16].DATAB
+PI[16] => mux2.DATAB
+PI[17] => mux1[17].DATAB
+PI[17] => mux2.DATAB
+PO[0] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[1] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[2] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[3] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[4] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[5] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[6] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[7] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[8] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[9] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[10] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[11] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[12] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[13] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[14] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[15] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[16] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[17] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+SI => mux1[17].DATAA
+SO <= L1[0].DB_MAX_OUTPUT_PORT_TYPE
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+cap_shft => mux1[17].OUTPUTSELECT
+cap_shft => mux1[16].OUTPUTSELECT
+cap_shft => mux1[15].OUTPUTSELECT
+cap_shft => mux1[14].OUTPUTSELECT
+cap_shft => mux1[13].OUTPUTSELECT
+cap_shft => mux1[12].OUTPUTSELECT
+cap_shft => mux1[11].OUTPUTSELECT
+cap_shft => mux1[10].OUTPUTSELECT
+cap_shft => mux1[9].OUTPUTSELECT
+cap_shft => mux1[8].OUTPUTSELECT
+cap_shft => mux1[7].OUTPUTSELECT
+cap_shft => mux1[6].OUTPUTSELECT
+cap_shft => mux1[5].OUTPUTSELECT
+cap_shft => mux1[4].OUTPUTSELECT
+cap_shft => mux1[3].OUTPUTSELECT
+cap_shft => mux1[2].OUTPUTSELECT
+cap_shft => mux1[1].OUTPUTSELECT
+cap_shft => mux1[0].OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+
+
+|TopLevel|Scan_Chain:scan_instance|Scan_Reg:Out_Reg
+clock => L2[0].CLK
+clock => L2[1].CLK
+clock => L2[2].CLK
+clock => L2[3].CLK
+clock => L2[4].CLK
+clock => L2[5].CLK
+clock => L2[6].CLK
+clock => L2[7].CLK
+clock => L1[0].CLK
+clock => L1[1].CLK
+clock => L1[2].CLK
+clock => L1[3].CLK
+clock => L1[4].CLK
+clock => L1[5].CLK
+clock => L1[6].CLK
+clock => L1[7].CLK
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+PI[0] => mux1[0].DATAB
+PI[0] => mux2.DATAB
+PI[1] => mux1[1].DATAB
+PI[1] => mux2.DATAB
+PI[2] => mux1[2].DATAB
+PI[2] => mux2.DATAB
+PI[3] => mux1[3].DATAB
+PI[3] => mux2.DATAB
+PI[4] => mux1[4].DATAB
+PI[4] => mux2.DATAB
+PI[5] => mux1[5].DATAB
+PI[5] => mux2.DATAB
+PI[6] => mux1[6].DATAB
+PI[6] => mux2.DATAB
+PI[7] => mux1[7].DATAB
+PI[7] => mux2.DATAB
+PO[0] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[1] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[2] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[3] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[4] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[5] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[6] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[7] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+SI => mux1[7].DATAA
+SO <= L1[0].DB_MAX_OUTPUT_PORT_TYPE
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+cap_shft => mux1[7].OUTPUTSELECT
+cap_shft => mux1[6].OUTPUTSELECT
+cap_shft => mux1[5].OUTPUTSELECT
+cap_shft => mux1[4].OUTPUTSELECT
+cap_shft => mux1[3].OUTPUTSELECT
+cap_shft => mux1[2].OUTPUTSELECT
+cap_shft => mux1[1].OUTPUTSELECT
+cap_shft => mux1[0].OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+
+
+|TopLevel|DUT:dut_instance
+input_vector[0] => mux:add_instance.X[0]
+input_vector[1] => mux:add_instance.X[1]
+input_vector[2] => mux:add_instance.X[2]
+input_vector[3] => mux:add_instance.X[3]
+input_vector[4] => mux:add_instance.X[4]
+input_vector[5] => mux:add_instance.X[5]
+input_vector[6] => mux:add_instance.X[6]
+input_vector[7] => mux:add_instance.X[7]
+input_vector[8] => mux:add_instance.Y[0]
+input_vector[9] => mux:add_instance.Y[1]
+input_vector[10] => mux:add_instance.Y[2]
+input_vector[11] => mux:add_instance.Y[3]
+input_vector[12] => mux:add_instance.Y[4]
+input_vector[13] => mux:add_instance.Y[5]
+input_vector[14] => mux:add_instance.Y[6]
+input_vector[15] => mux:add_instance.Y[7]
+input_vector[16] => mux:add_instance.OP[0]
+input_vector[17] => mux:add_instance.OP[1]
+output_vector[0] <= mux:add_instance.Z[0]
+output_vector[1] <= mux:add_instance.Z[1]
+output_vector[2] <= mux:add_instance.Z[2]
+output_vector[3] <= mux:add_instance.Z[3]
+output_vector[4] <= mux:add_instance.Z[4]
+output_vector[5] <= mux:add_instance.Z[5]
+output_vector[6] <= mux:add_instance.Z[6]
+output_vector[7] <= mux:add_instance.Z[7]
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance
+X[0] => eightbitadder:S0.A[0]
+X[0] => leftshift:S1.Q[0]
+X[0] => rightshift:S2.J[0]
+X[0] => multiplier:S3.b[0]
+X[1] => eightbitadder:S0.A[1]
+X[1] => leftshift:S1.Q[1]
+X[1] => rightshift:S2.J[1]
+X[1] => multiplier:S3.b[1]
+X[2] => eightbitadder:S0.A[2]
+X[2] => leftshift:S1.Q[2]
+X[2] => rightshift:S2.J[2]
+X[2] => multiplier:S3.b[2]
+X[3] => eightbitadder:S0.A[3]
+X[3] => leftshift:S1.Q[3]
+X[3] => rightshift:S2.J[3]
+X[3] => multiplier:S3.b[3]
+X[4] => eightbitadder:S0.A[4]
+X[4] => leftshift:S1.Q[4]
+X[4] => rightshift:S2.J[4]
+X[4] => multiplier:S3.b[4]
+X[5] => eightbitadder:S0.A[5]
+X[5] => leftshift:S1.Q[5]
+X[5] => rightshift:S2.J[5]
+X[5] => multiplier:S3.b[5]
+X[6] => eightbitadder:S0.A[6]
+X[6] => leftshift:S1.Q[6]
+X[6] => rightshift:S2.J[6]
+X[6] => multiplier:S3.b[6]
+X[7] => eightbitadder:S0.A[7]
+X[7] => leftshift:S1.Q[7]
+X[7] => rightshift:S2.J[7]
+X[7] => multiplier:S3.b[7]
+Y[0] => eightbitadder:S0.B[0]
+Y[0] => leftshift:S1.W[0]
+Y[0] => rightshift:S2.K[0]
+Y[0] => multiplier:S3.a[0]
+Y[1] => eightbitadder:S0.B[1]
+Y[1] => leftshift:S1.W[1]
+Y[1] => rightshift:S2.K[1]
+Y[1] => multiplier:S3.a[1]
+Y[2] => eightbitadder:S0.B[2]
+Y[2] => leftshift:S1.W[2]
+Y[2] => rightshift:S2.K[2]
+Y[2] => multiplier:S3.a[2]
+Y[3] => eightbitadder:S0.B[3]
+Y[3] => leftshift:S1.W[3]
+Y[3] => rightshift:S2.K[3]
+Y[3] => multiplier:S3.a[3]
+Y[4] => eightbitadder:S0.B[4]
+Y[4] => leftshift:S1.W[4]
+Y[4] => rightshift:S2.K[4]
+Y[4] => multiplier:S3.a[4]
+Y[5] => eightbitadder:S0.B[5]
+Y[5] => leftshift:S1.W[5]
+Y[5] => rightshift:S2.K[5]
+Y[5] => multiplier:S3.a[5]
+Y[6] => eightbitadder:S0.B[6]
+Y[6] => leftshift:S1.W[6]
+Y[6] => rightshift:S2.K[6]
+Y[6] => multiplier:S3.a[6]
+Y[7] => eightbitadder:S0.B[7]
+Y[7] => leftshift:S1.W[7]
+Y[7] => rightshift:S2.K[7]
+Y[7] => multiplier:S3.a[7]
+OP[0] => Equal0.IN1
+OP[0] => Equal1.IN0
+OP[0] => Equal2.IN1
+OP[0] => Equal3.IN1
+OP[1] => Equal0.IN0
+OP[1] => Equal1.IN1
+OP[1] => Equal2.IN0
+OP[1] => Equal3.IN0
+Z[0] <= Z[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+Z[1] <= Z[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+Z[2] <= Z[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+Z[3] <= Z[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+Z[4] <= Z[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+Z[5] <= Z[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+Z[6] <= Z[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+Z[7] <= Z[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|eightbitadder:S0
+A[0] => HALF_ADDER:FA0.A
+A[1] => Full_Adder:FA1.X
+A[2] => Full_Adder:FA2.X
+A[3] => Full_Adder:FA3.X
+A[4] => Full_Adder:FA4.X
+A[5] => Full_Adder:FA5.X
+A[6] => Full_Adder:FA6.X
+A[7] => Full_Adder:FA7.X
+B[0] => HALF_ADDER:FA0.B
+B[1] => Full_Adder:FA1.Y
+B[2] => Full_Adder:FA2.Y
+B[3] => Full_Adder:FA3.Y
+B[4] => Full_Adder:FA4.Y
+B[5] => Full_Adder:FA5.Y
+B[6] => Full_Adder:FA6.Y
+B[7] => Full_Adder:FA7.Y
+S[0] <= HALF_ADDER:FA0.S
+S[1] <= Full_Adder:FA1.sum
+S[2] <= Full_Adder:FA2.sum
+S[3] <= Full_Adder:FA3.sum
+S[4] <= Full_Adder:FA4.sum
+S[5] <= Full_Adder:FA5.sum
+S[6] <= Full_Adder:FA6.sum
+S[7] <= Full_Adder:FA7.sum
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|eightbitadder:S0|HALF_ADDER:FA0
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|eightbitadder:S0|Full_Adder:FA1
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|eightbitadder:S0|Full_Adder:FA2
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|eightbitadder:S0|Full_Adder:FA3
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|eightbitadder:S0|Full_Adder:FA4
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|eightbitadder:S0|Full_Adder:FA5
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|eightbitadder:S0|Full_Adder:FA6
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|eightbitadder:S0|Full_Adder:FA7
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|leftshift:S1
+Q[0] => l1[0].DATAA
+Q[1] => l1[1].DATAA
+Q[2] => l1[2].DATAA
+Q[3] => l1[3].DATAA
+Q[4] => l1[4].DATAA
+Q[5] => l1[5].DATAA
+Q[6] => l1[6].DATAA
+Q[7] => l1[7].DATAA
+W[0] => l2[7].OUTPUTSELECT
+W[0] => l2[6].OUTPUTSELECT
+W[0] => l2[5].OUTPUTSELECT
+W[0] => l2[4].OUTPUTSELECT
+W[0] => l2[3].OUTPUTSELECT
+W[0] => l2[2].OUTPUTSELECT
+W[0] => l2[1].OUTPUTSELECT
+W[0] => l2[0].OUTPUTSELECT
+W[1] => l3[7].OUTPUTSELECT
+W[1] => l3[6].OUTPUTSELECT
+W[1] => l3[5].OUTPUTSELECT
+W[1] => l3[4].OUTPUTSELECT
+W[1] => l3[3].OUTPUTSELECT
+W[1] => l3[2].OUTPUTSELECT
+W[1] => l3[1].OUTPUTSELECT
+W[1] => l3[0].OUTPUTSELECT
+W[2] => E.OUTPUTSELECT
+W[2] => E.OUTPUTSELECT
+W[2] => E.OUTPUTSELECT
+W[2] => E.OUTPUTSELECT
+W[2] => E.OUTPUTSELECT
+W[2] => E.OUTPUTSELECT
+W[2] => E.OUTPUTSELECT
+W[2] => E.OUTPUTSELECT
+W[3] => S.IN1
+W[4] => S.IN1
+W[5] => S.IN1
+W[6] => S.IN0
+W[7] => S.IN1
+E[0] <= E.DB_MAX_OUTPUT_PORT_TYPE
+E[1] <= E.DB_MAX_OUTPUT_PORT_TYPE
+E[2] <= E.DB_MAX_OUTPUT_PORT_TYPE
+E[3] <= E.DB_MAX_OUTPUT_PORT_TYPE
+E[4] <= E.DB_MAX_OUTPUT_PORT_TYPE
+E[5] <= E.DB_MAX_OUTPUT_PORT_TYPE
+E[6] <= E.DB_MAX_OUTPUT_PORT_TYPE
+E[7] <= E.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|rightshift:S2
+J[0] => l1[0].DATAA
+J[1] => l1[1].DATAA
+J[2] => l1[2].DATAA
+J[3] => l1[3].DATAA
+J[4] => l1[4].DATAA
+J[5] => l1[5].DATAA
+J[6] => l1[6].DATAA
+J[7] => l1[7].DATAA
+K[0] => l2[7].OUTPUTSELECT
+K[0] => l2[6].OUTPUTSELECT
+K[0] => l2[5].OUTPUTSELECT
+K[0] => l2[4].OUTPUTSELECT
+K[0] => l2[3].OUTPUTSELECT
+K[0] => l2[2].OUTPUTSELECT
+K[0] => l2[1].OUTPUTSELECT
+K[0] => l2[0].OUTPUTSELECT
+K[1] => l3[7].OUTPUTSELECT
+K[1] => l3[6].OUTPUTSELECT
+K[1] => l3[5].OUTPUTSELECT
+K[1] => l3[4].OUTPUTSELECT
+K[1] => l3[3].OUTPUTSELECT
+K[1] => l3[2].OUTPUTSELECT
+K[1] => l3[1].OUTPUTSELECT
+K[1] => l3[0].OUTPUTSELECT
+K[2] => L.OUTPUTSELECT
+K[2] => L.OUTPUTSELECT
+K[2] => L.OUTPUTSELECT
+K[2] => L.OUTPUTSELECT
+K[2] => L.OUTPUTSELECT
+K[2] => L.OUTPUTSELECT
+K[2] => L.OUTPUTSELECT
+K[2] => L.OUTPUTSELECT
+K[3] => S.IN1
+K[4] => S.IN1
+K[5] => S.IN1
+K[6] => S.IN0
+K[7] => S.IN1
+L[0] <= L.DB_MAX_OUTPUT_PORT_TYPE
+L[1] <= L.DB_MAX_OUTPUT_PORT_TYPE
+L[2] <= L.DB_MAX_OUTPUT_PORT_TYPE
+L[3] <= L.DB_MAX_OUTPUT_PORT_TYPE
+L[4] <= L.DB_MAX_OUTPUT_PORT_TYPE
+L[5] <= L.DB_MAX_OUTPUT_PORT_TYPE
+L[6] <= L.DB_MAX_OUTPUT_PORT_TYPE
+L[7] <= L.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3
+b[0] => p0[7].IN0
+b[0] => p0[6].IN0
+b[0] => p0[5].IN0
+b[0] => p0[4].IN0
+b[0] => p0[3].IN0
+b[0] => p0[2].IN0
+b[0] => p0[1].IN0
+b[0] => p0[0].IN0
+b[1] => p1[7].IN0
+b[1] => p1[6].IN0
+b[1] => p1[5].IN0
+b[1] => p1[4].IN0
+b[1] => p1[3].IN0
+b[1] => p1[2].IN0
+b[1] => p1[1].IN0
+b[2] => p2[7].IN0
+b[2] => p2[6].IN0
+b[2] => p2[5].IN0
+b[2] => p2[4].IN0
+b[2] => p2[3].IN0
+b[2] => p2[2].IN0
+b[3] => p3[7].IN0
+b[3] => p3[6].IN0
+b[3] => p3[5].IN0
+b[3] => p3[4].IN0
+b[3] => p3[3].IN0
+b[4] => p4[7].IN0
+b[4] => p4[6].IN0
+b[4] => p4[5].IN0
+b[4] => p4[4].IN0
+b[5] => p5[7].IN0
+b[5] => p5[6].IN0
+b[5] => p5[5].IN0
+b[6] => p6[6].IN0
+b[6] => p6[7].IN0
+b[7] => p7[7].IN0
+a[0] => p0[0].IN1
+a[0] => p1[1].IN1
+a[0] => p2[2].IN1
+a[0] => p3[3].IN1
+a[0] => p4[4].IN1
+a[0] => p5[5].IN1
+a[0] => p6[6].IN1
+a[0] => p7[7].IN1
+a[1] => p0[1].IN1
+a[1] => p1[2].IN1
+a[1] => p2[3].IN1
+a[1] => p3[4].IN1
+a[1] => p4[5].IN1
+a[1] => p5[6].IN1
+a[1] => p6[7].IN1
+a[2] => p0[2].IN1
+a[2] => p1[3].IN1
+a[2] => p2[4].IN1
+a[2] => p3[5].IN1
+a[2] => p4[6].IN1
+a[2] => p5[7].IN1
+a[3] => p0[3].IN1
+a[3] => p1[4].IN1
+a[3] => p2[5].IN1
+a[3] => p3[6].IN1
+a[3] => p4[7].IN1
+a[4] => p0[4].IN1
+a[4] => p1[5].IN1
+a[4] => p2[6].IN1
+a[4] => p3[7].IN1
+a[5] => p0[5].IN1
+a[5] => p1[6].IN1
+a[5] => p2[7].IN1
+a[6] => p0[6].IN1
+a[6] => p1[7].IN1
+a[7] => p0[7].IN1
+p[0] <= eightbitadder:m6.S[0]
+p[1] <= eightbitadder:m6.S[1]
+p[2] <= eightbitadder:m6.S[2]
+p[3] <= eightbitadder:m6.S[3]
+p[4] <= eightbitadder:m6.S[4]
+p[5] <= eightbitadder:m6.S[5]
+p[6] <= eightbitadder:m6.S[6]
+p[7] <= eightbitadder:m6.S[7]
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m0
+A[0] => HALF_ADDER:FA0.A
+A[1] => Full_Adder:FA1.X
+A[2] => Full_Adder:FA2.X
+A[3] => Full_Adder:FA3.X
+A[4] => Full_Adder:FA4.X
+A[5] => Full_Adder:FA5.X
+A[6] => Full_Adder:FA6.X
+A[7] => Full_Adder:FA7.X
+B[0] => HALF_ADDER:FA0.B
+B[1] => Full_Adder:FA1.Y
+B[2] => Full_Adder:FA2.Y
+B[3] => Full_Adder:FA3.Y
+B[4] => Full_Adder:FA4.Y
+B[5] => Full_Adder:FA5.Y
+B[6] => Full_Adder:FA6.Y
+B[7] => Full_Adder:FA7.Y
+S[0] <= HALF_ADDER:FA0.S
+S[1] <= Full_Adder:FA1.sum
+S[2] <= Full_Adder:FA2.sum
+S[3] <= Full_Adder:FA3.sum
+S[4] <= Full_Adder:FA4.sum
+S[5] <= Full_Adder:FA5.sum
+S[6] <= Full_Adder:FA6.sum
+S[7] <= Full_Adder:FA7.sum
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m0|HALF_ADDER:FA0
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m0|Full_Adder:FA1
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m0|Full_Adder:FA2
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m0|Full_Adder:FA3
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m0|Full_Adder:FA4
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m0|Full_Adder:FA5
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m0|Full_Adder:FA6
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m0|Full_Adder:FA7
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m1
+A[0] => HALF_ADDER:FA0.A
+A[1] => Full_Adder:FA1.X
+A[2] => Full_Adder:FA2.X
+A[3] => Full_Adder:FA3.X
+A[4] => Full_Adder:FA4.X
+A[5] => Full_Adder:FA5.X
+A[6] => Full_Adder:FA6.X
+A[7] => Full_Adder:FA7.X
+B[0] => HALF_ADDER:FA0.B
+B[1] => Full_Adder:FA1.Y
+B[2] => Full_Adder:FA2.Y
+B[3] => Full_Adder:FA3.Y
+B[4] => Full_Adder:FA4.Y
+B[5] => Full_Adder:FA5.Y
+B[6] => Full_Adder:FA6.Y
+B[7] => Full_Adder:FA7.Y
+S[0] <= HALF_ADDER:FA0.S
+S[1] <= Full_Adder:FA1.sum
+S[2] <= Full_Adder:FA2.sum
+S[3] <= Full_Adder:FA3.sum
+S[4] <= Full_Adder:FA4.sum
+S[5] <= Full_Adder:FA5.sum
+S[6] <= Full_Adder:FA6.sum
+S[7] <= Full_Adder:FA7.sum
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m1|HALF_ADDER:FA0
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m1|Full_Adder:FA1
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m1|Full_Adder:FA2
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m1|Full_Adder:FA3
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m1|Full_Adder:FA4
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m1|Full_Adder:FA5
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m1|Full_Adder:FA6
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m1|Full_Adder:FA7
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m2
+A[0] => HALF_ADDER:FA0.A
+A[1] => Full_Adder:FA1.X
+A[2] => Full_Adder:FA2.X
+A[3] => Full_Adder:FA3.X
+A[4] => Full_Adder:FA4.X
+A[5] => Full_Adder:FA5.X
+A[6] => Full_Adder:FA6.X
+A[7] => Full_Adder:FA7.X
+B[0] => HALF_ADDER:FA0.B
+B[1] => Full_Adder:FA1.Y
+B[2] => Full_Adder:FA2.Y
+B[3] => Full_Adder:FA3.Y
+B[4] => Full_Adder:FA4.Y
+B[5] => Full_Adder:FA5.Y
+B[6] => Full_Adder:FA6.Y
+B[7] => Full_Adder:FA7.Y
+S[0] <= HALF_ADDER:FA0.S
+S[1] <= Full_Adder:FA1.sum
+S[2] <= Full_Adder:FA2.sum
+S[3] <= Full_Adder:FA3.sum
+S[4] <= Full_Adder:FA4.sum
+S[5] <= Full_Adder:FA5.sum
+S[6] <= Full_Adder:FA6.sum
+S[7] <= Full_Adder:FA7.sum
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m2|HALF_ADDER:FA0
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m2|Full_Adder:FA1
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m2|Full_Adder:FA2
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m2|Full_Adder:FA3
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m2|Full_Adder:FA4
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m2|Full_Adder:FA5
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m2|Full_Adder:FA6
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m2|Full_Adder:FA7
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m3
+A[0] => HALF_ADDER:FA0.A
+A[1] => Full_Adder:FA1.X
+A[2] => Full_Adder:FA2.X
+A[3] => Full_Adder:FA3.X
+A[4] => Full_Adder:FA4.X
+A[5] => Full_Adder:FA5.X
+A[6] => Full_Adder:FA6.X
+A[7] => Full_Adder:FA7.X
+B[0] => HALF_ADDER:FA0.B
+B[1] => Full_Adder:FA1.Y
+B[2] => Full_Adder:FA2.Y
+B[3] => Full_Adder:FA3.Y
+B[4] => Full_Adder:FA4.Y
+B[5] => Full_Adder:FA5.Y
+B[6] => Full_Adder:FA6.Y
+B[7] => Full_Adder:FA7.Y
+S[0] <= HALF_ADDER:FA0.S
+S[1] <= Full_Adder:FA1.sum
+S[2] <= Full_Adder:FA2.sum
+S[3] <= Full_Adder:FA3.sum
+S[4] <= Full_Adder:FA4.sum
+S[5] <= Full_Adder:FA5.sum
+S[6] <= Full_Adder:FA6.sum
+S[7] <= Full_Adder:FA7.sum
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m3|HALF_ADDER:FA0
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m3|Full_Adder:FA1
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m3|Full_Adder:FA2
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m3|Full_Adder:FA3
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m3|Full_Adder:FA4
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m3|Full_Adder:FA5
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m3|Full_Adder:FA6
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m3|Full_Adder:FA7
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m4
+A[0] => HALF_ADDER:FA0.A
+A[1] => Full_Adder:FA1.X
+A[2] => Full_Adder:FA2.X
+A[3] => Full_Adder:FA3.X
+A[4] => Full_Adder:FA4.X
+A[5] => Full_Adder:FA5.X
+A[6] => Full_Adder:FA6.X
+A[7] => Full_Adder:FA7.X
+B[0] => HALF_ADDER:FA0.B
+B[1] => Full_Adder:FA1.Y
+B[2] => Full_Adder:FA2.Y
+B[3] => Full_Adder:FA3.Y
+B[4] => Full_Adder:FA4.Y
+B[5] => Full_Adder:FA5.Y
+B[6] => Full_Adder:FA6.Y
+B[7] => Full_Adder:FA7.Y
+S[0] <= HALF_ADDER:FA0.S
+S[1] <= Full_Adder:FA1.sum
+S[2] <= Full_Adder:FA2.sum
+S[3] <= Full_Adder:FA3.sum
+S[4] <= Full_Adder:FA4.sum
+S[5] <= Full_Adder:FA5.sum
+S[6] <= Full_Adder:FA6.sum
+S[7] <= Full_Adder:FA7.sum
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m4|HALF_ADDER:FA0
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m4|Full_Adder:FA1
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m4|Full_Adder:FA2
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m4|Full_Adder:FA3
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m4|Full_Adder:FA4
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m4|Full_Adder:FA5
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m4|Full_Adder:FA6
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m4|Full_Adder:FA7
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m5
+A[0] => HALF_ADDER:FA0.A
+A[1] => Full_Adder:FA1.X
+A[2] => Full_Adder:FA2.X
+A[3] => Full_Adder:FA3.X
+A[4] => Full_Adder:FA4.X
+A[5] => Full_Adder:FA5.X
+A[6] => Full_Adder:FA6.X
+A[7] => Full_Adder:FA7.X
+B[0] => HALF_ADDER:FA0.B
+B[1] => Full_Adder:FA1.Y
+B[2] => Full_Adder:FA2.Y
+B[3] => Full_Adder:FA3.Y
+B[4] => Full_Adder:FA4.Y
+B[5] => Full_Adder:FA5.Y
+B[6] => Full_Adder:FA6.Y
+B[7] => Full_Adder:FA7.Y
+S[0] <= HALF_ADDER:FA0.S
+S[1] <= Full_Adder:FA1.sum
+S[2] <= Full_Adder:FA2.sum
+S[3] <= Full_Adder:FA3.sum
+S[4] <= Full_Adder:FA4.sum
+S[5] <= Full_Adder:FA5.sum
+S[6] <= Full_Adder:FA6.sum
+S[7] <= Full_Adder:FA7.sum
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m5|HALF_ADDER:FA0
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m5|Full_Adder:FA1
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m5|Full_Adder:FA2
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m5|Full_Adder:FA3
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m5|Full_Adder:FA4
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m5|Full_Adder:FA5
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m5|Full_Adder:FA6
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m5|Full_Adder:FA7
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m6
+A[0] => HALF_ADDER:FA0.A
+A[1] => Full_Adder:FA1.X
+A[2] => Full_Adder:FA2.X
+A[3] => Full_Adder:FA3.X
+A[4] => Full_Adder:FA4.X
+A[5] => Full_Adder:FA5.X
+A[6] => Full_Adder:FA6.X
+A[7] => Full_Adder:FA7.X
+B[0] => HALF_ADDER:FA0.B
+B[1] => Full_Adder:FA1.Y
+B[2] => Full_Adder:FA2.Y
+B[3] => Full_Adder:FA3.Y
+B[4] => Full_Adder:FA4.Y
+B[5] => Full_Adder:FA5.Y
+B[6] => Full_Adder:FA6.Y
+B[7] => Full_Adder:FA7.Y
+S[0] <= HALF_ADDER:FA0.S
+S[1] <= Full_Adder:FA1.sum
+S[2] <= Full_Adder:FA2.sum
+S[3] <= Full_Adder:FA3.sum
+S[4] <= Full_Adder:FA4.sum
+S[5] <= Full_Adder:FA5.sum
+S[6] <= Full_Adder:FA6.sum
+S[7] <= Full_Adder:FA7.sum
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m6|HALF_ADDER:FA0
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m6|Full_Adder:FA1
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m6|Full_Adder:FA2
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m6|Full_Adder:FA3
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m6|Full_Adder:FA4
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m6|Full_Adder:FA5
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m6|Full_Adder:FA6
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut_instance|mux:add_instance|multiplier:S3|eightbitadder:m6|Full_Adder:FA7
+X => sum.IN0
+X => Cout.IN1
+Y => sum.IN1
+Y => Cout.IN0
+Y => Cout.IN0
+Cin => sum.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+

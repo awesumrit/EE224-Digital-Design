@@ -1,0 +1,111 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+-- VHDL code for Control Unit of the MIPS Processor
+entity control_unit_VHDL is
+port (
+  reset: in std_logic;
+  clk : in std_logic :
+ );
+end control_unit_VHDL;
+
+architecture Behavioral of control_unit_VHDL is
+
+   --state
+   type Fsmstate is (reset_state, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11,
+                     s12, s13, s14, s15, s16, s17, s19, s20, s21);
+   signal fsm_state: FsmState;
+
+signal regA, regB, regC, extendimmR, address, immlw16, immsw16 : std_logic_vector(15 downto 0);
+signal immR, immlw, immsw : std_logic_vector(5 downto 0);
+signal immI : std_logic_vector(8 downto 0);
+signal sign : std_logic;
+signal clk : std_logic;
+signal signimmR : std_logic_vector(9 downto 0);
+Signal opcode : std_logic_vector(3 downto 0);
+
+component Memory_asyncread_syncwrite is 
+	port (address,Mem_datain: in std_logic_vector(15 downto 0); clk,Mem_wrbar: in std_logic;
+				Mem_dataout: out std_logic_vector(15 downto 0));
+end component;
+
+	--Regfile
+	component register_file_VHDL is
+		port (
+		 clk,rst: in std_logic;
+		 reg_write_en: in std_logic;
+		 reg_write_dest: in std_logic_vector(2 downto 0);
+		 reg_write_data: in std_logic_vector(15 downto 0);
+		 reg_read_addr_1: in std_logic_vector(2 downto 0);
+		 reg_read_data_1: out std_logic_vector(15 downto 0);
+		 reg_read_addr_2: in std_logic_vector(2 downto 0);
+		 reg_read_data_2: out std_logic_vector(15 downto 0)
+		);
+	end register_file_VHDL;
+				  
+begin
+process(reset,opcode)
+
+ case opcode is
+  when "0000" => -- add
+	if( c='0' and z = '0') then --ADD
+		M1 : sixteenbitadder port map(regB, regA, regC) ;
+	elsif(c = '1' and z = '0') then --ADC
+		M2 : sixteenbitadder port map(regB, regA, regC) ;
+	elsif(c = '0' and z = '1') then --ADZ
+		M3 : sixteenbitadder port map(regB, regA, regC) ;	
+
+  when "0001" => -- ADI
+	sign <= immR(5) ;
+	signimmR <= (others => sign) ;
+	extendimmR <= signimmR(9 downto 0) & std_logic_vector(immR);
+	M4 : sixteenbitadder port map(regA, extendimmR, regB) ;
+	
+  when "0010" => -- NAND
+	if( c='0' and z = '0') then --NDU
+		regC <= regA nand regB;
+	elsif(c = '1' and z = '0') then --NDC
+		regC <= regA nand regB;
+	elsif(c = '0' and z = '1') then --NDZ
+		regC <= regA nand regB;
+		
+  when "0011" => -- LHI
+	sign <= immI(5) ;
+	regA(15 downto 7) <= immI(8 downto 0);
+	regA(6 downto 0) <= "0000000" ;
+	
+  when "0100" => -- LW
+    immlw16 <= "0000000000" & std_logic_vector(immlw);
+	M4 : sixteenbitadder port map(regB, immlw16, address) ;
+	L1 : Memory_asyncread_syncwrite port map(address, Mem_datain , clk, '1', regA) ;
+	
+  when "0101" => -- SW
+    immsw16 <= "0000000000" & std_logic_vector(immsw);
+	M5 : sixteenbitadder port map(regB, immsw16, address) ;
+	L2 : Memory_asyncread_syncwrite port map(address,  regA, clk, '1', Mem_dataout) ;	
+	
+  when "0110" => -- LA
+    immsw16 <= "0000000000" & std_logic_vector(immsw);
+	M5 : sixteenbitadder port map(regB, immsw16, address) ;
+	L2 : Memory_asyncread_syncwrite port map(address,  regA, clk, '1', Mem_dataout) ;	
+	
+  when "0111" => -- SA
+    immsw16 <= "0000000000" & std_logic_vector(immsw);
+	M5 : sixteenbitadder port map(regB, immsw16, address) ;
+	L2 : Memory_asyncread_syncwrite port map(address,  regA, clk, '1', Mem_dataout) ;	
+	
+ when others =>   
+    reg_dst <= "01";
+    mem_to_reg <= "00";
+    alu_op <= "00";
+    jump <= '0';
+    branch <= '0';
+    mem_read <= '0';
+    mem_write <= '0';
+    alu_src <= '0';
+    reg_write <= '1';
+    sign_or_zero <= '1';
+ end case;
+ end if;
+end process;
+
+end Behavioral;

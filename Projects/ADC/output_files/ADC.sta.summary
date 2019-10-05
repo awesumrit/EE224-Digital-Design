@@ -1,0 +1,53 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'CountDownTimer:coun1|timer[0]'
+Slack : -14.727
+TNS   : -114.979
+
+Type  : Setup 'clk'
+Slack : -12.140
+TNS   : -1323.511
+
+Type  : Setup 'Count[0]'
+Slack : -7.880
+TNS   : -15.149
+
+Type  : Setup 'fsm_state.st'
+Slack : -7.842
+TNS   : -64.684
+
+Type  : Hold 'CountDownTimer:coun1|timer[0]'
+Slack : -3.212
+TNS   : -4.824
+
+Type  : Hold 'Count[0]'
+Slack : -3.058
+TNS   : -3.058
+
+Type  : Hold 'fsm_state.st'
+Slack : -2.986
+TNS   : -2.986
+
+Type  : Hold 'clk'
+Slack : -1.814
+TNS   : -4.585
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'CountDownTimer:coun1|timer[0]'
+Slack : 0.119
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'Count[0]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'fsm_state.st'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

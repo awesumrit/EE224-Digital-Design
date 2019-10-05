@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sat Mar 09 21:46:24 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : statements
+Top-level Entity Name : example_1
+Family : MAX V
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 0 / 1,270 ( 0 % )
+Total pins : 1 / 114 ( < 1 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

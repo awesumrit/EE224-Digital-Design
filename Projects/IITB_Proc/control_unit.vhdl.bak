@@ -1,0 +1,327 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity control_unit is
+	Port( clk, RST:in std_logic);
+
+
+end entity;
+
+
+architecture Behave of control_unit is
+   --state
+   type Fsmstate is (reset, s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11,
+                     s12, s13, s14, s15, s16, s17, s19, s20, s21, s22);
+   signal fsm_state: FsmState;
+   
+	--Registers
+	signal PC, IR, Temp1, Temp2, Temp3: std_logic_vector(15 downto 0);
+	signal Carry, Zero: std_logic;
+	signal Carry_temp, Zero_temp: std_logic;
+	
+   --Memory
+   component Memory_asyncread_syncwrite
+		port (address,Mem_datain: in std_logic_vector(15 downto 0); clk,Mem_wrbar: in std_logic;
+				Mem_dataout: out std_logic_vector(15 downto 0));
+				end component;
+	--Regfile
+
+	component register_file_VHDL is
+		port (
+		 clk,rst: in std_logic;
+		 reg_write_bar: in std_logic;
+		 reg_write_dest: in std_logic_vector(2 downto 0);
+		 reg_write_data: in std_logic_vector(15 downto 0);
+		 reg_read_addr_1: in std_logic_vector(2 downto 0);
+		 reg_read_data_1: out std_logic_vector(15 downto 0);
+		 reg_read_addr_2: in std_logic_vector(2 downto 0);
+		 reg_read_data_2: out std_logic_vector(15 downto 0)
+		);
+	end register_file_VHDL;
+				  
+  --Memory connection
+	 signal mem_address, mem_data, Din_memory: std_logic_vector(15 downto 0);
+	 signal tmem_wrbar: std_logic;
+	 
+  --RegFile connection
+    signal A1_reg, A2_reg, A3_reg: std_logic_vector(2 downto 0);
+    signal treg_wen : std_logic;
+    signal D1_reg, D2_reg, D3_reg : std_logic_vector(15 downto 0);
+	 
+  --Enable for Temp1, Temp2, Temp3
+ 	 
+	 --
+	 Signal opcode : std_logic_vector(3 downto 0);
+	 
+begin
+   
+	opcode <= IR(15 downto 12);
+	
+	Mem: Memory_asyncread_syncwrite
+	port map ( address => mem_address, Mem_datain => Din_memory, clk => clk, Mem_wrbar => tmem_wrbar, Mem_dataout => mem_data );
+       
+    RF: register_file_VHDL
+    Port map (reg_read_addr_1=>A1_reg, reg_read_addr_2=>A2_reg, reg_write_dest=>A3_reg, clk=>clk, rst=>RST, reg_write_bar=> treg_wen,
+					reg_read_data_1=>D1_reg, reg_read_data_2=>D2_reg, reg_write_data=>D3_reg);
+	
+	
+   process(clk, fsm_state, PC, IR, Temp1, Temp2, Temp3, Carry, Zero, Carry_temp, Zero_temp, RST)
+      variable next_fsm_state_var : FsmState ;
+      variable next_PC_var, next_IR_var, next_Temp1_var, next_Temp2_var, next_Temp3_var : std_logic_vector(15 downto 0);
+		variable next_Carry_var, next_Zero_var : std_logic;
+		variable next_Carry_temp_var, next_Zero_temp_var : std_logic; -- cannot update carry in s3 therefore these are to be stored in temeporay registers
+		
+   begin 
+	  next_fsm_state_var := fsm_state;
+	  next_PC_var := PC;
+	  next_IR_var := IR;
+	  next_Temp1_var := Temp1;
+	  next_Temp2_var := Temp2;
+	  next_Temp3_var := Temp3;
+	  next_Carry_temp_var := Carry_temp;
+	  next_Zero_temp_var := Zero_temp;
+	  -- s0 = read from memory
+	  -- s1 = ADD, NDU, BEQ
+	  -- s2 = compute addition (Temp1 <= Temp1 + Temp2 )
+	  -- s3 = assign to RF_A3 (modify c,z)
+	  -- s4 = next instruction, go to s0
+	  -- s5 = ADI using immediate
+	  -- s6 = assign to RF_A3
+	  -- s7 = NAND (Temp1 <= Temp1 nand Temp2)
+	  -- s8 = assign to RF_A3 (modify z)
+	  -- s9 = LA and SA control
+	  -- s10, s11 =  LA counter and update for R0 to R7
+	  -- s12, s22 = SA counter and update for R0 to R7
+	  -- s13 = BEQ (condition if Temp1 = Temp2)
+	  -- s14 = for BEQ, next PC = PC + immediate
+	  -- s15 = 	LHI (store MSB)
+	  -- s16 = LW and SW
+	  -- s17 = LW (s16 - s2 - s17) - s4 - s0
+	  -- s19 = SW (s16 - s2 - s19) - s4 - s0
+	  -- s20 = JAL  (next PC = PC + immediate)
+	  -- s21 = JLR  (next PC = address in reg B)
+	  -- s12, s22 = SA counter and update for R0 to R7
+	  case fsm_state is
+              when reset=>
+			            if(RST='1') then
+			             next_fsm_state_var := reset;
+			            else
+			              next_fsm_state_var := s0;
+                       next_PC_var:="0000000000000000"; 
+							end if;
+							  
+	       	  when s0 =>
+			          mem_address <= PC;
+				  next_IR_var := mem_data; --to be assigned at +ve edge of clk
+				  case opcode is
+				      when "0000" | "0010" | "1100" =>  next_fsm_state_var := s1; --ADD, NDU and BEQ
+						when "0001" =>  next_fsm_state_var := s5;                     --ADI
+						when "0110" | "0111" =>   next_fsm_state_var := s9;            --LA and SA
+						when "0011" =>    next_fsm_state_var := s15;                     --LHI
+						when "0100" | "0101" =>    next_fsm_state_var := s16;            --LW and SW
+						when "1000" =>    next_fsm_state_var := s20;                     --JAL
+						when "1001" =>   next_fsm_state_var := s21;                      --JLR
+						when others => null ;
+                                   end case;
+                  treg_wrbar <='1';
+						tmem_wrbar <= '1';
+						
+		       when s1 =>
+			        A1_reg <= IR(11 downto 9);
+		            A2_reg <= IR( 8 downto 6);
+                  next_Temp1_var := D1_reg;
+                  next_Temp2_var := D2_reg;
+                case opcode is
+				         when "0000" => next_fsm_state_var := s2;  --ADD
+			            when "0001" => next_fsm_state_var := s7;  --NDU
+				         when "1100" => next_fsm_state_var := s13;  --BEQ
+				         when others => null;
+                end case;
+                            
+					
+		  when s2 =>     --ADDITION
+                                
+		          next_Temp1_var := std_logic_vector(signed(Temp1) + signed(Temp2));
+                if (next_Temp1_var = "000000000000000") then next_Zero_temp_var := '1';
+			       else next_Zero_temp_var := '0';
+					 end if;
+			       next_Carry_temp_var := next_Temp1_var(15) and (Temp1(15) xnor Temp2(15));-- overflow
+			       
+			  case opcode is 
+			       when "0000" => 
+		                if (IR(1 downto 0) = "00") then next_fsm_state_var := s3;
+							 elsif (IR(1 downto 0) = "10" and Carry = '1' ) then next_fsm_state_var := s3;
+							 elsif (IR(1 downto 0) = "01" and Zero ='1' ) then next_fsm_state_var := s3;
+							 else next_fsm_state_var := s4;
+							 end if;
+					 when "0001" => next_fsm_state_var := s6; --ADI
+					 when "0100" => next_fsm_state_var := s17;  --LW
+                when "0101" => next_fsm_state_var := s19; --SW
+					 when others => null;
+                 end case;
+                                 
+					
+		when s3 => 
+           next_Carry_var := Carry_temp;
+			  next_Zero_var := Zero_temp;
+			  A3_reg <= IR(5 downto 3);
+           treg_wrbar <= '0';
+			  D3_reg <= Temp1;
+			  next_fsm_state_var := s4;
+			  
+		when s4 =>
+		     next_PC_var := std_logic_vector(unsigned(PC) + 1);
+			  next_fsm_state_var := s0;
+			  treg_wrbar <= '1';
+			  tmem_wrbar <= '1';
+		   
+      when s5 => 
+           A1_reg <= IR(11 downto 9);
+           next_Temp1_var := D1_reg;
+           next_Temp2_var := std_logic_vector(RESIZE( signed(IR(5 downto 0)), 16));
+           next_fsm_state_var := s2;
+			  
+		when s6=>
+           A3_reg <= IR(8 downto 6);
+			  treg_wrbar <= '0';
+			  D3_reg <= Temp1;
+           next_fsm_state_var := s4;
+			           
+		when s7=>
+           next_Temp1_var:= (Temp1 NAND Temp2);
+			  if (next_Temp1_var = "000000000000000") then next_Zero_temp_var := '1';
+		 	  else next_Zero_temp_var := '0';
+			  end if;
+          --next state 
+           if (IR(1 downto 0) = "00") then next_fsm_state_var := s8;
+			  elsif (IR(1 downto 0) = "10" and Carry = '1' ) then next_fsm_state_var := s8;
+			  elsif (IR(1 downto 0) = "01" and Zero ='1' ) then next_fsm_state_var := s8;
+			  else next_fsm_state_var := s4;
+		  end if;
+		  
+		  
+		when s8=> 
+			  next_Zero_var := Zero_temp;
+			  A3_reg <= IR(5 downto 3);
+           treg_wrbar <= '0';
+			  D3_reg <= Temp1; 
+			  next_fsm_state_var := s4;
+			  
+		when s9=>
+           A1_reg<= IR(11 downto 9);
+           next_Temp1_var:= D1_reg;
+           next_Temp3_var := "0000000000000000";
+           case opcode is 
+				when "0111" => next_fsm_state_var := s12; --SA
+				when "0110" => next_fsm_state_var := s10;  --LA
+				when others => null;
+			  end case;
+			  
+       when s10=> -- LA
+           mem_address <= Temp1;
+           A3_reg <= Temp3(2 downto 0);
+           treg_wrbar<='0';
+		   D3_reg <= mem_data; 
+           next_Temp1_var:= std_logic_vector(unsigned(Temp1) +1);
+           if(unsigned(Temp3) <= 7) then
+			      next_fsm_state_var := s11;
+           else next_fsm_state_var := s4;
+			  end if;
+                
+	   when s11=> -- LA control
+			  next_Temp3_var:=std_logic_vector(unsigned(Temp3)+1);
+           next_fsm_state_var := s10;
+			  treg_wrbar <= '1';
+			  tmem_wrbar <= '1';
+			  
+	   when s22=> -- SA control
+			  next_Temp3_var:=std_logic_vector(unsigned(Temp3)+1);
+           next_fsm_state_var := s12;
+			  treg_wrbar <= '1';
+			  tmem_wrbar <= '1';		
+			  
+		when s12=> -- SA
+           mem_address <= Temp1;
+           A1_reg <= Temp3(2 downto 0);
+			  tmem_wrbar<='0';
+			  Din_memory <= D1_reg; 
+           next_Temp1_var:= std_logic_vector(unsigned(Temp1) +1);
+           if(unsigned(Temp3)<=7) then
+			        next_fsm_state_var := s11;
+           else next_fsm_state_var := s4;
+			  end if;
+			  
+		when s13=>
+		     if(Temp1 = Temp2) then next_fsm_state_var := s14;
+			  else next_fsm_state_var := s4;
+           end if;
+           next_Temp2_var:= std_logic_vector(RESIZE( signed(IR(5 downto 0)), 16));
+			  
+		when s14=>
+			next_PC_var := std_logic_vector(signed(PC) + signed(Temp2));
+			next_fsm_state_var := s0;
+			
+		when s15=>
+			A3_reg <= IR(11 downto 9);
+         treg_wrbar<='0';
+			D3_reg <= std_logic_vector(unsigned(IR(8 downto 0) & "0000000")); 
+         next_fsm_state_var := s4;
+			
+		when s16=>
+			A2_reg<= IR(8 downto 6);
+         next_Temp1_var:= D2_reg;
+         next_Temp2_var:= std_logic_vector(RESIZE( signed(IR(5 downto 0)), 16));
+         next_fsm_state_var := s2;
+			
+		when S17=>
+			mem_address <= Temp1;
+         A3_reg <= IR(11 downto 9);
+         treg_wrbar<='0';
+			D3_reg <= mem_data;
+         next_fsm_state_var := s4;
+			
+       when s19=>
+			mem_address <= Temp1;
+         A1_reg <= IR(11 downto 9);
+			tmem_wrbar<='0';
+			Din_memory <= D1_reg; 
+			next_fsm_state_var := s4;
+			
+		when s20=>
+			A3_reg <= IR(11 downto 9);
+         treg_wrbar<='0';
+			D3_reg <= PC;
+         next_PC_var:= std_logic_vector(signed(PC)+ signed(RESIZE( signed(IR(8 downto 0)), 16)));
+			next_fsm_state_var := s0;
+			
+		when S21=>
+			A3_reg <= IR(11 downto 9);
+			treg_wrbar<='0';
+			D3_reg <= PC;
+			A2_reg <= IR(8 downto 6);
+			next_PC_var:=D2_reg;
+			next_fsm_state_var := s0;
+end case;
+
+--update register and FSM
+		if(rising_edge(clk)) then
+                       if(RST='1') then 
+                        fsm_state<=s0;
+                       else 
+					   fsm_state<=next_fsm_state_var;
+					   PC<= next_PC_var;
+					   IR<= next_IR_var;
+					   Temp1<= next_Temp1_var ;
+					   Temp2<= next_Temp2_var ;
+					   Temp3<=next_Temp3_var ;
+						Carry_temp <= next_Carry_temp_var;
+						Zero_temp<=next_Zero_temp_var;
+						Carry<=next_Carry_var;
+						Zero<=next_Zero_var;
+		end if;
+		end if;
+end process;
+end Behave;
+         
+                    

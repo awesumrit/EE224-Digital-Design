@@ -1,0 +1,18 @@
+
+State Machine - |ADC_b|fsm_state
+Name fsm_state.stay fsm_state.red fsm_state.wrt fsm_state.css fsm_state.css5 fsm_state.css4 fsm_state.css3 fsm_state.css2 fsm_state.st 
+fsm_state.st 0 0 0 0 0 0 0 0 0 
+fsm_state.css2 0 0 0 0 0 0 0 1 1 
+fsm_state.css3 0 0 0 0 0 0 1 0 1 
+fsm_state.css4 0 0 0 0 0 1 0 0 1 
+fsm_state.css5 0 0 0 0 1 0 0 0 1 
+fsm_state.css 0 0 0 1 0 0 0 0 1 
+fsm_state.wrt 0 0 1 0 0 0 0 0 1 
+fsm_state.red 0 1 0 0 0 0 0 0 1 
+fsm_state.stay 1 0 0 0 0 0 0 0 1 
+
+State Machine - |ADC_b|CountDownTimer:coun1|fsm_state
+Name fsm_state.DONES fsm_state.WORKS fsm_state.IDLE 
+fsm_state.IDLE 0 0 0 
+fsm_state.WORKS 0 1 1 
+fsm_state.DONES 1 0 1 

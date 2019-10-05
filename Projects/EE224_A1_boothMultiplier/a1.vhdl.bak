@@ -1,0 +1,133 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.all;
+–use IEEE.STD_LOGIC_ARITH.ALL;
+–use IEEE.STD_LOGIC_std_logic_vector.ALL;
+entity booth_multiplier8 is
+Port ( A : in  STD_LOGIC_VECTOR (7 downto 0);
+B : in  STD_LOGIC_VECTOR (7 downto 0);
+prod : out  STD_LOGIC_VECTOR (15 downto 0));
+end booth_multiplier8;
+
+architecture Behavioral of booth_multiplier8 is
+
+component full_adder is
+Port ( a : in  STD_LOGIC;
+b : in  STD_LOGIC;
+c : in  STD_LOGIC;
+sum : out  STD_LOGIC;
+carry : out  STD_LOGIC);
+end component;
+
+component half_adder is
+Port ( a : in  STD_LOGIC;
+b : in  STD_LOGIC;
+sum : out  STD_LOGIC;
+carry : out  STD_LOGIC);
+end component;
+
+type row is array (8 downto 0) of std_logic_vector(8 downto 0);
+signal p : row;
+signal p8:std_logic_vector(7 downto 0):=”10101011″;
+signal sig_mcd: std_logic_vector(8 downto 0):= (others=>’0′);
+signal sig_minusA : std_logic_vector(8 downto 0):= (others=>’0′);
+signal sig_twiceA: std_logic_vector(8 downto 0):= (others=>’0′);
+signal sig_twice_minusA :std_logic_vector(8 downto 0):= (others=>’0′);
+signal s1,c1:std_logic_vector(2 downto 0):=(others=>’0′);
+signal s2,c2:std_logic_vector(6 downto 0):=(others=>’0′);
+signal s3,c3:std_logic_vector(10 downto 0):=(others=>’0′);
+signal s4,c4:std_logic_vector(13 downto 0):=(others=>’0′);
+begin
+
+process(A,B)
+variable D : std_logic_vector(8 downto 0):= (others=>’0′);
+variable mcd: std_logic_vector(8 downto 0):= (others=>’0′);
+variable minusA : std_logic_vector(8 downto 0):= (others=>’0′);
+variable twiceA: std_logic_vector(8 downto 0):= (others=>’0′);
+variable twice_minusA :std_logic_vector(8 downto 0):= (others=>’0′);
+variable minusA4 : std_logic_vector(7 downto 0):= (others=>’0′);
+
+begin
+D :=B&’0′;
+minusA4:=std_logic_vector((unsigned(not A)+1));
+if A=”10000000″ then
+minusA:=”010000000″;
+else
+minusA:=minusA4(7)&minusA4;
+end if;
+mcd:= A(7)&A;
+twiceA:=std_logic_vector(A)&’0′;
+twice_minusA:=minusA(7 downto 0)& ‘0’;
+
+sig_mcd<=mcd;
+sig_minusA<=minusA;
+sig_twiceA<=twiceA;
+sig_twice_minusA<=twice_minusA;
+
+for i in 0 to 3 loop
+
+	if D(2+2*i downto 0+2*i)=”001″ or D(2+2*i downto 0+2*i)=”010″ then
+		p(2*i)(7 downto 0)<=mcd(7 downto 0) ;
+		p(2*i)(8)<=not(mcd(8));
+	elsif D(2+2*i downto 0+2*i)=”011″ then
+		p(2*i)(7 downto 0)<=twiceA(7 downto 0);
+		p(2*i)(8)<=not(twiceA(8));
+	elsif D(2+2*i downto 0+2*i)=”100″ then
+		p(2*i)(7 downto 0)<=twice_minusA(7 downto 0);
+		p(2*i)(8)<=not(twice_minusA(8));
+	elsif D(2+2*i downto 0+2*i)=”101″ or D(2+2*i downto 0+2*i)=”110″ then
+		p(2*i)(7 downto 0)<=minusA(7 downto 0)  ;
+		p(2*i)(8)<=not(minusA(8));
+	else
+		p(2*i)(7 downto 0)<=(others=>’0′);
+		p(2*i)(8)<=’1′;
+	end if;
+
+	–D(2-2*i downto 0):=D(4 -2*i downto 2);	
+
+end  loop;
+
+end process;
+
+———————–level1———————–p(i)(j)———-i=0,2,4,6——j=0 to 8——————————–
+ha1_1:half_adder port map(p(0)(8),p(2)(6),s1(0),c1(0));
+ha1_2:half_adder port map(p(2)(7),p(4)(5),s1(1),c1(1));
+ha1_3:half_adder port map(p(2)(8),p(4)(6),s1(2),c1(2));
+
+———————-level2————————p(i)(j)———-i=0,2,4,6——j=0 to 8———————————
+
+ha2_1:half_adder port map(p(0)(6),p(2)(4),s2(0),c2(0));
+fa2_1:full_adder port map(p(0)(7),p(2)(5),p(4)(3),s2(1),c2(1));
+fa2_2:full_adder port map(p(4)(4),p(6)(2),s1(0),s2(2),c2(2));
+fa2_3:full_adder port map(p(6)(3),c1(0),s1(1),s2(3),c2(3));
+fa2_4:full_adder port map(p(6)(4),c1(1),s1(2),s2(4),c2(4));
+fa2_5:full_adder port map(p(4)(7),p(6)(5),c1(2),s2(5),c2(5));
+fa2_6:half_adder port map(p(4)(8),p(6)(6),s2(6),c2(6));
+
+———————-level3————————p(i)(j)———-i=0,2,4,6——j=0 to 8———————————-
+
+ha3_1:half_adder port map(p(0)(4),p(2)(2),s3(0),c3(0));
+fa3_1:full_adder port map(p(0)(5),p(2)(3),p(4)(1),s3(1),c3(1));
+fa3_2:full_adder port map(p(4)(2),p(6)(0),s2(0),s3(2),c3(2));
+fa3_3:full_adder port map(p(6)(1),c2(0),s2(1),s3(3),c3(3));
+fa3_4:full_adder port map(p8(0),c2(1),s2(2),s3(4),c3(4));
+fa3_5:full_adder port map(p8(1),c2(2),s2(3),s3(5),c3(5));
+fa3_6:full_adder port map(p8(2),c2(3),s2(4),s3(6),c3(6));
+fa3_7:full_adder port map(p8(3),c2(4),s2(5),s3(7),c3(7));
+fa3_8:full_adder port map(p8(4),c2(5),s2(6),s3(8),c3(8));
+fa3_9:full_adder port map(p(6)(7),p8(5),c2(6),s3(9),c3(9));
+ha3_2:half_adder port map(p(6)(8),p8(6),s3(10),c3(10));
+———————-level4————————p(i)(j)———-i=0,2,4,6——j=0 to 8———————————-
+prod(0)<=p(0)(0);
+prod(1)<=p(0)(1);
+
+ha4_1:half_adder port map(p(0)(2),p(2)(0),s4(0),c4(0));
+fa4_1:full_adder port map(c4(0),p(0)(3),p(2)(1),s4(1),c4(1));
+fa4_2:full_adder port map(c4(1),p(4)(0),s3(0),s4(2),c4(2));
+loop1: for i in 0 to 9 generate
+fa4_3:full_adder port map(c3(i),s3(i+1),c4(i+2),s4(i+3),c4(i+3));
+end generate loop1;
+fa:full_adder port map(p8(7),c3(10),c4(12),s4(13),c4(13));
+prod(15 downto 2)<=s4(13 downto 0);
+
+end Behavioral;

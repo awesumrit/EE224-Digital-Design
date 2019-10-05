@@ -1,0 +1,193 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/18.1/Projects/RTL_mult/simulation/modelsim
+Eaddern
+Z1 w1554110821
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/intelFPGA_lite/18.1/Projects/RTL_mult/mult_components.vhdl
+Z6 FC:/intelFPGA_lite/18.1/Projects/RTL_mult/mult_components.vhdl
+l0
+L74
+V<Zabh@J<QF@@n8ICz83`F3
+!s100 8<eZS:h635A`SZ:RA<XOz1
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1554111423
+!i10b 1
+Z9 !s108 1554111423.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/Projects/RTL_mult/mult_components.vhdl|
+Z11 !s107 C:/intelFPGA_lite/18.1/Projects/RTL_mult/mult_components.vhdl|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+R4
+DEx4 work 6 addern 0 22 <Zabh@J<QF@@n8ICz83`F3
+l82
+L81
+V@664i^Q3W44zI]_@AJ8^]0
+!s100 `EZW9L?laKSOJGjPiA[aZ0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Econtroller
+R1
+R2
+R3
+R4
+R0
+R5
+R6
+l0
+L91
+V^YT7g_oMHWWGgaJII87SP2
+!s100 hCgoV>`20`_099[66P<d51
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+R4
+DEx4 work 10 controller 0 22 ^YT7g_oMHWWGgaJII87SP2
+l107
+L103
+V;71b[b;G6A=bS3KX_F^550
+!s100 1Ld07imbBY?CBcOz4`1951
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Pmult_components
+R3
+R4
+R1
+R0
+R5
+R6
+l0
+L4
+Vi<1`1lj8^@DU^B5WI67M13
+!s100 ;W4Bh8C`NnN9K4z6b7^z`0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Emulttop
+Z14 w1554111001
+Z15 DPx4 work 15 mult_components 0 22 i<1`1lj8^@DU^B5WI67M13
+R3
+R4
+R0
+Z16 8C:/intelFPGA_lite/18.1/Projects/RTL_mult/MultTop.vhdl
+Z17 FC:/intelFPGA_lite/18.1/Projects/RTL_mult/MultTop.vhdl
+l0
+L5
+V23f@ZA_3g<RlMHW?h;l6b3
+!s100 z5iEm<C9f`?l@8gd7KR_[1
+R7
+31
+R8
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/Projects/RTL_mult/MultTop.vhdl|
+Z19 !s107 C:/intelFPGA_lite/18.1/Projects/RTL_mult/MultTop.vhdl|
+!i113 1
+R12
+R13
+Abehavioral
+R15
+R3
+R4
+DEx4 work 7 multtop 0 22 23f@ZA_3g<RlMHW?h;l6b3
+l21
+L14
+VmX5<TYgm6cYEdd<Re;o4`1
+!s100 ;T76eSYkdH=Td9Q_zzWOQ3
+R7
+31
+R8
+!i10b 1
+R9
+R18
+R19
+!i113 1
+R12
+R13
+Eregn
+R1
+R3
+R4
+R0
+R5
+R6
+l0
+L39
+V`a_foQa;iabm^U:fd^a]i0
+!s100 dNF4]z4C2GhhY@9NKJhJz1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Abehavioral
+R3
+R4
+DEx4 work 4 regn 0 22 `a_foQa;iabm^U:fd^a]i0
+l53
+L51
+VVNzJjnYEPc>U01NU9J;fB0
+!s100 ^EZm95]R2U[G5k13117dE3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13

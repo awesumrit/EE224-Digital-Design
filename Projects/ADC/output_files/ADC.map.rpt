@@ -1,0 +1,487 @@
+Analysis & Synthesis report for ADC
+Thu May 02 16:40:49 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |ADC_b|fsm_state
+  9. State Machine - |ADC_b|CountDownTimer:coun1|fsm_state
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Port Connectivity Checks: "CountDownTimer:coun1"
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu May 02 16:40:49 2019       ;
+; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name               ; ADC                                         ;
+; Top-level Entity Name       ; ADC_b                                       ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 340                                         ;
+; Total pins                  ; 22                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                            ; ADC_b              ; ADC                ;
+; Family name                                                      ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                  ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                           ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+; CountDownTimer.vhd               ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Projects/ADC/CountDownTimer.vhd ;         ;
+; ADC_b.vhd                        ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd          ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 340   ;
+;     -- Combinational with no register       ; 179   ;
+;     -- Register only                        ; 88    ;
+;     -- Combinational with a register        ; 73    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 42    ;
+;     -- 3 input functions                    ; 127   ;
+;     -- 2 input functions                    ; 75    ;
+;     -- 1 input functions                    ; 8     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 218   ;
+;     -- arithmetic mode                      ; 122   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 40    ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 161   ;
+; Total logic cells in carry chains           ; 131   ;
+; I/O pins                                    ; 22    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 161   ;
+; Total fan-out                               ; 1095  ;
+; Average fan-out                             ; 3.02  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                           ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------+----------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name         ; Entity Name    ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------+----------------+--------------+
+; |ADC_b                     ; 340 (244)   ; 161          ; 0          ; 22   ; 0            ; 179 (147)    ; 88 (56)           ; 73 (41)          ; 131 (99)        ; 0 (0)      ; |ADC_b                      ; ADC_b          ; work         ;
+;    |CountDownTimer:coun1|  ; 96 (96)     ; 64           ; 0          ; 0    ; 0            ; 32 (32)      ; 32 (32)           ; 32 (32)          ; 32 (32)         ; 0 (0)      ; |ADC_b|CountDownTimer:coun1 ; CountDownTimer ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |ADC_b|fsm_state                                                                                                                                   ;
++----------------+----------------+---------------+---------------+---------------+----------------+----------------+----------------+----------------+--------------+
+; Name           ; fsm_state.stay ; fsm_state.red ; fsm_state.wrt ; fsm_state.css ; fsm_state.css5 ; fsm_state.css4 ; fsm_state.css3 ; fsm_state.css2 ; fsm_state.st ;
++----------------+----------------+---------------+---------------+---------------+----------------+----------------+----------------+----------------+--------------+
+; fsm_state.st   ; 0              ; 0             ; 0             ; 0             ; 0              ; 0              ; 0              ; 0              ; 0            ;
+; fsm_state.css2 ; 0              ; 0             ; 0             ; 0             ; 0              ; 0              ; 0              ; 1              ; 1            ;
+; fsm_state.css3 ; 0              ; 0             ; 0             ; 0             ; 0              ; 0              ; 1              ; 0              ; 1            ;
+; fsm_state.css4 ; 0              ; 0             ; 0             ; 0             ; 0              ; 1              ; 0              ; 0              ; 1            ;
+; fsm_state.css5 ; 0              ; 0             ; 0             ; 0             ; 1              ; 0              ; 0              ; 0              ; 1            ;
+; fsm_state.css  ; 0              ; 0             ; 0             ; 1             ; 0              ; 0              ; 0              ; 0              ; 1            ;
+; fsm_state.wrt  ; 0              ; 0             ; 1             ; 0             ; 0              ; 0              ; 0              ; 0              ; 1            ;
+; fsm_state.red  ; 0              ; 1             ; 0             ; 0             ; 0              ; 0              ; 0              ; 0              ; 1            ;
+; fsm_state.stay ; 1              ; 0             ; 0             ; 0             ; 0              ; 0              ; 0              ; 0              ; 1            ;
++----------------+----------------+---------------+---------------+---------------+----------------+----------------+----------------+----------------+--------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------+
+; State Machine - |ADC_b|CountDownTimer:coun1|fsm_state                ;
++-----------------+-----------------+-----------------+----------------+
+; Name            ; fsm_state.DONES ; fsm_state.WORKS ; fsm_state.IDLE ;
++-----------------+-----------------+-----------------+----------------+
+; fsm_state.IDLE  ; 0               ; 0               ; 0              ;
+; fsm_state.WORKS ; 0               ; 1               ; 1              ;
+; fsm_state.DONES ; 1               ; 0               ; 1              ;
++-----------------+-----------------+-----------------+----------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; CS$latch                                            ; Selector13          ; yes                    ;
+; RD$latch                                            ; Selector9           ; yes                    ;
+; WR$latch                                            ; Selector11          ; yes                    ;
+; dac_in[0]$latch                                     ; fsm_state.st        ; yes                    ;
+; dac_in[1]$latch                                     ; fsm_state.st        ; yes                    ;
+; dac_in[2]$latch                                     ; fsm_state.st        ; yes                    ;
+; dac_in[3]$latch                                     ; fsm_state.st        ; yes                    ;
+; dac_in[4]$latch                                     ; fsm_state.st        ; yes                    ;
+; dac_in[5]$latch                                     ; fsm_state.st        ; yes                    ;
+; dac_in[6]$latch                                     ; fsm_state.st        ; yes                    ;
+; dac_in[7]$latch                                     ; fsm_state.st        ; yes                    ;
+; dac_prev[0]                                         ; Selector7           ; yes                    ;
+; dac_prev[1]                                         ; Selector7           ; yes                    ;
+; dac_prev[2]                                         ; Selector7           ; yes                    ;
+; dac_prev[3]                                         ; Selector7           ; yes                    ;
+; dac_prev[4]                                         ; Selector7           ; yes                    ;
+; dac_prev[5]                                         ; Selector7           ; yes                    ;
+; dac_prev[6]                                         ; Selector7           ; yes                    ;
+; dac_prev[7]                                         ; Selector7           ; yes                    ;
+; t8[3]                                               ; t8[0]               ; yes                    ;
+; t8[4]                                               ; t8[0]               ; yes                    ;
+; t8[5]                                               ; t8[0]               ; yes                    ;
+; t8[6]                                               ; t8[0]               ; yes                    ;
+; t8[7]                                               ; t8[0]               ; yes                    ;
+; t8[2]                                               ; t8[0]               ; yes                    ;
+; t8[1]                                               ; t8[0]               ; yes                    ;
+; t8[0]                                               ; t8[0]               ; yes                    ;
+; Number of user-specified and inferred latches = 27  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; t7[8..31]                               ; Stuck at GND due to stuck port data_in ;
+; t6[8..31]                               ; Stuck at GND due to stuck port data_in ;
+; t5[8..31]                               ; Stuck at GND due to stuck port data_in ;
+; t4[8..31]                               ; Stuck at GND due to stuck port data_in ;
+; t3[8..31]                               ; Stuck at GND due to stuck port data_in ;
+; t2[8..31]                               ; Stuck at GND due to stuck port data_in ;
+; t1[8..31]                               ; Stuck at GND due to stuck port data_in ;
+; CountDownTimer:coun1|fsm_state.IDLE     ; Lost fanout                            ;
+; CountDownTimer:coun1|fsm_state.WORKS    ; Lost fanout                            ;
+; CountDownTimer:coun1|fsm_state.DONES    ; Lost fanout                            ;
+; Total Number of Removed Registers = 171 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                ;
++---------------+---------------------------+------------------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register         ;
++---------------+---------------------------+------------------------------------------------+
+; t7[23]        ; Stuck at GND              ; t6[23], t5[23], t4[23], t3[23], t2[23], t1[23] ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[22]        ; Stuck at GND              ; t6[22], t5[22], t4[22], t3[22], t2[22], t1[22] ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[21]        ; Stuck at GND              ; t6[21], t5[21], t4[21], t3[21], t2[21], t1[21] ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[20]        ; Stuck at GND              ; t6[20], t5[20], t4[20], t3[20], t2[20], t1[20] ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[19]        ; Stuck at GND              ; t6[19], t5[19], t4[19], t3[19], t2[19], t1[19] ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[18]        ; Stuck at GND              ; t6[18], t5[18], t4[18], t3[18], t2[18], t1[18] ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[17]        ; Stuck at GND              ; t6[17], t5[17], t4[17], t3[17], t2[17], t1[17] ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[16]        ; Stuck at GND              ; t6[16], t5[16], t4[16], t3[16], t2[16], t1[16] ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[15]        ; Stuck at GND              ; t6[15], t5[15], t4[15], t3[15], t2[15], t1[15] ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[14]        ; Stuck at GND              ; t6[14], t5[14], t4[14], t3[14], t2[14], t1[14] ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[13]        ; Stuck at GND              ; t6[13], t5[13], t4[13], t3[13], t2[13], t1[13] ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[12]        ; Stuck at GND              ; t6[12], t5[12], t4[12], t3[12], t2[12], t1[12] ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[11]        ; Stuck at GND              ; t6[11], t5[11], t4[11], t3[11], t2[11], t1[11] ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[10]        ; Stuck at GND              ; t6[10], t5[10], t4[10], t3[10], t2[10], t1[10] ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[9]         ; Stuck at GND              ; t6[9], t5[9], t4[9], t3[9], t2[9], t1[9]       ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[8]         ; Stuck at GND              ; t6[8], t5[8], t4[8], t3[8], t2[8], t1[8]       ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[31]        ; Stuck at GND              ; t6[31], t5[31], t4[31], t3[31], t2[31]         ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[30]        ; Stuck at GND              ; t6[30], t5[30], t4[30], t3[30], t2[30]         ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[29]        ; Stuck at GND              ; t6[29], t5[29], t4[29], t3[29], t2[29]         ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[28]        ; Stuck at GND              ; t6[28], t5[28], t4[28], t3[28], t2[28]         ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[27]        ; Stuck at GND              ; t6[27], t5[27], t4[27], t3[27], t2[27]         ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[26]        ; Stuck at GND              ; t6[26], t5[26], t4[26], t3[26], t2[26]         ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[25]        ; Stuck at GND              ; t6[25], t5[25], t4[25], t3[25], t2[25]         ;
+;               ; due to stuck port data_in ;                                                ;
+; t7[24]        ; Stuck at GND              ; t6[24], t5[24], t4[24], t3[24], t2[24]         ;
+;               ; due to stuck port data_in ;                                                ;
++---------------+---------------------------+------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 161   ;
+; Number of registers using Synchronous Clear  ; 40    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 88    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; CountDownTimer:coun1|timer[0]          ; 3       ;
+; CountDownTimer:coun1|timer[31]         ; 7       ;
+; CountDownTimer:coun1|Count[0]          ; 3       ;
+; CountDownTimer:coun1|Count[31]         ; 2       ;
+; Total number of inverted registers = 4 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CountDownTimer:coun1"                                                                ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; y     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; start ; Input  ; Info     ; Stuck at VCC                                                                        ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Thu May 02 16:40:32 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ADC -c ADC
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file countdowntimer.vhd
+    Info (12022): Found design unit 1: CountDownTimer-Behave File: C:/intelFPGA_lite/18.1/Projects/ADC/CountDownTimer.vhd Line: 11
+    Info (12023): Found entity 1: CountDownTimer File: C:/intelFPGA_lite/18.1/Projects/ADC/CountDownTimer.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file adc_b.vhd
+    Info (12022): Found design unit 1: ADC_b-Behave File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 12
+    Info (12023): Found entity 1: ADC_b File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 5
+Info (12127): Elaborating entity "ADC_b" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at ADC_b.vhd(16): object "cn1out" assigned a value but never read File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 16
+Warning (10492): VHDL Process Statement warning at ADC_b.vhd(38): signal "Count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 38
+Warning (10492): VHDL Process Statement warning at ADC_b.vhd(72): signal "INTR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 72
+Warning (10492): VHDL Process Statement warning at ADC_b.vhd(91): signal "INTR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at ADC_b.vhd(93): signal "ADC_b_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 93
+Warning (10631): VHDL Process Statement warning at ADC_b.vhd(30): inferring latch(es) for signal or variable "CS", which holds its previous value in one or more paths through the process File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at ADC_b.vhd(30): inferring latch(es) for signal or variable "WR", which holds its previous value in one or more paths through the process File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at ADC_b.vhd(30): inferring latch(es) for signal or variable "RD", which holds its previous value in one or more paths through the process File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at ADC_b.vhd(30): inferring latch(es) for signal or variable "dac_in", which holds its previous value in one or more paths through the process File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at ADC_b.vhd(30): inferring latch(es) for signal or variable "t8", which holds its previous value in one or more paths through the process File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at ADC_b.vhd(30): inferring latch(es) for signal or variable "dac_prev", which holds its previous value in one or more paths through the process File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "dac_prev[0]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "dac_prev[1]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "dac_prev[2]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "dac_prev[3]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "dac_prev[4]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "dac_prev[5]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "dac_prev[6]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "dac_prev[7]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[0]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[1]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[2]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[3]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[4]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[5]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[6]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[7]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[8]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[9]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[10]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[11]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[12]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[13]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[14]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[15]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[16]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[17]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[18]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[19]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[20]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[21]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[22]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[23]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[24]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[25]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[26]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[27]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[28]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[29]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[30]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "t8[31]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "dac_in[0]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "dac_in[1]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "dac_in[2]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "dac_in[3]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "dac_in[4]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "dac_in[5]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "dac_in[6]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "dac_in[7]" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "RD" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "WR" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (10041): Inferred latch for "CS" at ADC_b.vhd(30) File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+Info (12128): Elaborating entity "CountDownTimer" for hierarchy "CountDownTimer:coun1" File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 27
+Warning (10036): Verilog HDL or VHDL warning at CountDownTimer.vhd(24): object "Done_var" assigned a value but never read File: C:/intelFPGA_lite/18.1/Projects/ADC/CountDownTimer.vhd Line: 24
+Warning (10631): VHDL Process Statement warning at CountDownTimer.vhd(22): inferring latch(es) for signal or variable "R", which holds its previous value in one or more paths through the process File: C:/intelFPGA_lite/18.1/Projects/ADC/CountDownTimer.vhd Line: 22
+Warning (10631): VHDL Process Statement warning at CountDownTimer.vhd(22): inferring latch(es) for signal or variable "y", which holds its previous value in one or more paths through the process File: C:/intelFPGA_lite/18.1/Projects/ADC/CountDownTimer.vhd Line: 22
+Info (10041): Inferred latch for "y" at CountDownTimer.vhd(22) File: C:/intelFPGA_lite/18.1/Projects/ADC/CountDownTimer.vhd Line: 22
+Info (10041): Inferred latch for "R" at CountDownTimer.vhd(22) File: C:/intelFPGA_lite/18.1/Projects/ADC/CountDownTimer.vhd Line: 22
+Warning (13012): Latch CS$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fsm_state.css5 File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 15
+Warning (13012): Latch RD$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fsm_state.css4 File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 15
+Warning (13012): Latch WR$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fsm_state.st File: C:/intelFPGA_lite/18.1/Projects/ADC/ADC_b.vhd Line: 15
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 362 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 340 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 4786 megabytes
+    Info: Processing ended: Thu May 02 16:40:49 2019
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:30
+
+

@@ -1,0 +1,19 @@
+--multiplexer code
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity mux is
+	port (X, Y : in std_logic_vector(7 downto 0);
+			Z: out std_logic_vector(7 downto 0);
+			OP: in std_logic_vector(1 downto 0));
+end entity mux;
+
+
+architecture struct of mux is
+begin
+    Z0: eightbitadder port map(X, Y, Z) when (OP = "00");
+    Z1: leftshift port map(X, Y, Z) when (OP = "01");
+    Z2: rightshift port map(X, Y, Z) when (OP = "10");
+    Z1: multiplier port map(X, Y, Z) when (OP = "11");
+
+end struct;

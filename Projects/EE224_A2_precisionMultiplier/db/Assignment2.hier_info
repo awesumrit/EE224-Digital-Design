@@ -1,0 +1,2163 @@
+|DUT
+input_vector[0] => quarter_precision_multiplier:add_instance.y[0]
+input_vector[1] => quarter_precision_multiplier:add_instance.y[1]
+input_vector[2] => quarter_precision_multiplier:add_instance.y[2]
+input_vector[3] => quarter_precision_multiplier:add_instance.y[3]
+input_vector[4] => quarter_precision_multiplier:add_instance.y[4]
+input_vector[5] => quarter_precision_multiplier:add_instance.y[5]
+input_vector[6] => quarter_precision_multiplier:add_instance.y[6]
+input_vector[7] => quarter_precision_multiplier:add_instance.y[7]
+input_vector[8] => quarter_precision_multiplier:add_instance.x[0]
+input_vector[9] => quarter_precision_multiplier:add_instance.x[1]
+input_vector[10] => quarter_precision_multiplier:add_instance.x[2]
+input_vector[11] => quarter_precision_multiplier:add_instance.x[3]
+input_vector[12] => quarter_precision_multiplier:add_instance.x[4]
+input_vector[13] => quarter_precision_multiplier:add_instance.x[5]
+input_vector[14] => quarter_precision_multiplier:add_instance.x[6]
+input_vector[15] => quarter_precision_multiplier:add_instance.x[7]
+output_vector[0] << quarter_precision_multiplier:add_instance.z[0]
+output_vector[1] << quarter_precision_multiplier:add_instance.z[1]
+output_vector[2] << quarter_precision_multiplier:add_instance.z[2]
+output_vector[3] << quarter_precision_multiplier:add_instance.z[3]
+output_vector[4] << quarter_precision_multiplier:add_instance.z[4]
+output_vector[5] << quarter_precision_multiplier:add_instance.z[5]
+output_vector[6] << quarter_precision_multiplier:add_instance.z[6]
+output_vector[7] << quarter_precision_multiplier:add_instance.z[7]
+output_vector[8] << quarter_precision_multiplier:add_instance.z[8]
+output_vector[9] << quarter_precision_multiplier:add_instance.z[9]
+output_vector[10] << quarter_precision_multiplier:add_instance.z[10]
+output_vector[11] << quarter_precision_multiplier:add_instance.z[11]
+output_vector[12] << quarter_precision_multiplier:add_instance.z[12]
+output_vector[13] << quarter_precision_multiplier:add_instance.z[13]
+output_vector[14] << quarter_precision_multiplier:add_instance.z[14]
+output_vector[15] << quarter_precision_multiplier:add_instance.z[15]
+
+
+|DUT|quarter_precision_multiplier:add_instance
+x[0] => multiplier:M1.a[0]
+x[1] => multiplier:M1.a[1]
+x[2] => multiplier:M1.a[2]
+x[3] => multiplier:M1.a[3]
+x[4] => fivebitadder:A1.A[0]
+x[5] => fivebitadder:A1.A[1]
+x[6] => fivebitadder:A1.A[2]
+x[7] => z_sign.IN0
+y[0] => multiplier:M1.b[0]
+y[1] => multiplier:M1.b[1]
+y[2] => multiplier:M1.b[2]
+y[3] => multiplier:M1.b[3]
+y[4] => fivebitadder:A1.B[0]
+y[5] => fivebitadder:A1.B[1]
+y[6] => fivebitadder:A1.B[2]
+y[7] => z_sign.IN1
+z[0] <= mux:M2.C[0]
+z[1] <= mux:M2.C[1]
+z[2] <= mux:M2.C[2]
+z[3] <= mux:M2.C[3]
+z[4] <= mux:M2.C[4]
+z[5] <= mux:M2.C[5]
+z[6] <= mux:M2.C[6]
+z[7] <= mux:M2.C[7]
+z[8] <= mux:M2.C[8]
+z[9] <= mux:M2.C[9]
+z[10] <= fivebitadder:A3.S[0]
+z[11] <= fivebitadder:A3.S[1]
+z[12] <= fivebitadder:A3.S[2]
+z[13] <= fivebitadder:A3.S[3]
+z[14] <= fivebitadder:A3.S[4]
+z[15] <= z_sign.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1
+a[0] => p0[0].IN0
+a[0] => p1[1].IN0
+a[0] => p2[2].IN0
+a[0] => p3[3].IN0
+a[0] => p4[4].IN0
+a[1] => p0[1].IN0
+a[1] => p1[2].IN0
+a[1] => p2[3].IN0
+a[1] => p3[4].IN0
+a[1] => p4[5].IN0
+a[2] => p0[2].IN0
+a[2] => p1[3].IN0
+a[2] => p2[4].IN0
+a[2] => p3[5].IN0
+a[2] => p4[6].IN0
+a[3] => p0[3].IN0
+a[3] => p1[4].IN0
+a[3] => p2[5].IN0
+a[3] => p3[6].IN0
+a[3] => p4[7].IN0
+a[4] => p0[4].IN0
+a[4] => p1[5].IN0
+a[4] => p2[6].IN0
+a[4] => p3[7].IN0
+a[4] => p4[8].IN0
+b[0] => p0[4].IN1
+b[0] => p0[3].IN1
+b[0] => p0[2].IN1
+b[0] => p0[1].IN1
+b[0] => p0[0].IN1
+b[1] => p1[5].IN1
+b[1] => p1[4].IN1
+b[1] => p1[3].IN1
+b[1] => p1[2].IN1
+b[1] => p1[1].IN1
+b[2] => p2[6].IN1
+b[2] => p2[5].IN1
+b[2] => p2[4].IN1
+b[2] => p2[3].IN1
+b[2] => p2[2].IN1
+b[3] => p3[7].IN1
+b[3] => p3[6].IN1
+b[3] => p3[5].IN1
+b[3] => p3[4].IN1
+b[3] => p3[3].IN1
+b[4] => p4[8].IN1
+b[4] => p4[7].IN1
+b[4] => p4[6].IN1
+b[4] => p4[5].IN1
+b[4] => p4[4].IN1
+p[0] <= tenbitadder:m3.S[0]
+p[1] <= tenbitadder:m3.S[1]
+p[2] <= tenbitadder:m3.S[2]
+p[3] <= tenbitadder:m3.S[3]
+p[4] <= tenbitadder:m3.S[4]
+p[5] <= tenbitadder:m3.S[5]
+p[6] <= tenbitadder:m3.S[6]
+p[7] <= tenbitadder:m3.S[7]
+p[8] <= tenbitadder:m3.S[8]
+p[9] <= tenbitadder:m3.S[9]
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0
+A[0] => HALF_ADDER:FA0.A
+A[1] => Full_Adder:FA1.A
+A[2] => Full_Adder:FA2.A
+A[3] => Full_Adder:FA3.A
+A[4] => Full_Adder:FA4.A
+A[5] => Full_Adder:FA5.A
+A[6] => Full_Adder:FA6.A
+A[7] => Full_Adder:FA7.A
+A[8] => Full_Adder:FA8.A
+A[9] => Full_Adder:FA9.A
+B[0] => HALF_ADDER:FA0.B
+B[1] => Full_Adder:FA1.B
+B[2] => Full_Adder:FA2.B
+B[3] => Full_Adder:FA3.B
+B[4] => Full_Adder:FA4.B
+B[5] => Full_Adder:FA5.B
+B[6] => Full_Adder:FA6.B
+B[7] => Full_Adder:FA7.B
+B[8] => Full_Adder:FA8.B
+B[9] => Full_Adder:FA9.B
+S[0] <= HALF_ADDER:FA0.S
+S[1] <= Full_Adder:FA1.S
+S[2] <= Full_Adder:FA2.S
+S[3] <= Full_Adder:FA3.S
+S[4] <= Full_Adder:FA4.S
+S[5] <= Full_Adder:FA5.S
+S[6] <= Full_Adder:FA6.S
+S[7] <= Full_Adder:FA7.S
+S[8] <= Full_Adder:FA8.S
+S[9] <= Full_Adder:FA9.S
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|HALF_ADDER:FA0
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA1
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA1|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA1|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA1|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA1|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA2
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA2|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA2|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA2|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA2|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA3
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA3|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA3|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA3|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA3|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA4
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA4|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA4|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA4|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA4|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA5
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA5|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA5|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA5|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA5|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA6
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA6|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA6|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA6|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA6|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA7
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA7|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA7|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA7|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA7|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA8
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA8|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA8|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA8|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA8|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA9
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA9|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA9|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA9|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m0|Full_Adder:FA9|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1
+A[0] => HALF_ADDER:FA0.A
+A[1] => Full_Adder:FA1.A
+A[2] => Full_Adder:FA2.A
+A[3] => Full_Adder:FA3.A
+A[4] => Full_Adder:FA4.A
+A[5] => Full_Adder:FA5.A
+A[6] => Full_Adder:FA6.A
+A[7] => Full_Adder:FA7.A
+A[8] => Full_Adder:FA8.A
+A[9] => Full_Adder:FA9.A
+B[0] => HALF_ADDER:FA0.B
+B[1] => Full_Adder:FA1.B
+B[2] => Full_Adder:FA2.B
+B[3] => Full_Adder:FA3.B
+B[4] => Full_Adder:FA4.B
+B[5] => Full_Adder:FA5.B
+B[6] => Full_Adder:FA6.B
+B[7] => Full_Adder:FA7.B
+B[8] => Full_Adder:FA8.B
+B[9] => Full_Adder:FA9.B
+S[0] <= HALF_ADDER:FA0.S
+S[1] <= Full_Adder:FA1.S
+S[2] <= Full_Adder:FA2.S
+S[3] <= Full_Adder:FA3.S
+S[4] <= Full_Adder:FA4.S
+S[5] <= Full_Adder:FA5.S
+S[6] <= Full_Adder:FA6.S
+S[7] <= Full_Adder:FA7.S
+S[8] <= Full_Adder:FA8.S
+S[9] <= Full_Adder:FA9.S
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|HALF_ADDER:FA0
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA1
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA1|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA1|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA1|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA1|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA2
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA2|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA2|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA2|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA2|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA3
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA3|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA3|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA3|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA3|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA4
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA4|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA4|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA4|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA4|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA5
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA5|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA5|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA5|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA5|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA6
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA6|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA6|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA6|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA6|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA7
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA7|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA7|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA7|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA7|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA8
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA8|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA8|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA8|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA8|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA9
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA9|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA9|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA9|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m1|Full_Adder:FA9|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2
+A[0] => HALF_ADDER:FA0.A
+A[1] => Full_Adder:FA1.A
+A[2] => Full_Adder:FA2.A
+A[3] => Full_Adder:FA3.A
+A[4] => Full_Adder:FA4.A
+A[5] => Full_Adder:FA5.A
+A[6] => Full_Adder:FA6.A
+A[7] => Full_Adder:FA7.A
+A[8] => Full_Adder:FA8.A
+A[9] => Full_Adder:FA9.A
+B[0] => HALF_ADDER:FA0.B
+B[1] => Full_Adder:FA1.B
+B[2] => Full_Adder:FA2.B
+B[3] => Full_Adder:FA3.B
+B[4] => Full_Adder:FA4.B
+B[5] => Full_Adder:FA5.B
+B[6] => Full_Adder:FA6.B
+B[7] => Full_Adder:FA7.B
+B[8] => Full_Adder:FA8.B
+B[9] => Full_Adder:FA9.B
+S[0] <= HALF_ADDER:FA0.S
+S[1] <= Full_Adder:FA1.S
+S[2] <= Full_Adder:FA2.S
+S[3] <= Full_Adder:FA3.S
+S[4] <= Full_Adder:FA4.S
+S[5] <= Full_Adder:FA5.S
+S[6] <= Full_Adder:FA6.S
+S[7] <= Full_Adder:FA7.S
+S[8] <= Full_Adder:FA8.S
+S[9] <= Full_Adder:FA9.S
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|HALF_ADDER:FA0
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA1
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA1|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA1|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA1|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA1|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA2
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA2|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA2|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA2|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA2|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA3
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA3|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA3|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA3|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA3|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA4
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA4|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA4|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA4|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA4|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA5
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA5|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA5|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA5|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA5|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA6
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA6|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA6|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA6|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA6|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA7
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA7|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA7|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA7|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA7|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA8
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA8|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA8|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA8|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA8|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA9
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA9|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA9|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA9|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m2|Full_Adder:FA9|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3
+A[0] => HALF_ADDER:FA0.A
+A[1] => Full_Adder:FA1.A
+A[2] => Full_Adder:FA2.A
+A[3] => Full_Adder:FA3.A
+A[4] => Full_Adder:FA4.A
+A[5] => Full_Adder:FA5.A
+A[6] => Full_Adder:FA6.A
+A[7] => Full_Adder:FA7.A
+A[8] => Full_Adder:FA8.A
+A[9] => Full_Adder:FA9.A
+B[0] => HALF_ADDER:FA0.B
+B[1] => Full_Adder:FA1.B
+B[2] => Full_Adder:FA2.B
+B[3] => Full_Adder:FA3.B
+B[4] => Full_Adder:FA4.B
+B[5] => Full_Adder:FA5.B
+B[6] => Full_Adder:FA6.B
+B[7] => Full_Adder:FA7.B
+B[8] => Full_Adder:FA8.B
+B[9] => Full_Adder:FA9.B
+S[0] <= HALF_ADDER:FA0.S
+S[1] <= Full_Adder:FA1.S
+S[2] <= Full_Adder:FA2.S
+S[3] <= Full_Adder:FA3.S
+S[4] <= Full_Adder:FA4.S
+S[5] <= Full_Adder:FA5.S
+S[6] <= Full_Adder:FA6.S
+S[7] <= Full_Adder:FA7.S
+S[8] <= Full_Adder:FA8.S
+S[9] <= Full_Adder:FA9.S
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|HALF_ADDER:FA0
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA1
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA1|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA1|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA1|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA1|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA2
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA2|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA2|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA2|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA2|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA3
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA3|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA3|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA3|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA3|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA4
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA4|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA4|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA4|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA4|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA5
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA5|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA5|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA5|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA5|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA6
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA6|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA6|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA6|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA6|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA7
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA7|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA7|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA7|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA7|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA8
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA8|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA8|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA8|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA8|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA9
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA9|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA9|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA9|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|multiplier:M1|tenbitadder:m3|Full_Adder:FA9|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|mux:M2
+A[0] => C.IN0
+A[1] => C.IN0
+A[2] => C.IN0
+A[3] => C.IN0
+A[4] => C.IN0
+A[5] => C.IN0
+A[6] => C.IN0
+A[7] => C.IN0
+A[8] => C.IN0
+A[9] => C.IN0
+B[0] => C.IN0
+B[1] => C.IN0
+B[2] => C.IN0
+B[3] => C.IN0
+B[4] => C.IN0
+B[5] => C.IN0
+B[6] => C.IN0
+B[7] => C.IN0
+B[8] => C.IN0
+B[9] => C.IN0
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+S => C.IN1
+C[0] <= C.DB_MAX_OUTPUT_PORT_TYPE
+C[1] <= C.DB_MAX_OUTPUT_PORT_TYPE
+C[2] <= C.DB_MAX_OUTPUT_PORT_TYPE
+C[3] <= C.DB_MAX_OUTPUT_PORT_TYPE
+C[4] <= C.DB_MAX_OUTPUT_PORT_TYPE
+C[5] <= C.DB_MAX_OUTPUT_PORT_TYPE
+C[6] <= C.DB_MAX_OUTPUT_PORT_TYPE
+C[7] <= C.DB_MAX_OUTPUT_PORT_TYPE
+C[8] <= C.DB_MAX_OUTPUT_PORT_TYPE
+C[9] <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1
+A[0] => HALF_ADDER:FA0.A
+A[1] => Full_Adder:FA1.A
+A[2] => Full_Adder:FA2.A
+A[3] => Full_Adder:FA3.A
+A[4] => Full_Adder:FA4.A
+B[0] => HALF_ADDER:FA0.B
+B[1] => Full_Adder:FA1.B
+B[2] => Full_Adder:FA2.B
+B[3] => Full_Adder:FA3.B
+B[4] => Full_Adder:FA4.B
+S[0] <= HALF_ADDER:FA0.S
+S[1] <= Full_Adder:FA1.S
+S[2] <= Full_Adder:FA2.S
+S[3] <= Full_Adder:FA3.S
+S[4] <= Full_Adder:FA4.S
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|HALF_ADDER:FA0
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA1
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA1|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA1|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA1|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA1|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA2
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA2|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA2|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA2|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA2|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA3
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA3|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA3|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA3|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA3|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA4
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA4|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA4|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA4|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A1|Full_Adder:FA4|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2
+A[0] => HALF_ADDER:FA0.A
+A[1] => Full_Adder:FA1.A
+A[2] => Full_Adder:FA2.A
+A[3] => Full_Adder:FA3.A
+A[4] => Full_Adder:FA4.A
+B[0] => HALF_ADDER:FA0.B
+B[1] => Full_Adder:FA1.B
+B[2] => Full_Adder:FA2.B
+B[3] => Full_Adder:FA3.B
+B[4] => Full_Adder:FA4.B
+S[0] <= HALF_ADDER:FA0.S
+S[1] <= Full_Adder:FA1.S
+S[2] <= Full_Adder:FA2.S
+S[3] <= Full_Adder:FA3.S
+S[4] <= Full_Adder:FA4.S
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|HALF_ADDER:FA0
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA1
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA1|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA1|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA1|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA1|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA2
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA2|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA2|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA2|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA2|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA3
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA3|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA3|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA3|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA3|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA4
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA4|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA4|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA4|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A2|Full_Adder:FA4|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3
+A[0] => HALF_ADDER:FA0.A
+A[1] => Full_Adder:FA1.A
+A[2] => Full_Adder:FA2.A
+A[3] => Full_Adder:FA3.A
+A[4] => Full_Adder:FA4.A
+B[0] => HALF_ADDER:FA0.B
+B[1] => Full_Adder:FA1.B
+B[2] => Full_Adder:FA2.B
+B[3] => Full_Adder:FA3.B
+B[4] => Full_Adder:FA4.B
+S[0] <= HALF_ADDER:FA0.S
+S[1] <= Full_Adder:FA1.S
+S[2] <= Full_Adder:FA2.S
+S[3] <= Full_Adder:FA3.S
+S[4] <= Full_Adder:FA4.S
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|HALF_ADDER:FA0
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA1
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA1|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA1|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA1|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA1|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA2
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA2|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA2|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA2|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA2|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA3
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA3|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA3|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA3|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA3|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA4
+A => HALF_ADDER:ha.A
+B => HALF_ADDER:ha.B
+Cin => AND_2:a1.B
+Cin => XOR_2:x1.B
+S <= XOR_2:x1.Y
+Cout <= OR_2:o1.Y
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA4|HALF_ADDER:ha
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA4|AND_2:a1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA4|OR_2:o1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|quarter_precision_multiplier:add_instance|fivebitadder:A3|Full_Adder:FA4|XOR_2:x1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
